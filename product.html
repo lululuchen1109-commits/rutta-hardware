@@ -41,6 +41,7 @@
 body{padding-bottom:76px}.toplinks{max-width:min(78vw,720px);overflow-x:auto;scrollbar-width:none}.toplinks::-webkit-scrollbar{display:none}.toplinks a{white-space:nowrap}.toplinks .nav-cta{color:#1d5d3d;font-weight:650}
 .site-footer{border-top:1px solid var(--line);background:#f7f8f6;padding:46px var(--gut) 34px}.footer-grid{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:30px}.footer-brand{font-size:22px;font-weight:700;letter-spacing:-.06em}.footer-copy{color:#6a746d;font-size:12px;line-height:1.7;max-width:25em;margin-top:12px}.footer-col{display:grid;align-content:start;gap:8px}.footer-col strong{font-size:12px;color:#28352d}.footer-col a{font-size:12px;color:#68736b}.footer-meta{max-width:var(--max);margin:34px auto 0;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:18px;color:#7b857e;font-size:11px}
 .capture-bar{position:fixed;z-index:20;bottom:0;inset-inline:0;background:rgba(29,41,35,.96);color:white;backdrop-filter:blur(12px);box-shadow:0 -8px 30px rgba(19,29,23,.14)}.capture-inner{max-width:var(--max);margin:auto;padding:12px var(--gut);display:flex;align-items:center;gap:24px}.capture-copy{flex:1;min-width:0}.capture-copy strong{font-size:14px;display:block}.capture-copy span{font-size:11px;color:#c4d2c8;display:block;margin-top:2px}.capture-form{display:flex;gap:8px;min-width:min(430px,44vw)}.capture-form input{width:100%;height:42px;border:0;border-radius:7px;background:#fff;color:var(--ink);padding:0 13px;font:13px var(--sans)}.capture-form button{height:42px;white-space:nowrap;border-radius:7px;background:#dcefe0;color:#193824;padding:0 18px;font-weight:650}.capture-status{font-size:11px;color:#c6e6cf;min-width:160px}.capture-status.error{color:#ffd0c3}
+.product-price-band{border-top:1px solid var(--line);background:#1d2923;color:#fff;padding:clamp(46px,7vw,82px) var(--gut)}.product-price-inner{max-width:var(--max);margin:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,.6fr);gap:36px;align-items:end}.product-price-band .rd-sub{color:#b8dfc1}.product-price-band h2{font-size:clamp(30px,4.2vw,58px);line-height:1;letter-spacing:-.07em;margin:10px 0 12px}.product-price-band p{color:#c6d4ca;font-size:14px;line-height:1.7;max-width:38em;margin:0}.product-price-card{border:1px solid #557061;border-radius:12px;background:#263b30;padding:22px}.product-price-card strong{display:block;font-size:27px;letter-spacing:-.04em}.product-price-card span{display:block;color:#c4d4c8;font-size:12px;line-height:1.6;margin-top:5px}@media(max-width:780px){.product-price-inner{grid-template-columns:1fr}.product-price-band{padding-inline:20px}}
 @media(max-width:760px){body{padding-bottom:106px}.toplinks{max-width:66vw;gap:18px}.footer-grid{grid-template-columns:repeat(2,1fr)}.footer-brand{grid-column:1/-1}.footer-meta{display:block}.footer-meta span{display:block;margin-top:5px}.capture-inner{display:block;padding:11px 18px 13px}.capture-copy{margin-bottom:8px}.capture-form{min-width:0}.capture-form input{min-width:0}.capture-form button{padding-inline:14px}.capture-status{display:block;min-height:15px;margin-top:5px}}
 </style></head><body>
 <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -195,6 +196,13 @@ body{padding-bottom:76px}.toplinks{max-width:min(78vw,720px);overflow-x:auto;scr
   </section>
 
 </div>
+
+<section class="product-price-band" aria-labelledby="product-price-title">
+  <div class="product-price-inner">
+    <div><p class="rd-sub">WORKING PRICE HYPOTHESIS</p><h2 id="product-price-title">A concept you can react to.</h2><p>The hardware and software relationship is still being tested. No payment is taken on this page, and the price is shown to make your response more concrete.</p></div>
+    <div class="product-price-card"><strong>$79 device</strong><span>plus $12 per member / month for the software layer. Final pricing and availability are still being tested.</span></div>
+  </div>
+</section>
 
 <script>
 (() => {
