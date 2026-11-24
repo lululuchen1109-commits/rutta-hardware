@@ -667,7 +667,7 @@ body{padding-bottom:76px}.toplinks{max-width:min(78vw,720px);overflow-x:auto;scr
   const nav = all(".toplinks a");
   const anchors = nav.map(link => byId(link.hash.slice(1)));
   function setActiveNav() {
-    let index = 0;
+    let index = Math.max(0, nav.findIndex(link => link.hasAttribute("data-page-current")));
     for (let item = 1; item < anchors.length; item += 1) {
       if (anchors[item] && anchors[item].getBoundingClientRect().top <= 100) index = item;
     }
