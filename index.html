@@ -281,6 +281,15 @@
 </script>
 <script>
 (() => {
+  /*
+    Production integration contract
+    - Set window.RUTTA_CONCEPT_ENDPOINT to the POST endpoint used by the lead system.
+    - A lead payload contains { event: 'concept_lead', ...formFields, attribution: {...} }.
+    - The endpoint should append one row to the team lead table and increment the source's lead count.
+    - Set window.RUTTA_ANALYTICS_ENDPOINT to receive { event: 'concept_view', attribution: {...} }.
+    - Source order is source, src, ref, utm_source, utm_campaign, then direct.
+    - Without an endpoint, preview events are kept in this browser only and the UI says so.
+  */
   const form = document.getElementById('conceptLeadForm');
   if (!form) return;
   const status = document.getElementById('leadStatus');
@@ -291,7 +300,8 @@
     utm_medium: params.get('utm_medium') || '',
     utm_campaign: params.get('utm_campaign') || '',
     landing_path: window.location.pathname + window.location.search,
-    referrer: document.referrer || ''
+    referrer: document.referrer || '',
+    first_seen_at: new Date().toISOString()
   };
   Object.entries(attribution).forEach(([key, value]) => {
     const input = form.elements.namedItem(key);
@@ -300,13 +310,19 @@
   const endpoint = window.RUTTA_CONCEPT_ENDPOINT || '';
   const analyticsEndpoint = window.RUTTA_ANALYTICS_ENDPOINT || '';
   const record = (event, data = {}) => {
-    const payload = { event, occurred_at: new Date().toISOString(), ...attribution, ...data };
-    try { localStorage.setItem('rutta:last-event', JSON.stringify(payload)); } catch {}
+    const payload = { event, occurred_at: new Date().toISOString(), attribution: { ...attribution }, ...data };
+    try {
+      const events = JSON.parse(localStorage.getItem('rutta-concept-events-v1') || '[]');
+      events.push(payload);
+      localStorage.setItem('rutta-concept-events-v1', JSON.stringify(events.slice(-100)));
+    } catch {}
     if (analyticsEndpoint) {
       fetch(analyticsEndpoint, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload), keepalive:true }).catch(() => {});
     }
   };
-  if (!sessionStorage.getItem('rutta:concept-view:' + attribution.source)) {
+  let hasViewed = false;
+  try { hasViewed = Boolean(sessionStorage.getItem('rutta:concept-view:' + attribution.source)); } catch {}
+  if (!hasViewed) {
     record('concept_view');
     try { sessionStorage.setItem('rutta:concept-view:' + attribution.source, '1'); } catch {}
   }
@@ -314,7 +330,8 @@
     event.preventDefault();
     if (!form.reportValidity()) return;
     const fields = Object.fromEntries(new FormData(form).entries());
-    const payload = { event:'concept_lead', occurred_at:new Date().toISOString(), ...fields, ...attribution };
+    delete fields.consent;
+    const payload = { event:'concept_lead', occurred_at:new Date().toISOString(), ...fields, attribution: { ...attribution } };
     status.dataset.state = '';
     status.textContent = 'Sending…';
     try {
@@ -324,7 +341,7 @@
         status.dataset.state = 'success';
         status.textContent = 'Thank you. We’ll be in touch when the next version is ready.';
       } else {
-        localStorage.setItem('rutta:last-lead', JSON.stringify(payload));
+        try { localStorage.setItem('rutta:last-lead', JSON.stringify(payload)); } catch {}
         status.dataset.state = 'success';
         status.textContent = 'Saved in this browser preview. Connect a form endpoint before launch to receive team leads.';
       }
