@@ -14,6 +14,7 @@
   <link rel="preload" as="font" href="assets/instrument.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/landing/hero-silver.webp" fetchpriority="high">
   <link rel="stylesheet" href="assets/landing/home.css">
+  <link rel="stylesheet" href="assets/landing/unboxing.css">
   <link rel="stylesheet" href="assets/landing/switch.css">
   <link rel="stylesheet" href="assets/landing/explore.css">
   <link rel="stylesheet" href="assets/landing/notes.css">
@@ -36,7 +37,10 @@
           <h1 id="hero-title">Rutta Bar</h1>
           <p class="hero-line">The side-mounted mic <br>for MacBook Air.</p>
           <p class="hero-desc">A USB-C microphone that sits along the edge of your Mac. Plug it in for a conversation. Slide the switch when you want to mute.</p>
-          <a class="hero-cta" href="#fit">See how it fits <span aria-hidden="true">↓</span></a>
+          <div class="hero-actions">
+            <a class="hero-cta" href="#fit">See how it fits <span aria-hidden="true">↓</span></a>
+            <a class="film-link" href="#unboxing"><span class="film-play-icon" aria-hidden="true">▶</span> Watch the unboxing</a>
+          </div>
         </div>
         <div class="hero-studio">
           <div class="hero-scene">
@@ -53,6 +57,24 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+    <section id="unboxing" class="unboxing" aria-labelledby="unboxing-title">
+      <div class="unboxing-inner">
+        <div class="unboxing-copy">
+          <h2 id="unboxing-title">Lift the lid.</h2>
+          <p>A first look at the silver Rutta Bar, nestled in its paper tray.</p>
+          <small>9-second silent film · Packaging concept render</small>
+        </div>
+        <figure class="unboxing-frame">
+          <video id="unboxing-film" width="864" height="1080" controls muted playsinline preload="none"
+                 poster="assets/landing/unboxing-poster.webp" aria-label="Rutta Bar unboxing film" aria-describedby="unboxing-description">
+            <source src="assets/landing/unboxing.mp4" type="video/mp4">
+            <a href="assets/landing/unboxing.mp4">Open the unboxing film (MP4)</a>
+          </video>
+          <figcaption class="unboxing-description" id="unboxing-description">The packaging opens to reveal the silver microphone and its built-in USB-C plug.</figcaption>
+          <p class="unboxing-error" hidden>This browser couldn't play the film. <a href="assets/landing/unboxing.mp4">Open the MP4 directly</a>.</p>
+        </figure>
       </div>
     </section>
     <section class="fit" id="fit" aria-labelledby="fit-title">
@@ -190,6 +212,7 @@
     </div>
   </footer>
   <script defer src="assets/landing/home.js"></script>
+  <script defer src="assets/landing/unboxing.js"></script>
   <script defer src="assets/landing/switch.js"></script>
   <script defer src="assets/landing/explore.js"></script>
   <script defer src="assets/landing/notes.js"></script>
