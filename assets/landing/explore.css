@@ -1,0 +1,116 @@
+.rb-explore {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  scroll-margin-top: 64px;
+  background: #302b63;
+  color: #f9f5ff;
+}
+.rb-explore * { box-sizing: border-box }
+.rb-explore [hidden] { display: none !important }
+.rb-explore-inner {
+  max-width: 1536px;
+  padding: clamp(70px,8vw,132px) clamp(24px,6vw,102px);
+  margin: auto;
+  display: grid;
+  grid-template-columns: minmax(240px,.69fr) minmax(0,1.45fr);
+  gap: clamp(24px,5vw,104px);
+  align-items: center;
+}
+.rb-explore-copy { z-index: 1 }
+.rb-explore #rb-explore-title {
+  color: #faf5ff;
+  font-size: clamp(50px,5.7vw,92px);
+  line-height: 1.015;
+  letter-spacing: -.025em;
+  font-weight: 570;
+  margin: 0 0 .31em;
+}
+.rb-explore .rb-explore-intro {
+  color: #e0dced;
+  font-size: clamp(16px,1.4vw,20px);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 29ch;
+}
+.rb-explore-parts { margin-top: clamp(25px,3vw,46px); max-width: 315px }
+.rb-explore button { font: inherit; cursor: pointer; text-transform: none }
+.rb-explore-parts button {
+  color: #e3defa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #706a95;
+  border-radius: 0;
+  letter-spacing: -.012em;
+  font-size: clamp(17px,1.5vw,23px);
+  background: transparent;
+  padding: 12px 3px 12px 0;
+  text-align: left;
+}
+.rb-explore-parts button span {
+  color: #b9b3ff;
+  transition: transform .25s ease;
+}
+.rb-explore-parts button:is([aria-pressed=true],:hover) { color: #fff }
+.rb-explore-parts button:is([aria-pressed=true],:hover) span { color: #fff; transform: translate(2px,-2px) }
+.rb-explore-parts button[aria-pressed=true] { border-color: #e1d8ff; font-weight: 650 }
+.rb-explore :is(button,canvas,a):focus-visible { outline: 3px solid #e4d1ff; outline-offset: 4px }
+.rb-explore-stage { margin: 0; min-width: 0; position: relative }
+.rb-explore-view { position: relative; height: auto; aspect-ratio: 1.86; isolation: isolate }
+.rb-explore-orbit { pointer-events: none; position: absolute; inset: -6% -10%; overflow: hidden; z-index: -1 }
+.rb-explore-orbit i {
+  position: absolute;
+  top: 25%; left: 12%; width: 78%; height: 46%;
+  border: 1px solid rgba(199,187,255,.40);
+  transform: rotate(-20deg);
+  border-radius: 50%;
+}
+.rb-explore-orbit i:nth-child(2) { transform: rotate(-20deg) scale(1.21); opacity: .52 }
+.rb-explore-orbit i:nth-child(3) { transform: rotate(-20deg) scale(1.42); opacity: .28 }
+.rb-explore-still { display: block; position: absolute; inset: 0; width: 86%; height: 94%; margin: auto; object-fit: contain; filter: drop-shadow(12px 24px 15px rgba(10,9,38,.27)) }
+.rb-explore-canvas { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; z-index: 1; visibility: hidden; filter: drop-shadow(7px 20px 12px rgba(12,9,42,.28)); }
+.rb-explore[data-3d=ready] .rb-explore-canvas { visibility: visible }
+.rb-explore[data-3d=ready] .rb-explore-still { display: none }
+.rb-explore-focus { pointer-events: none; position: absolute; z-index: 2; left: 50%; top: 50%; width: 38px; height: 38px; transform: translate(-50%,-50%); border: 1.5px solid rgb(255 255 255 / .95); box-shadow: 0 0 0 1px rgb(40 28 85 / .55); border-radius: 100% }
+.rb-explore-foot { display: flex; justify-content: space-between; gap: 16px; align-items: start; color: #e6e0fa; margin: 10px 0 0; min-height: 58px }
+.rb-explore-caption { max-width: 47ch; font-size: 16px; line-height: 1.55 }
+.rb-explore-reset {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  color: #f5f1ff;
+  background: none;
+  font-size: 14px !important;
+  padding: 3px 0;
+  border: 0;
+  border-bottom: 1px solid #918aaf;
+  border-radius: 0;
+}
+.rb-explore-reset span { font-family: Arial, sans-serif; font-size: 1.2em }
+.rb-explore[data-3d=still] .rb-explore-canvas { display: none }
+.rb-explore[data-3d=still] .rb-explore-view { overflow: hidden }
+.rb-explore[data-3d=still]:not([data-detail=home]) .rb-explore-still { width: 100%; height: 100% }
+.rb-explore:not([data-detail=home]) :is(.rb-explore-canvas,.rb-explore-still) {
+  mask-image: linear-gradient(to right,transparent,black 6%,black 94%,transparent);
+}
+@media(max-width:780px) {
+  .rb-explore-inner { grid-template-columns: 1fr; gap: 24px; padding: 62px max(22px,6vw) 44px }
+  .rb-explore-copy { display: contents }
+  .rb-explore #rb-explore-title { margin: 0; font-size: clamp(46px,8vw,64px) }
+  .rb-explore #rb-explore-title br { display: none }
+  .rb-explore #rb-explore-title br::after { content: " " }
+  .rb-explore .rb-explore-intro { margin-top: -10px; max-width: 40ch }
+  .rb-explore-stage { grid-row: 3; }
+  .rb-explore-view { aspect-ratio: 1.62 }
+  .rb-explore-parts { margin: -8px 0 0; max-width: none }
+  .rb-explore-parts button { padding: 11px 0; min-height: 44px }
+  .rb-explore-caption { font-size: 14px }
+  .rb-explore-focus { width: 27px; height: 27px }
+  .rb-explore-foot { min-height: 50px; margin-top: 4px }
+}
+@media(prefers-reduced-motion:reduce) { .rb-explore *, .rb-explore *::before { transition: none !important; animation: none !important } }

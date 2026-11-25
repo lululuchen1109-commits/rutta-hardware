@@ -1,0 +1,132 @@
+.rb-notes {
+  scroll-margin-top: 64px;
+  overflow: clip;
+  background: #fbfaf5;
+  color: #282b23;
+}
+.rb-notes *, .rb-notes *::after { box-sizing: border-box }
+.rb-notes-inner {
+  display: grid;
+  grid-template-columns: minmax(0,.88fr) minmax(0,1fr);
+  align-items: center;
+  gap: clamp(38px,7vw,118px);
+  max-width: 1480px;
+  padding: clamp(76px,8.5vw,144px) clamp(24px,7vw,108px);
+  margin: auto;
+}
+.rb-notes #rb-notes-title {
+  max-width: 11ch;
+  margin: 0;
+  color: inherit;
+  font-size: clamp(50px,5.8vw,88px);
+  font-weight: 550;
+  line-height: 1.025;
+  letter-spacing: -.03em;
+}
+.rb-notes-intro > p {
+  margin: 20px 0 26px;
+  max-width: 38ch;
+  font-size: clamp(17px,1.4vw,20px);
+  color: #494d41;
+  line-height: 1.5;
+}
+.rb-notes-tabs {
+  display: inline-flex;
+  border-radius: 100px;
+  background: #e9eae0;
+  padding: 4px;
+}
+.rb-notes-tabs button {
+  display: inline-block;
+  border: 0;
+  padding: 0 16px;
+  min-height: 39px;
+  border-radius: 100px;
+  color: #384234;
+  background: transparent;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 550;
+  cursor: pointer;
+}
+.rb-notes-tabs button[aria-selected="true"] { color: #fff; background: #29392d }
+.rb-notes :is(button,[tabindex]):focus-visible { outline: 3px solid #365a4c; outline-offset: 3px }
+.rb-notes-example { margin: 0; padding: 6px 0 0; min-width: 0 }
+.rb-notes-pad {
+  --rb-fold: 30px;
+  position: relative;
+  transform: rotate(.9deg);
+  filter: drop-shadow(1px 3px 1px #423e2214) drop-shadow(4px 13px 15px #544e3021);
+}
+.rb-notes-paper {
+  position: relative;
+  padding: clamp(24px,2.6vw,42px) clamp(25px,3.2vw,50px);
+  background-color: #fff0b0;
+  background-image: repeating-linear-gradient(to bottom,transparent 0 27px,#b3b29365 27px 28px);
+  background-position: 0 8px;
+  clip-path: polygon(0 0,100% 0,100% calc(100% - var(--rb-fold)),calc(100% - var(--rb-fold)) 100%,0 100%);
+}
+.rb-notes-paper::after {
+  content: "";
+  position: absolute; right: 0; bottom: 0;
+  width: var(--rb-fold); height: var(--rb-fold);
+  background: linear-gradient(135deg,#ead887,#e2d690);
+  box-shadow: -1px -1px 4px #90732f33;
+}
+.rb-notes .rb-notes-meta {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  border-bottom: 1px solid #847744;
+  margin: 0 0 12px; padding-bottom: 9px;
+  color: #615533; font-size: 13px; letter-spacing: .02em;
+}
+.rb-notes-page {
+  min-height: 254px;
+  outline-offset: 2px;
+}
+.rb-notes-page[hidden] { display: none!important }
+.rb-notes .rb-notes-page h3 {
+  margin: 0 0 15px;
+  font: italic 500 clamp(28px,2.65vw,42px)/1.25 Georgia,serif;
+  color: #35301f; letter-spacing: -.025em;
+}
+.rb-notes-dialogue, .rb-notes-decisions {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 9px 14px;
+  margin: 0; font-size: clamp(16px,1.35vw,21px);
+  line-height: 1.45; color: #393422;
+}
+.rb-notes-dialogue dt,.rb-notes-decisions dt {
+  font-size: .7em; font-weight: 650; line-height: 1.5;
+  color: #65572b; align-self: start; padding-top: .25em;
+}
+.rb-notes-dialogue dd,.rb-notes-decisions dd { margin: 0 }
+.rb-notes-decisions { row-gap: 16px }
+.rb-notes-decisions strong { font-weight: 600; text-decoration: underline; text-decoration-color: #af8f2e; text-underline-offset: .15em }
+.rb-notes .rb-notes-confirmed {
+  margin: 22px 0 0;
+  color: #354932; font-size: 14px; font-weight: 600;
+}
+.rb-notes-confirmed span { padding-right: 5px }
+.rb-notes figcaption {
+  text-align: right; margin-top: 13px;
+  font: inherit; color: #66695b; font-size: 12px;
+}
+.rb-notes-page.is-current { animation: rb-paper-in .25s ease-out both }
+@keyframes rb-paper-in { from { opacity: .4; transform: translate(3px,1px) } to { opacity: 1; transform: none } }
+@media (max-width:800px) {
+  .rb-notes-inner { grid-template-columns: 1fr; gap: 36px }
+  .rb-notes #rb-notes-title { max-width: 14ch }
+  .rb-notes-intro > p { max-width: 52ch }
+  .rb-notes-page { min-height: 216px }
+}
+@media (max-width:460px) {
+  .rb-notes-inner { gap: 28px }
+  .rb-notes-paper { padding: 22px 21px 29px }
+  .rb-notes-page { min-height: 265px }
+  .rb-notes-meta { font-size: 12px }
+  .rb-notes-dialogue,.rb-notes-decisions { column-gap: 9px }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rb-notes-page.is-current { animation: none }
+}

@@ -47,7 +47,7 @@
     precision highp float;
     varying vec3 vPos, vNormal;
     uniform vec3 uAlbedo, uToward;
-    uniform float uMetallic, uRoughness, uLight;
+    uniform float uMetallic, uRoughness, uLight, uDisplayStudio;
     uniform vec3 uLightColor;
     const vec3 key = vec3(-0.43, -0.27, 0.86);
     const vec3 strip = vec3(0.62, 0.09, 0.78);
@@ -79,6 +79,13 @@
       vec3 base = uAlbedo * uAlbedo;
       vec3 specular = studio(r, uRoughness) * mix(vec3(0.047 + 0.11 * f), base + 0.27 * f, uMetallic);
       vec3 color = (diffuseLight * base * (1.0 - uMetallic) + specular) * bounce;
+      if (uDisplayStudio > 0.5 && uMetallic > 0.7) {
+        // Finite strip lights give even a broad, flat aluminum face a reflected gradient.
+        float card = 0.5 + 0.5 * cos(3.1 * r.z + vPos.y * 0.115 - 0.6);
+        float ribbon = exp(-pow((r.z - 0.35 + vPos.y * 0.015) * 3.2, 2.0));
+        color = color * (0.82 + 0.32 * card) + base *
+          (0.17 + 0.35 * card + 0.33 * ribbon + 0.09 * hemi);
+      }
       vec3 emission = uLightColor * uLight;
       color = color + emission;
       color = 1.15 * color / (1.0 + 0.32 * color);
@@ -148,8 +155,8 @@
     return { program, attrib, uniform };
   }
 
-  function mount(canvas) {
-    const gl = canvas.getContext("webgl", { alpha: false, antialias: true, powerPreference: "high-performance" });
+  function mount(canvas, { transparent = false, inline = false } = {}) {
+    const gl = canvas.getContext("webgl", { alpha: transparent, antialias: true, powerPreference: "high-performance" });
     if (!gl) throw new Error("The browser could not open a WebGL context for Rutta.");
     const stage = compile(gl, stageVertex, stageFragment);
     const object = compile(gl, objectVertex, objectFragment);
@@ -168,13 +175,15 @@
       count,
     }));
     const projection = Object.fromEntries([
-      "Right", "Up", "Toward", "Center", "Scale", "Shift", "Albedo", "Metallic", "Roughness", "Light", "LightColor",
+      "Right", "Up", "Toward", "Center", "Scale", "Shift", "Albedo", "Metallic", "Roughness", "Light", "LightColor", "DisplayStudio",
     ].map(name => [name, object.uniform("u" + name)]));
     const studio = Object.fromEntries([
       "ShadowAt", "ShadowAxis", "ShadowSize", "Aspect",
     ].map(name => [name, stage.uniform("u" + name)]));
     const attr = { stage: stage.attrib("aPosition"), position: object.attrib("aPosition"), normal: object.attrib("aNormal") };
-    const center = [-0.45, 13.1, 0.12];
+    const homeCenter = [-0.45, 13.1, 0.12];
+    const center = [...homeCenter];
+    let centerGoal = homeCenter;
     const motion = matchMedia("(prefers-reduced-motion: reduce)");
     let azimuth = positions.home[0], elevation = positions.home[1], scale = 1;
     let azGoal = azimuth, elGoal = elevation, scaleGoal = 1;
@@ -183,7 +192,7 @@
     const pointers = new Map();
     const cleanups = [];
     const previousTouch = canvas.style.touchAction;
-    canvas.style.touchAction = "none";
+    canvas.style.touchAction = inline ? "pan-y" : "none";
 
     function clamp(value, low, high) { return Math.max(low, Math.min(high, value)); }
     function on(target, type, callback, options) {
@@ -209,6 +218,7 @@
       azimuth += (azGoal - azimuth) * ease;
       elevation += (elGoal - elevation) * ease;
       scale += (scaleGoal - scale) * ease;
+      for (let i = 0; i < 3; i++) center[i] += (centerGoal[i] - center[i]) * ease;
       const shiftGoal = muted ? 1.28 : 0;
       shift += (shiftGoal - shift) * ease;
       const a = azimuth;
@@ -225,23 +235,26 @@
 
       gl.viewport(0, 0, width, height);
       gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-      gl.disable(gl.DEPTH_TEST);
-      gl.useProgram(stage.program);
-      gl.bindBuffer(gl.ARRAY_BUFFER, backdrop);
-      gl.enableVertexAttribArray(attr.stage);
-      gl.vertexAttribPointer(attr.stage, 2, gl.FLOAT, false, 0, 0);
-      const floor = [-2.80 - center[0], 13.0 - center[1], -3.14 - center[2]];
-      const along = [right[1], up[1]];
-      const alongLength = Math.max(0.001, Math.hypot(along[0], along[1]));
-      gl.uniform2f(studio.ShadowAt, dot(floor, right) * xScale + 0.027, dot(floor,up) * yScale - 0.022);
-      gl.uniform2f(studio.ShadowAxis, along[0] / alongLength, along[1] / alongLength);
-      gl.uniform2f(studio.ShadowSize, 12.8 * yScale * alongLength, (2.5 + 1.2*Math.max(0,Math.sin(e))) * yScale);
-      gl.uniform1f(studio.Aspect, aspect);
-      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-      gl.disableVertexAttribArray(attr.stage);
+      if (!transparent) {
+        gl.disable(gl.DEPTH_TEST);
+        gl.useProgram(stage.program);
+        gl.bindBuffer(gl.ARRAY_BUFFER, backdrop);
+        gl.enableVertexAttribArray(attr.stage);
+        gl.vertexAttribPointer(attr.stage, 2, gl.FLOAT, false, 0, 0);
+        const floor = [-2.80 - center[0], 13.0 - center[1], -3.14 - center[2]];
+        const along = [right[1], up[1]];
+        const alongLength = Math.max(0.001, Math.hypot(along[0], along[1]));
+        gl.uniform2f(studio.ShadowAt, dot(floor, right) * xScale + 0.027, dot(floor,up) * yScale - 0.022);
+        gl.uniform2f(studio.ShadowAxis, along[0] / alongLength, along[1] / alongLength);
+        gl.uniform2f(studio.ShadowSize, 12.8 * yScale * alongLength, (2.5 + 1.2*Math.max(0,Math.sin(e))) * yScale);
+        gl.uniform1f(studio.Aspect, aspect);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        gl.disableVertexAttribArray(attr.stage);
+      }
 
       gl.enable(gl.DEPTH_TEST);
       gl.useProgram(object.program);
+      gl.uniform1f(projection.DisplayStudio, transparent ? 1.0 : 0.0);
       gl.uniform3fv(projection.Right, right);
       gl.uniform3fv(projection.Up, up);
       gl.uniform3fv(projection.Toward, toward);
@@ -271,7 +284,8 @@
       gl.disableVertexAttribArray(attr.position);
       gl.disableVertexAttribArray(attr.normal);
       const settles = Math.abs(azGoal-azimuth) + Math.abs(elGoal-elevation) + Math.abs(scaleGoal-scale) + Math.abs(shiftGoal-shift);
-      if (settles > 0.0008 || (lightOn && !voice && !motion.matches && toward[0] < -0.015)) schedule();
+      const centerTravel = Math.max(...center.map((v, i) => Math.abs(v - centerGoal[i])));
+      if (centerTravel > 0.001 || settles > 0.0008 || (lightOn && !voice && !motion.matches && toward[0] < -0.015)) schedule();
     }
 
     function setView(name) {
@@ -279,6 +293,13 @@
       if (!view) return;
       azGoal = azimuth + Math.atan2(Math.sin(view[0]-azimuth), Math.cos(view[0]-azimuth));
       elGoal = view[1];
+      schedule();
+    }
+    function setCamera({ angle, pitch, magnification, target }) {
+      azGoal = azimuth + Math.atan2(Math.sin(angle - azimuth), Math.cos(angle - azimuth));
+      elGoal = clamp(pitch, -1.34, 1.562);
+      scaleGoal = clamp(magnification, 0.60, 2.65);
+      centerGoal = target;
       schedule();
     }
     function setMuted(value) {
@@ -314,6 +335,7 @@
     }
     function reset() {
       scaleGoal = 1;
+      centerGoal = homeCenter;
       setView("home");
     }
     function pinchDistance() {
@@ -340,10 +362,11 @@
     };
     ["pointerup", "pointercancel", "lostpointercapture"].forEach(name => on(canvas, name, release));
     on(canvas, "wheel", event => {
+      if (inline) return; // Let the document scroll through an embedded model.
       if (event.cancelable) event.preventDefault();
       const multiplier = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? canvas.clientHeight : 1;
       zoom(Math.exp(clamp(-event.deltaY * multiplier * 0.0016,-0.35,0.35)));
-    }, {passive:false});
+    }, {passive:inline});
     on(canvas, "keydown", event => {
       const commands = {
         ArrowLeft: () => orbit(-18, 0), ArrowRight: () => orbit(18, 0),
@@ -366,7 +389,7 @@
     draw(performance.now());
 
     return {
-      setView, setMuted, setPowered, setActivity, setFinish, zoom, reset,
+      setCamera, setView, setMuted, setPowered, setActivity, setFinish, zoom, reset,
       dispose() {
         if (disposed) return;
         disposed = true;
