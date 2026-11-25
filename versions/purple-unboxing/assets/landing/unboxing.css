@@ -1,0 +1,78 @@
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 20px;
+}
+.film-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding-block: 9px;
+  font-size: 14px;
+  font-weight: 580;
+  text-decoration: none;
+}
+.film-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.film-play-icon { font: 12px/1 Arial, sans-serif; }
+
+.unboxing {
+  background: #f5eee6;
+  color: #302820;
+}
+.unboxing-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, .88fr);
+  grid-template-areas: "film copy";
+  gap: clamp(36px, 7vw, 104px);
+  align-items: center;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: clamp(44px, 5vw, 80px) var(--space);
+}
+.unboxing-copy { grid-area: copy; }
+.unboxing-copy h2 {
+  font-size: clamp(44px, 5.2vw, 84px);
+  line-height: 1.045;
+  letter-spacing: -.034em;
+  font-weight: 550;
+}
+.unboxing-copy p { margin-top: 17px; max-width: 28ch; text-wrap: pretty; }
+.unboxing-copy small { display: block; margin-top: 22px; color: #685a50; font-size: 13px; }
+.unboxing-frame {
+  grid-area: film;
+  width: 100%;
+  max-width: 430px;
+  justify-self: end;
+  position: relative;
+}
+.unboxing-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  background: #dfd3c3;
+  border-radius: 20px;
+}
+.unboxing-description {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.unboxing-error { margin-top: 10px; font-size: 14px; }
+@media (max-width: 680px) {
+  .hero-actions { gap: 0 16px; align-items: center; margin-top: 12px; }
+  .hero-actions .hero-cta { margin-top: 0; }
+  .film-link { min-height: 42px; font-size: 13px; }
+  .unboxing-inner {
+    grid-template-columns: 1fr;
+    grid-template-areas: "copy" "film";
+    gap: 20px;
+    padding: 45px var(--space);
+  }
+  .unboxing-copy p { margin-top: 8px; max-width: 38ch; }
+  .unboxing-copy small { margin-top: 9px; }
+  .unboxing-frame { justify-self: center; }
+}
