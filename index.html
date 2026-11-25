@@ -3,355 +3,470 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f3ee">
-  <title>Rutta Bar · The microphone that lives on the side of your Mac</title>
-  <meta name="description" content="Rutta Bar is a side-mounted microphone concept for MacBook Air. See where it fits into real conversations, try the mute switch and look at the hardware up close.">
+  <meta name="theme-color" content="#111115">
+  <title>Rutta Bar · The microphone that lives on your Mac</title>
+  <meta name="description" content="Rutta Bar is a slim aluminum microphone concept that plugs into the side of a MacBook Air. Talk naturally, slide to mute, and get every conversation back as a clear note.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Rutta Bar · The microphone that lives on the side of your Mac">
-  <meta property="og:description" content="A USB-C microphone that sits flush along the edge of a MacBook Air. Plug it in, talk, slide to mute.">
+  <meta property="og:title" content="Rutta Bar · The microphone that lives on your Mac">
+  <meta property="og:description" content="A slim aluminum microphone that plugs into the side of your MacBook Air. No cable, no battery, one switch to mute.">
   <meta property="og:image" content="https://lululuchen1109-commits.github.io/rutta-hardware/assets/v2/share.jpg">
   <link rel="icon" type="image/svg+xml" href="assets/landing/monogram.svg">
-  <link rel="preload" as="font" href="assets/instrument.woff2" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/v2/hero-desk-1600.webp" imagesrcset="assets/v2/hero-desk-900.webp 900w, assets/v2/hero-desk-1600.webp 1600w" imagesizes="(max-width:1440px) 92vw, 1300px" fetchpriority="high">
+  <link rel="preload" as="font" href="assets/inter-latin-var.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/v2/hero-desk-1600.webp" fetchpriority="high">
   <link rel="stylesheet" href="assets/landing/switch.css?v=logo-left-1">
   <link rel="stylesheet" href="assets/landing/explore.css">
-  <link rel="stylesheet" href="assets/landing/notes.css">
-  <link rel="stylesheet" href="assets/v2/site.css">
+  <link rel="stylesheet" href="assets/looki/site.css">
 </head>
 <body>
-  <a class="skip" href="#overview">Skip to content</a>
-  <header class="mast">
-    <div class="mast-inner">
-      <a class="brand" href="#overview" aria-label="Rutta Bar home"><img src="assets/landing/monogram.svg" alt="" width="16" height="22">Rutta Bar</a>
-      <nav class="site-nav" aria-label="Page sections">
-        <a href="#scenes">In use</a><a href="#fit">Fit</a><a href="#switch">Mute</a><a href="#explore">Hardware</a><a href="#people">Who it’s for</a><a href="#specs">Specs</a>
+  <a class="lk-skip" href="#main">Skip to content</a>
+
+  <!-- Announcement bar -->
+  <div class="lk-bar">
+    <button type="button" class="lk-bar-link" data-film>Rutta Bar is a hardware concept. <span>Watch the 9-second unboxing film</span> <span aria-hidden="true">›</span></button>
+  </div>
+
+  <!-- Header -->
+  <header class="lk-header" data-state="top">
+    <div class="lk-header-inner">
+      <a class="lk-logo" href="#main" aria-label="Rutta Bar home">
+        <svg viewBox="-1 -1 21 26" width="18" height="22" aria-hidden="true"><use href="#rutta-mark"/></svg>
+        <span>rutta</span>
+      </a>
+      <nav class="lk-nav" aria-label="Main">
+        <a href="#how">How it works</a>
+        <a href="#stories">Stories</a>
+        <a href="#hardware">Hardware</a>
+        <a href="#people">Who it’s for</a>
+        <a href="#faq">Specs</a>
+        <a href="product.html#gallery">Gallery</a>
       </nav>
-      <a class="mast-link" href="product.html#gallery">Gallery <span aria-hidden="true">↗</span></a>
+      <a class="lk-cta" href="#updates">Get updates</a>
     </div>
   </header>
 
-  <main>
-    <!-- Hero -->
-    <section id="overview" class="v-hero" aria-labelledby="hero-title">
-      <div class="v-wrap v-hero-head">
-        <p class="v-eyebrow"><span class="v-led" aria-hidden="true"></span>Rutta Bar · Microphone for MacBook Air</p>
-        <h1 id="hero-title">The microphone that lives on the side of your Mac.</h1>
-        <div class="v-hero-aside">
-          <p>A slim aluminum bar that plugs into the USB-C port and sits flush along the edge. Nothing on the desk, nothing to charge. Slide the switch to mute.</p>
-          <div class="v-actions">
-            <a class="v-btn" href="#scenes">See it in use <span aria-hidden="true">↓</span></a>
-            <a class="v-text-btn film-link" href="#unboxing"><span class="v-play" aria-hidden="true"></span>Unboxing · 0:09</a>
+  <main id="main">
+    <!-- Hero carousel -->
+    <section class="lk-hero" aria-roledescription="carousel" aria-label="Rutta Bar highlights">
+      <div class="lk-hero-track">
+        <article class="lk-slide lk-slide--photo is-active" aria-roledescription="slide" aria-label="1 of 2">
+          <img class="lk-slide-bg" src="assets/v2/hero-desk-1600.webp" srcset="assets/v2/hero-desk-900.webp 900w, assets/v2/hero-desk-1600.webp 1600w" sizes="100vw" width="1600" height="1073" alt="A silver Rutta Bar plugged into the left side of a MacBook Air on a wooden desk in morning light" fetchpriority="high">
+          <div class="lk-stickers" aria-hidden="true">
+            <span class="lk-sticker lk-sticker--lilac">Decisions<i>✓</i></span>
+            <span class="lk-sticker lk-sticker--orange">Next steps<i>→</i></span>
           </div>
-        </div>
-      </div>
-      <figure class="v-wrap v-hero-photo">
-        <img src="assets/v2/hero-desk-1600.webp" srcset="assets/v2/hero-desk-900.webp 900w, assets/v2/hero-desk-1600.webp 1600w" sizes="(max-width:1440px) 92vw, 1300px" width="1600" height="1073" fetchpriority="high" alt="A silver Rutta Bar plugged into the left side of a MacBook Air on a wooden desk in morning light">
-        <figcaption><span>Silver Rutta Bar on a 13-inch MacBook Air</span><span>Concept scene</span></figcaption>
-      </figure>
-    </section>
-
-    <!-- Facts -->
-    <section class="v-facts" aria-label="Rutta Bar at a glance">
-      <dl class="v-wrap v-facts-grid">
-        <div><dt>Exposed length</dt><dd>26<small>mm</small></dd></div>
-        <div><dt>Side extension</dt><dd>5.5<small>mm</small></dd></div>
-        <div><dt>Cables, batteries</dt><dd>0</dd></div>
-        <div><dt>To mute</dt><dd>1<small>slide</small></dd></div>
-      </dl>
-    </section>
-
-    <!-- Scenes -->
-    <section id="scenes" class="v-scenes" aria-labelledby="scenes-title">
-      <div class="v-wrap">
-        <div class="v-section-head">
-          <p class="v-index">01 — In use</p>
-          <h2 id="scenes-title">Made for the conversations that happen at your desk.</h2>
-        </div>
-        <div class="v-scenes-body">
-          <div class="v-scene-tabs" role="tablist" aria-label="Scenes">
-            <button type="button" role="tab" id="scene-tab-1" aria-controls="scene-1" aria-selected="true"><span class="n">01</span><span class="t">Design review</span><span class="bar" aria-hidden="true"><i></i></span></button>
-            <button type="button" role="tab" id="scene-tab-2" aria-controls="scene-2" aria-selected="false" tabindex="-1"><span class="n">02</span><span class="t">Research interview</span><span class="bar" aria-hidden="true"><i></i></span></button>
-            <button type="button" role="tab" id="scene-tab-3" aria-controls="scene-3" aria-selected="false" tabindex="-1"><span class="n">03</span><span class="t">Remote call</span><span class="bar" aria-hidden="true"><i></i></span></button>
-            <button type="button" role="tab" id="scene-tab-4" aria-controls="scene-4" aria-selected="false" tabindex="-1"><span class="n">04</span><span class="t">Tutoring</span><span class="bar" aria-hidden="true"><i></i></span></button>
-          </div>
-          <div class="v-scene-stage">
-            <article class="v-scene is-active" id="scene-1" role="tabpanel" aria-labelledby="scene-tab-1">
-              <div class="v-scene-photo">
-                <img src="assets/v2/scene-review-1400.webp" srcset="assets/v2/scene-review-900.webp 900w, assets/v2/scene-review-1400.webp 1400w" sizes="(max-width:900px) 100vw, 66vw" width="1400" height="933" loading="lazy" alt="Two colleagues in a design review at a café table, a MacBook Air with Rutta Bar between them">
-                <span class="v-chip" data-led="input"><i></i>Sending audio</span>
-                <aside class="v-note"><b>Decided</b>Test the silver prototype on Friday. Leo sends the build by Thursday noon.</aside>
-              </div>
-              <div class="v-scene-copy">
-                <h3>Two people, one small table.</h3>
-                <p>Rutta Bar faces the room from the side of the Mac, so both voices reach it across a café table. No recorder sitting between you.</p>
-              </div>
-            </article>
-            <article class="v-scene" id="scene-2" role="tabpanel" aria-labelledby="scene-tab-2" hidden>
-              <div class="v-scene-photo">
-                <img src="assets/v2/scene-interview-1400.webp" srcset="assets/v2/scene-interview-900.webp 900w, assets/v2/scene-interview-1400.webp 1400w" sizes="(max-width:900px) 100vw, 66vw" width="1400" height="933" loading="lazy" alt="A researcher listening to a participant in a bright meeting room, a MacBook Air with Rutta Bar on the table">
-                <span class="v-chip" data-led="ready"><i></i>Ready</span>
-                <aside class="v-note"><b>Takeaway</b>Prefers a paper checklist for setup. Follow up on step three.</aside>
-              </div>
-              <div class="v-scene-copy">
-                <h3>Eyes on the participant.</h3>
-                <p>You keep eye contact instead of watching a recorder. The light on top shows everyone at the table when sound is going to the Mac.</p>
-              </div>
-            </article>
-            <article class="v-scene" id="scene-3" role="tabpanel" aria-labelledby="scene-tab-3" hidden>
-              <div class="v-scene-photo">
-                <img src="assets/v2/scene-remote-1400.webp" srcset="assets/v2/scene-remote-900.webp 900w, assets/v2/scene-remote-1400.webp 1400w" sizes="(max-width:900px) 100vw, 66vw" width="1400" height="933" loading="lazy" alt="A person on a video call at home, sliding the mute switch on the Rutta Bar">
-                <span class="v-chip" data-led="mute"><i></i>Muted</span>
-                <aside class="v-note"><b>Muted</b>The top light goes out. The call hears nothing until you slide it back.</aside>
-              </div>
-              <div class="v-scene-copy">
-                <h3>Mute without hunting for the app.</h3>
-                <p>The switch sits under your fingertip on the edge of the Mac. You can find it mid-sentence, without looking away from the call.</p>
-              </div>
-            </article>
-            <article class="v-scene" id="scene-4" role="tabpanel" aria-labelledby="scene-tab-4" hidden>
-              <div class="v-scene-photo">
-                <img src="assets/v2/scene-tutor-1400.webp" srcset="assets/v2/scene-tutor-900.webp 900w, assets/v2/scene-tutor-1400.webp 1400w" sizes="(max-width:900px) 100vw, 66vw" width="1400" height="933" loading="lazy" alt="A tutor and a student working through notes at a library table, a MacBook Air with Rutta Bar between them">
-                <span class="v-chip" data-led="input"><i></i>Sending audio</span>
-                <aside class="v-note"><b>Next session</b>Go back over the chapter four proofs, starting with question 2b.</aside>
-              </div>
-              <div class="v-scene-copy">
-                <h3>Keep the last five minutes.</h3>
-                <p>The best questions often come right at the end. Rutta Bar is already plugged in, so there’s nothing to set up when they do.</p>
-              </div>
-            </article>
-            <p class="v-fine">Concept scenes · Fictional people</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Finishes -->
-    <section class="v-finish" data-finish="silver" aria-labelledby="finish-title">
-      <div class="v-wrap v-finish-grid">
-        <div class="v-finish-copy">
-          <p class="v-index">02 — Finish</p>
-          <h2 id="finish-title">Anodized to sit beside your Mac.</h2>
-          <p>Four aluminum finishes, one for each MacBook Air color.</p>
-          <div class="v-swatches" role="group" aria-label="Aluminum finish">
-            <button type="button" data-tone="silver" aria-pressed="true"><i></i>Silver</button>
-            <button type="button" data-tone="sky" aria-pressed="false"><i></i>Sky Blue</button>
-            <button type="button" data-tone="starlight" aria-pressed="false"><i></i>Starlight</button>
-            <button type="button" data-tone="midnight" aria-pressed="false"><i></i>Midnight</button>
-          </div>
-          <p class="v-finish-status" aria-live="polite"></p>
-        </div>
-        <div class="v-finish-object">
-          <img id="finish-object" src="assets/landing/hero-silver.webp?v=logo-left-1" width="1302" height="567" loading="lazy" alt="Silver Rutta Bar with the USB-C plug behind the aluminum shell" draggable="false">
-        </div>
-      </div>
-    </section>
-
-    <!-- Unboxing -->
-    <section id="unboxing" class="v-unboxing" aria-labelledby="unboxing-title">
-      <div class="v-wrap v-unboxing-grid">
-        <div class="v-unboxing-copy">
-          <p class="v-index">03 — In the box</p>
-          <h2 id="unboxing-title">Lift the lid.</h2>
-          <p>A first look at the silver Rutta Bar, nestled in its paper tray. One piece of aluminum, nothing else to find.</p>
-          <small>9-second silent film · Packaging concept render</small>
-        </div>
-        <figure class="v-unboxing-frame">
-          <video id="unboxing-film" width="864" height="1080" controls muted playsinline preload="none"
-                 poster="assets/landing/unboxing-poster.webp?v=logo-left-1" aria-label="Rutta Bar unboxing film" aria-describedby="unboxing-description">
-            <source src="assets/landing/unboxing.mp4?v=logo-left-1" type="video/mp4">
-            <a href="assets/landing/unboxing.mp4?v=logo-left-1">Open the unboxing film (MP4)</a>
-          </video>
-          <figcaption class="v-sr" id="unboxing-description">The packaging opens to reveal the silver microphone and its built-in USB-C plug.</figcaption>
-          <p class="unboxing-error" hidden>This browser couldn't play the film. <a href="assets/landing/unboxing.mp4?v=logo-left-1">Open the MP4 directly</a>.</p>
-        </figure>
-      </div>
-    </section>
-
-    <!-- Fit -->
-    <section class="fit" id="fit" aria-labelledby="fit-title">
-      <div class="v-wrap fit-inner">
-        <div class="fit-copy">
-          <p class="v-index">04 — Fit</p>
-          <h2 id="fit-title">Right beside your Mac.</h2>
-          <p>The plug slips into the left USB-C port nearest the palm rest. Your Mac supplies the power, so there’s no cable across the desk.</p>
-        </div>
-        <figure class="fit-player">
-          <div class="fit-screen">
-            <img id="fit-frame" src="assets/landing/fit-00.webp?v=logo-left-1" width="1440" height="880" alt="Rutta Bar aligned with the USB-C port on the side of a MacBook Air" loading="lazy">
-          </div>
-          <figcaption class="fit-controls">
-            <button type="button" class="fit-play" aria-label="Play installation"><span aria-hidden="true">▶</span></button>
-            <div class="fit-track">
-              <div class="track-labels"><label for="fit-range">Slide to connect</label><output id="fit-status" for="fit-range">Unplugged</output></div>
-              <input type="range" id="fit-range" min="0" max="15" value="0" step="1" aria-label="Insert the microphone" aria-valuetext="Unplugged">
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- Switch -->
-    <section id="switch" class="rb-switch" aria-labelledby="rb-switch-title" data-state="ready">
-      <div class="rb-switch-inner">
-        <header class="rb-switch-heading">
-          <div>
-            <p class="v-index">05 — Mute</p>
-            <h2 id="rb-switch-title">Mute by touch.</h2>
-          </div>
-          <p>The metal switch sits on the outer edge, right under your fingertip. A light next to the R on top shows when audio is going to your Mac.</p>
-        </header>
-        <div class="rb-switch-set">
-          <div class="rb-switch-shot">
-            <img class="rb-switch-still" src="assets/landing/switch-photo-ready.webp?v=logo-left-1" alt="Silver Rutta Bar with a mute switch on its side and one status light next to the R on top." width="1421" height="394" draggable="false" loading="lazy" decoding="async">
-            <img class="rb-switch-dim" src="assets/landing/switch-photo-mute.webp?v=logo-left-1" width="1421" height="394" alt="" aria-hidden="true" draggable="false" loading="lazy" decoding="async">
-            <button class="rb-switch-handle" type="button" role="switch" aria-label="Mute the microphone in this demo" aria-checked="false" aria-describedby="rb-switch-hint">
-              <span class="rb-switch-callout" aria-hidden="true"><span>Slide to mute</span><i></i></span>
-            </button>
-          </div>
-        </div>
-        <div class="rb-switch-console">
-          <div class="rb-switch-choices" role="group" aria-label="Preview microphone states">
-            <button type="button" data-mode="ready" aria-pressed="true"><i></i>Ready</button>
-            <button type="button" data-mode="input" aria-pressed="false"><i></i>Sending audio</button>
-            <button type="button" data-mode="mute" aria-pressed="false"><i></i>Muted</button>
-          </div>
-          <p class="rb-switch-reading" aria-live="polite" aria-atomic="true">The light on top breathes green while the microphone is ready.</p>
-        </div>
-        <p id="rb-switch-hint" class="rb-switch-sr">Interactive demo. Click the switch or drag it left to mute and right to unmute.</p>
-      </div>
-    </section>
-
-    <!-- Explore -->
-    <section class="rb-explore" id="explore" aria-labelledby="rb-explore-title">
-      <div class="rb-explore-inner">
-        <div class="rb-explore-copy">
-          <p class="v-index">06 — Hardware</p>
-          <h2 id="rb-explore-title">Look closer.</h2>
-          <p class="rb-explore-intro">Turn Rutta Bar around, or choose a detail to see how it fits together.</p>
-          <div class="rb-explore-parts" role="group" aria-label="Explore a hardware detail">
-            <button type="button" data-rb-part="ports" aria-pressed="false">Sound openings <span aria-hidden="true">↗</span></button>
-            <button type="button" data-rb-part="plug" aria-pressed="false">USB-C plug <span aria-hidden="true">↗</span></button>
-            <button type="button" data-rb-part="mute" aria-pressed="false">Mute switch <span aria-hidden="true">↗</span></button>
-          </div>
-        </div>
-        <figure class="rb-explore-stage" aria-label="Rutta Bar hardware study">
-          <div class="rb-explore-view">
-            <div class="rb-explore-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
-            <img class="rb-explore-still" src="assets/landing/hero-silver.webp?v=logo-left-1" width="1200" height="600" alt="Silver Rutta Bar with its USB-C plug and side-mounted controls" loading="lazy">
-            <canvas class="rb-explore-canvas" width="820" height="410" tabindex="-1" aria-label="Rutta Bar 3D model. Drag or use the arrow keys to rotate. Press plus or minus to zoom."></canvas>
-            <span class="rb-explore-focus" aria-hidden="true" hidden></span>
-          </div>
-          <figcaption class="rb-explore-foot">
-            <span class="rb-explore-caption" aria-live="polite">Rutta Bar in silver</span>
-            <button type="button" class="rb-explore-reset" hidden><span aria-hidden="true">↺</span> Reset view</button>
-          </figcaption>
-        </figure>
-        <noscript><a href="product.html#details">See the product details</a></noscript>
-      </div>
-    </section>
-
-    <!-- Notes -->
-    <section id="notes" class="rb-notes" aria-labelledby="rb-notes-title">
-      <div class="rb-notes-inner">
-        <div class="rb-notes-intro">
-          <p class="v-index">07 — After the talk</p>
-          <h2 id="rb-notes-title">What did we decide?</h2>
-          <p>Two teammates settle a detail before they leave the table. In the proposed Rutta app, they’d review the decision and who owns the next step before sharing it with the team.</p>
-          <div class="rb-notes-tabs" role="tablist" aria-label="Software concept example">
-            <button type="button" role="tab" id="rb-tab-dialogue" aria-controls="rb-paper-dialogue" aria-selected="true">Conversation</button>
-            <button type="button" role="tab" id="rb-tab-note" aria-controls="rb-paper-note" aria-selected="false" tabindex="-1">Reviewed note</button>
-          </div>
-        </div>
-        <figure class="rb-notes-example">
-          <div class="rb-notes-pad">
-            <div class="rb-notes-paper">
-              <p class="rb-notes-meta">Design team <span>Tuesday, 10 am</span></p>
-              <div class="rb-notes-page" id="rb-paper-dialogue" role="tabpanel" aria-labelledby="rb-tab-dialogue" tabindex="0">
-                <h3>Friday’s user test</h3>
-                <dl class="rb-notes-dialogue">
-                  <dt>Maya</dt><dd>“Which prototype are we putting in front of people on Friday?”</dd>
-                  <dt>Leo</dt><dd>“The silver one. I’ll send the updated build by Thursday noon.”</dd>
-                  <dt>Maya</dt><dd>“Perfect. Let’s go with silver.”</dd>
-                </dl>
-              </div>
-              <div class="rb-notes-page" id="rb-paper-note" role="tabpanel" aria-labelledby="rb-tab-note" tabindex="0" hidden>
-                <h3>Friday’s user test</h3>
-                <dl class="rb-notes-decisions">
-                  <dt>Decision</dt><dd>Test the silver prototype on Friday.</dd>
-                  <dt>Next step</dt><dd>Leo will send the updated build by <strong>Thursday noon.</strong></dd>
-                </dl>
-                <p class="rb-notes-confirmed"><span aria-hidden="true">✓</span> Reviewed by Maya and Leo</p>
-              </div>
+          <div class="lk-glass">
+            <p class="lk-eyebrow">Rutta Bar</p>
+            <h1>The microphone that lives on your Mac</h1>
+            <p>A slim aluminum mic that plugs into the side of your MacBook Air. Talk naturally, slide to mute, and get every conversation back as a clear note.</p>
+            <div class="lk-hero-actions">
+              <a class="lk-pill lk-pill--glass" href="#how">See how it works</a>
+              <button type="button" class="lk-textlink" data-film>Watch the unboxing</button>
             </div>
           </div>
-          <figcaption>Software concept · Fictional conversation</figcaption>
-        </figure>
+        </article>
+        <article class="lk-slide lk-slide--product" data-finish="silver" aria-roledescription="slide" aria-label="2 of 2">
+          <div class="lk-product-stage" aria-hidden="true">
+            <img id="hero-finish" src="assets/landing/hero-silver.webp?v=logo-left-1" width="1302" height="567" alt="" loading="lazy" draggable="false">
+          </div>
+          <div class="lk-glass">
+            <p class="lk-eyebrow">Four finishes</p>
+            <h2>Made to match your MacBook&nbsp;Air</h2>
+            <p>Silver, Sky Blue, Starlight and Midnight, each in anodized aluminum. Pick one to see it.</p>
+            <div class="lk-finishes" role="group" aria-label="Aluminum finish">
+              <button type="button" data-tone="silver" aria-pressed="true"><i></i>Silver</button>
+              <button type="button" data-tone="sky" aria-pressed="false"><i></i>Sky Blue</button>
+              <button type="button" data-tone="starlight" aria-pressed="false"><i></i>Starlight</button>
+              <button type="button" data-tone="midnight" aria-pressed="false"><i></i>Midnight</button>
+            </div>
+            <div class="lk-hero-actions">
+              <a class="lk-pill lk-pill--glass" href="#hardware">Explore the hardware</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <button type="button" class="lk-arrow lk-arrow--prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6 8.5 12l6 6"/></svg></button>
+      <button type="button" class="lk-arrow lk-arrow--next" aria-label="Next slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></button>
+      <div class="lk-progress" role="group" aria-label="Choose a slide">
+        <button type="button" aria-label="Slide 1" aria-current="true"><i></i></button>
+        <button type="button" aria-label="Slide 2"><i></i></button>
       </div>
     </section>
 
-    <!-- People -->
-    <section id="people" class="v-people" aria-labelledby="people-title">
-      <div class="v-wrap">
-        <div class="v-section-head">
-          <p class="v-index">08 — Who it’s for</p>
-          <h2 id="people-title">People who think out loud for a living.</h2>
+    <!-- How it works: tabbed media stage -->
+    <section id="how" class="lk-section lk-how" aria-labelledby="how-title">
+      <header class="lk-head">
+        <h2 id="how-title">Every conversation comes back clear</h2>
+        <p>Plug Rutta Bar into your Mac and just talk. Afterwards, the Rutta app turns what was said into a transcript, the decisions you made and answers you can search.</p>
+      </header>
+      <div class="lk-stage">
+        <img class="lk-stage-photo" src="assets/v2/scene-remote-1400.webp" srcset="assets/v2/scene-remote-900.webp 900w, assets/v2/scene-remote-1400.webp 1400w" sizes="(max-width:760px) 100vw, 1400px" width="1400" height="939" loading="lazy" alt="A person on a video call at home with a Rutta Bar on the side of their MacBook Air">
+        <div class="lk-stage-panel">
+          <div class="lk-tabs" role="tablist" aria-label="What you get back">
+            <button type="button" role="tab" id="how-tab-1" aria-controls="how-1" aria-selected="true">Transcript</button>
+            <button type="button" role="tab" id="how-tab-2" aria-controls="how-2" aria-selected="false" tabindex="-1">Decisions</button>
+            <button type="button" role="tab" id="how-tab-3" aria-controls="how-3" aria-selected="false" tabindex="-1">Ask</button>
+          </div>
+
+          <div class="lk-cards" id="how-1" role="tabpanel" aria-labelledby="how-tab-1">
+            <div class="lk-card">
+              <p class="lk-chip-row"><span class="lk-chip">Tue 10:02 · Weekly design sync</span></p>
+              <ol class="lk-transcript">
+                <li><span class="lk-av lk-av--a">M</span><p><b>Maya</b>Which prototype are we testing on Friday?</p></li>
+                <li><span class="lk-av lk-av--b">L</span><p><b>Leo</b>The silver one. I’ll send the new build by Thursday noon.</p></li>
+                <li><span class="lk-av lk-av--a">M</span><p><b>Maya</b>Perfect. Let’s go with silver.</p></li>
+              </ol>
+            </div>
+            <div class="lk-card lk-card--story">
+              <h3>Friday’s user test</h3>
+              <span class="lk-quote" aria-hidden="true">“</span>
+              <p>Maya and Leo agreed to put the silver prototype in front of five people on Friday. Leo will send the updated build by Thursday noon.</p>
+            </div>
+          </div>
+
+          <div class="lk-cards" id="how-2" role="tabpanel" aria-labelledby="how-tab-2" hidden>
+            <div class="lk-card">
+              <p class="lk-chip-row"><span class="lk-chip">Reviewed note</span></p>
+              <ul class="lk-checks">
+                <li><i class="ok">✓</i><p><b>Decision</b>Test the silver prototype on Friday.</p></li>
+                <li><i>→</i><p><b>Leo · Thu 12:00</b>Send the updated build.</p></li>
+                <li><i>→</i><p><b>Maya · Wed</b>Book five participants.</p></li>
+              </ul>
+            </div>
+            <div class="lk-card lk-card--row">
+              <span class="lk-avs"><span class="lk-av lk-av--a">M</span><span class="lk-av lk-av--b">L</span></span>
+              <p>Reviewed by Maya and Leo</p>
+              <span class="lk-mini-pill">Share</span>
+            </div>
+          </div>
+
+          <div class="lk-cards" id="how-3" role="tabpanel" aria-labelledby="how-tab-3" hidden>
+            <p class="lk-bubble lk-bubble--me">What did we decide about Friday?</p>
+            <p class="lk-bubble">Test the silver prototype. Leo is sending the build by Thursday noon.</p>
+            <div class="lk-card">
+              <p class="lk-chip-row"><span class="lk-chip">Related moment</span></p>
+              <figure class="lk-moment">
+                <img src="assets/v2/scene-review-900.webp" width="900" height="604" loading="lazy" alt="Maya and Leo at a café table during the design review">
+                <figcaption>10:14</figcaption>
+              </figure>
+            </div>
+          </div>
         </div>
-        <ul class="v-people-grid">
-          <li class="v-person">
+      </div>
+      <p class="lk-fine">The Rutta app is a software concept. Conversation and people are fictional.</p>
+    </section>
+
+    <!-- Three things we left out (rotator) -->
+    <section class="lk-section lk-rules" aria-labelledby="rules-title">
+      <h2 id="rules-title" class="lk-kicker">Three things we left out</h2>
+      <div class="lk-rule-words">
+        <button type="button" class="lk-word is-prev" data-i="2">No app to mute</button>
+        <button type="button" class="lk-word is-current" data-i="0" aria-current="true">No cable</button>
+        <button type="button" class="lk-word is-next" data-i="1">No battery</button>
+      </div>
+      <p class="lk-rule-text" aria-live="polite">“The USB-C plug is the whole connection. Nothing runs across the desk, and nothing gets left behind in a bag.”</p>
+    </section>
+
+    <!-- Stories: expandable cards -->
+    <section id="stories" class="lk-section lk-stories" aria-labelledby="stories-title">
+      <header class="lk-head lk-head--sm">
+        <h2 id="stories-title">Built for the conversations at your desk</h2>
+        <p>Five everyday moments, kept by Rutta Bar.</p>
+      </header>
+      <div class="lk-story-wrap">
+        <button type="button" class="lk-story-arrow lk-story-arrow--prev" aria-label="Previous story"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6 8.5 12l6 6"/></svg></button>
+        <div class="lk-story-track">
+          <article class="lk-story is-open">
+            <img src="assets/v2/scene-review-1400.webp" srcset="assets/v2/scene-review-900.webp 900w, assets/v2/scene-review-1400.webp 1400w" sizes="(max-width:760px) 86vw, 680px" width="1400" height="939" loading="lazy" alt="Two colleagues in a design review at a café table, a MacBook Air with Rutta Bar between them">
+            <span class="lk-story-tag">Design review</span>
+            <button type="button" class="lk-story-toggle" aria-expanded="true" aria-label="Design review details"></button>
+            <div class="lk-story-copy">
+              <h3>Settle it before you leave the table.</h3>
+              <p>Both voices reach the side of the Mac across a café table. The decision is written down before the coffee’s finished.</p>
+            </div>
+            <div class="lk-story-ui" aria-hidden="true">
+              <div class="lk-card"><p class="lk-chip-row"><span class="lk-chip">Decided</span></p><p class="lk-ui-line">Test the silver prototype on Friday.</p></div>
+              <div class="lk-card"><p class="lk-ui-meta">Next step</p><p class="lk-ui-line">Leo sends the build by <b>Thursday noon</b>.</p></div>
+            </div>
+          </article>
+          <article class="lk-story">
+            <img src="assets/v2/scene-interview-1400.webp" srcset="assets/v2/scene-interview-900.webp 900w, assets/v2/scene-interview-1400.webp 1400w" sizes="(max-width:760px) 86vw, 680px" width="1400" height="939" loading="lazy" alt="A researcher listening to a participant, a MacBook Air with Rutta Bar on the table">
+            <span class="lk-story-tag">Research interview</span>
+            <button type="button" class="lk-story-toggle" aria-expanded="false" aria-label="Research interview details"></button>
+            <div class="lk-story-copy">
+              <h3>Keep your eyes on the participant.</h3>
+              <p>No recorder sitting between you. The light on top tells everyone at the table when sound is going to the Mac.</p>
+            </div>
+            <div class="lk-story-ui" aria-hidden="true">
+              <div class="lk-card"><p class="lk-chip-row"><span class="lk-chip">Takeaways</span></p>
+                <ul class="lk-ui-list"><li><time>14:05</time>Prefers a paper checklist for setup.</li><li><time>14:21</time>Got stuck on step three.</li></ul></div>
+            </div>
+          </article>
+          <article class="lk-story">
+            <img src="assets/looki/kitchen-podcast-1400.webp" srcset="assets/looki/kitchen-podcast-900.webp 900w, assets/looki/kitchen-podcast-1400.webp 1400w" sizes="(max-width:760px) 86vw, 680px" width="1400" height="782" loading="lazy" alt="Two friends recording a conversation at a sunlit kitchen table, a MacBook Air with Rutta Bar in the foreground">
+            <span class="lk-story-tag">Kitchen table</span>
+            <button type="button" class="lk-story-toggle" aria-expanded="false" aria-label="Kitchen table details"></button>
+            <div class="lk-story-copy">
+              <h3>Record the conversation, not the setup.</h3>
+              <p>Two friends, two mugs, one laptop. Plug it in and there’s nothing else to press.</p>
+            </div>
+            <div class="lk-story-ui" aria-hidden="true">
+              <div class="lk-card"><p class="lk-chip-row"><span class="lk-chip">Episode 12 · 38 min</span></p><span class="lk-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><p class="lk-ui-meta">3 highlights marked</p></div>
+            </div>
+          </article>
+          <article class="lk-story">
+            <img src="assets/looki/studio-standup-1400.webp" srcset="assets/looki/studio-standup-900.webp 900w, assets/looki/studio-standup-1400.webp 1400w" sizes="(max-width:760px) 86vw, 680px" width="1400" height="782" loading="lazy" alt="Three teammates at a morning standup in a bright studio, a MacBook Air with Rutta Bar on the table">
+            <span class="lk-story-tag">Standup</span>
+            <button type="button" class="lk-story-toggle" aria-expanded="false" aria-label="Standup details"></button>
+            <div class="lk-story-copy">
+              <h3>Ten minutes, three owners.</h3>
+              <p>Everyone talks, nobody takes minutes. Who owns what is clear before the laptop closes.</p>
+            </div>
+            <div class="lk-story-ui" aria-hidden="true">
+              <div class="lk-card"><p class="lk-chip-row"><span class="lk-chip">Owners</span></p>
+                <ul class="lk-ui-list"><li><time>Ana</time>Finish the onboarding copy.</li><li><time>Sam</time>Fix the export bug.</li><li><time>Jo</time>Send the client update.</li></ul></div>
+            </div>
+          </article>
+          <article class="lk-story">
+            <img src="assets/v2/scene-tutor-1400.webp" srcset="assets/v2/scene-tutor-900.webp 900w, assets/v2/scene-tutor-1400.webp 1400w" sizes="(max-width:760px) 86vw, 680px" width="1400" height="939" loading="lazy" alt="A tutor and a student at a library table, a MacBook Air with Rutta Bar between them">
+            <span class="lk-story-tag">Tutoring</span>
+            <button type="button" class="lk-story-toggle" aria-expanded="false" aria-label="Tutoring details"></button>
+            <div class="lk-story-copy">
+              <h3>Keep the last five minutes.</h3>
+              <p>The best questions come right at the end. Rutta Bar is already plugged in when they do.</p>
+            </div>
+            <div class="lk-story-ui" aria-hidden="true">
+              <div class="lk-card"><p class="lk-ui-meta">Next session</p><p class="lk-ui-line">Chapter four proofs, starting with question 2b.</p></div>
+            </div>
+          </article>
+        </div>
+        <button type="button" class="lk-story-arrow lk-story-arrow--next" aria-label="Next story"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></button>
+      </div>
+      <div class="lk-dots" role="group" aria-label="Choose a story"></div>
+      <p class="lk-fine">Concept scenes · Fictional people</p>
+    </section>
+
+    <!-- Hardware -->
+    <section id="hardware" class="lk-section lk-hardware" aria-labelledby="hardware-title">
+      <header class="lk-head">
+        <h2 id="hardware-title">Small enough to forget it’s there</h2>
+        <p>26 mm of aluminum on the side of your Mac. Here’s how it fits, how it mutes and what it looks like up close.</p>
+      </header>
+
+      <div class="lk-fit fit-player">
+        <img id="fit-frame" src="assets/landing/fit-00.webp?v=logo-left-1" width="1440" height="880" alt="Rutta Bar aligned with the USB-C port on the side of a MacBook Air" loading="lazy">
+        <div class="lk-fit-card">
+          <h3>Right beside your Mac</h3>
+          <dl>
+            <div><dt>Exposed length</dt><dd>26 mm</dd></div>
+            <div><dt>Side extension</dt><dd>5.5 mm</dd></div>
+            <div><dt>Cables, batteries</dt><dd>0</dd></div>
+          </dl>
+        </div>
+        <div class="lk-fit-controls">
+          <button type="button" class="fit-play" aria-label="Play installation"><span aria-hidden="true">▶</span></button>
+          <label for="fit-range" class="lk-sr">Slide to connect</label>
+          <input type="range" id="fit-range" min="0" max="15" value="0" step="1" aria-valuetext="Unplugged">
+          <output id="fit-status" for="fit-range">Unplugged</output>
+        </div>
+      </div>
+
+      <div class="lk-duo">
+        <div id="switch" class="rb-switch lk-switch" data-state="ready" aria-labelledby="rb-switch-title">
+          <div class="lk-duo-head">
+            <h3 id="rb-switch-title">Mute by touch</h3>
+            <p>A metal switch sits on the outer edge, right under your fingertip. The light next to the R on top shows when audio is going to your Mac.</p>
+          </div>
+          <div class="rb-switch-set">
+            <div class="rb-switch-shot">
+              <img class="rb-switch-still" src="assets/landing/switch-photo-ready.webp?v=logo-left-1" alt="Silver Rutta Bar with a mute switch on its side and one status light next to the R on top." width="1421" height="394" draggable="false" loading="lazy" decoding="async">
+              <img class="rb-switch-dim" src="assets/landing/switch-photo-mute.webp?v=logo-left-1" width="1421" height="394" alt="" aria-hidden="true" draggable="false" loading="lazy" decoding="async">
+              <button class="rb-switch-handle" type="button" role="switch" aria-label="Mute the microphone in this demo" aria-checked="false" aria-describedby="rb-switch-hint">
+                <span class="rb-switch-callout" aria-hidden="true"><span>Slide to mute</span><i></i></span>
+              </button>
+            </div>
+          </div>
+          <div class="rb-switch-console">
+            <div class="rb-switch-choices lk-tabs" role="group" aria-label="Preview microphone states">
+              <button type="button" data-mode="ready" aria-pressed="true"><i></i>Ready</button>
+              <button type="button" data-mode="input" aria-pressed="false"><i></i>Sending audio</button>
+              <button type="button" data-mode="mute" aria-pressed="false"><i></i>Muted</button>
+            </div>
+            <p class="rb-switch-reading" aria-live="polite" aria-atomic="true">The light on top breathes green while the microphone is ready.</p>
+          </div>
+          <p id="rb-switch-hint" class="rb-switch-sr">Interactive demo. Click the switch or drag it left to mute and right to unmute.</p>
+        </div>
+      </div>
+
+      <div class="rb-explore lk-explore" id="explore" aria-labelledby="rb-explore-title">
+        <div class="rb-explore-inner">
+          <div class="rb-explore-copy">
+            <h3 id="rb-explore-title">Look closer</h3>
+            <p class="rb-explore-intro">Drag to turn Rutta Bar around, or choose a detail.</p>
+            <div class="rb-explore-parts" role="group" aria-label="Explore a hardware detail">
+              <button type="button" data-rb-part="ports" aria-pressed="false">Sound openings <span aria-hidden="true">+</span></button>
+              <button type="button" data-rb-part="plug" aria-pressed="false">USB-C plug <span aria-hidden="true">+</span></button>
+              <button type="button" data-rb-part="mute" aria-pressed="false">Mute switch <span aria-hidden="true">+</span></button>
+            </div>
+          </div>
+          <figure class="rb-explore-stage" aria-label="Rutta Bar hardware study">
+            <div class="rb-explore-view">
+              <div class="rb-explore-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+              <img class="rb-explore-still" src="assets/landing/hero-silver.webp?v=logo-left-1" width="1200" height="600" alt="Silver Rutta Bar with its USB-C plug and side-mounted controls" loading="lazy">
+              <canvas class="rb-explore-canvas" width="820" height="410" tabindex="-1" aria-label="Rutta Bar 3D model. Drag or use the arrow keys to rotate. Press plus or minus to zoom."></canvas>
+              <span class="rb-explore-focus" aria-hidden="true" hidden></span>
+            </div>
+            <figcaption class="rb-explore-foot">
+              <span class="rb-explore-caption" aria-live="polite">Rutta Bar in silver</span>
+              <button type="button" class="rb-explore-reset" hidden><span aria-hidden="true">↺</span> Reset view</button>
+            </figcaption>
+          </figure>
+          <noscript><a href="product.html#details">See the product details</a></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- People: masonry -->
+    <section id="people" class="lk-section lk-people" aria-labelledby="people-title">
+      <header class="lk-head lk-head--sm">
+        <h2 id="people-title">Who we’re designing it for</h2>
+        <p>Three people we keep in mind while we design. They’re fictional, so these aren’t customer reviews.</p>
+      </header>
+      <div class="lk-masonry">
+        <div class="lk-col">
+          <figure class="lk-tile lk-tile--tall">
             <img src="assets/v2/persona-designer-720.webp" width="720" height="900" loading="lazy" alt="Portrait of Maya, a product designer">
-            <blockquote>“Our reviews happen at a café table, not in a booked room. I’d want it plugged in when the sketches come out, so I’m not scribbling while Leo talks.”</blockquote>
-            <p class="who"><b>Maya</b><span>Product designer</span></p>
-          </li>
-          <li class="v-person">
+            <figcaption><b>Maya</b>Reviews happen at a café table, not a booked room.</figcaption>
+          </figure>
+          <article class="lk-quote-card">
+            <p class="lk-qc-top"><span>Rutta Bar</span><span>Fictional persona</span></p>
+            <blockquote>“I’d want it plugged in when the sketches come out, so I’m not scribbling while Leo talks.”</blockquote>
+            <div class="lk-qc-more" hidden><p>Maya runs two design reviews a week, usually away from the office. She’d use the reviewed note to send decisions to engineering the same afternoon.</p></div>
+            <footer><img src="assets/v2/persona-designer-720.webp" alt="" width="36" height="36" loading="lazy"><p><b>Maya</b>Product designer</p><button type="button" class="lk-plus" aria-expanded="false" aria-label="More about Maya"></button></footer>
+          </article>
+          <figure class="lk-tile">
+            <img src="assets/looki/plug-macro-900.webp" width="900" height="503" loading="lazy" alt="Fingertips sliding a Rutta Bar into the USB-C port of a MacBook Air">
+            <figcaption><b>One motion</b>Slide it in. That’s the whole setup.</figcaption>
+          </figure>
+        </div>
+        <div class="lk-col">
+          <article class="lk-quote-card">
+            <p class="lk-qc-top"><span>Rutta Bar</span><span>Fictional persona</span></p>
+            <blockquote>“In interviews my eyes should be on the participant, not a recorder. A light they can see is an honest signal that we’re recording.”</blockquote>
+            <div class="lk-qc-more" hidden><p>Dana interviews six to eight participants a week. Being able to point at the light when she asks for consent matters as much as the audio does.</p></div>
+            <footer><img src="assets/v2/persona-researcher-720.webp" alt="" width="36" height="36" loading="lazy"><p><b>Dana</b>UX researcher</p><button type="button" class="lk-plus" aria-expanded="false" aria-label="More about Dana"></button></footer>
+          </article>
+          <figure class="lk-tile lk-tile--tall">
             <img src="assets/v2/persona-researcher-720.webp" width="720" height="900" loading="lazy" alt="Portrait of Dana, a UX researcher">
-            <blockquote>“In interviews my eyes should be on the participant, not a recorder. And a light they can see is an honest signal that we’re recording.”</blockquote>
-            <p class="who"><b>Dana</b><span>UX researcher</span></p>
-          </li>
-          <li class="v-person">
+            <figcaption><b>Dana</b>Six to eight interviews a week.</figcaption>
+          </figure>
+          <figure class="lk-tile">
+            <img src="assets/looki/kitchen-podcast-900.webp" width="900" height="503" loading="lazy" alt="Two friends recording at a kitchen table">
+            <figcaption><b>Kitchen-table recordings</b>Nothing to set up but the mugs.</figcaption>
+          </figure>
+        </div>
+        <div class="lk-col">
+          <figure class="lk-tile lk-tile--tall">
             <img src="assets/v2/persona-teacher-720.webp" width="720" height="900" loading="lazy" alt="Portrait of Tomás, a university tutor">
-            <blockquote>“Students ask their best questions in the last five minutes. I’d want those kept without setting anything up.”</blockquote>
-            <p class="who"><b>Tomás</b><span>University tutor</span></p>
-          </li>
-        </ul>
-        <p class="v-fine">Fictional personas, written to illustrate how Rutta Bar could be used. Not customer reviews.</p>
+            <figcaption><b>Tomás</b>The best questions come in the last five minutes.</figcaption>
+          </figure>
+          <article class="lk-quote-card">
+            <p class="lk-qc-top"><span>Rutta Bar</span><span>Fictional persona</span></p>
+            <blockquote>“Students ask their best questions right at the end. I’d want those kept without setting anything up.”</blockquote>
+            <div class="lk-qc-more" hidden><p>Tomás tutors in the library between lectures. He’d share the “next session” note with each student so they arrive knowing where to start.</p></div>
+            <footer><img src="assets/v2/persona-teacher-720.webp" alt="" width="36" height="36" loading="lazy"><p><b>Tomás</b>University tutor</p><button type="button" class="lk-plus" aria-expanded="false" aria-label="More about Tomás"></button></footer>
+          </article>
+          <figure class="lk-tile">
+            <img src="assets/v2/scene-tutor-900.webp" width="900" height="604" loading="lazy" alt="A tutor and a student working at a library table">
+            <figcaption><b>Between lectures</b>Already plugged in when the questions start.</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
-    <!-- Specs -->
-    <section id="specs" class="specs" aria-labelledby="specs-title">
-      <div class="v-wrap specs-inner">
-        <div class="specs-title">
-          <p class="v-index">09 — Specs</p>
-          <h2 id="specs-title">The details.</h2>
-          <a class="v-text-link" href="product.html#specs">Full specifications <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="drawers">
-          <details open><summary>Size and fit</summary>
-            <dl><dt>Reference Mac</dt><dd>13-inch MacBook Air (M4)</dd><dt>Exposed length</dt><dd>Approx. 26 mm along the side</dd><dt>Side extension</dt><dd>5.5 mm design target, measured from the side wall</dd></dl>
-            <p>Clearance around neighboring plugs and the display hinge still needs testing on a physical sample.</p>
-          </details>
-          <details><summary>Connection and power</summary><p>The built-in USB-C plug carries power from the Mac and audio back to it. The design has no battery to charge. It uses the port closest to the palm rest, leaving the other USB-C port and MagSafe behind it.</p></details>
-          <details><summary>Materials and finishes</summary><p>The shell and switch cap are designed in anodized aluminum. The four render studies are Silver, Sky Blue, Starlight and Midnight. Final colors will be matched against physical samples.</p></details>
-          <details><summary>What’s been tested?</summary><p>This is an industrial design concept. The page shows the intended fit, controls and indicator behavior. Pickup from different seats, keyboard noise and real-world fit still need prototype tests.</p></details>
-        </div>
+    <!-- FAQ / specs -->
+    <section id="faq" class="lk-section lk-faq" aria-labelledby="faq-title">
+      <header class="lk-head lk-head--sm">
+        <h2 id="faq-title">The details</h2>
+        <p>Measured against a 13-inch MacBook Air (M4).</p>
+      </header>
+      <div class="lk-faq-list">
+        <details open><summary>Size and fit</summary>
+          <dl><dt>Reference Mac</dt><dd>13-inch MacBook Air (M4)</dd><dt>Exposed length</dt><dd>Approx. 26 mm along the side</dd><dt>Side extension</dt><dd>5.5 mm design target, measured from the side wall</dd></dl>
+          <p>Clearance around neighboring plugs and the display hinge still needs testing on a physical sample.</p>
+        </details>
+        <details><summary>Connection and power</summary><p>The built-in USB-C plug carries power from the Mac and audio back to it. There’s no battery to charge. It uses the port closest to the palm rest, leaving the other USB-C port and MagSafe free.</p></details>
+        <details><summary>Materials and finishes</summary><p>The shell and switch cap are designed in anodized aluminum. The four render studies are Silver, Sky Blue, Starlight and Midnight. Final colors will be matched against physical samples.</p></details>
+        <details><summary>What’s been tested so far?</summary><p>Rutta Bar is an industrial design concept. This page shows the intended fit, controls and indicator behavior. Pickup from different seats, keyboard noise and real-world fit still need prototype tests.</p></details>
+      </div>
+    </section>
+
+    <!-- More -->
+    <section class="lk-section lk-more" aria-labelledby="more-title">
+      <header class="lk-head lk-head--sm">
+        <h2 id="more-title">More from Rutta</h2>
+        <p>Every angle of the hardware, the full spec sheet and a short film of the box.</p>
+      </header>
+      <div class="lk-more-grid">
+        <a class="lk-more-card lk-more-card--photo" href="product.html#gallery">
+          <img src="assets/looki/studio-standup-900.webp" width="900" height="503" loading="lazy" alt="">
+          <span class="lk-more-copy"><b>See every angle in the product gallery</b><span class="lk-pill lk-pill--outline">Open gallery</span></span>
+        </a>
+        <a class="lk-more-card lk-more-card--cream" href="product.html#specs">
+          <span>Full specifications, measured against a 13-inch MacBook Air, plus the materials and the parts we’re still testing.</span>
+          <i class="lk-round" aria-hidden="true">›</i>
+        </a>
+        <button type="button" class="lk-more-card lk-more-card--film" data-film>
+          <img src="assets/landing/unboxing-poster.webp?v=logo-left-1" width="864" height="1080" loading="lazy" alt="">
+          <span class="lk-more-copy"><b>Lift the lid</b><span>A 9-second unboxing film</span></span>
+          <i class="lk-round lk-round--play" aria-hidden="true">▶</i>
+        </button>
       </div>
     </section>
   </main>
 
-  <footer class="v-foot">
-    <div class="v-wrap">
-      <p class="v-foot-mark" aria-hidden="true">Rutta Bar</p>
-      <div class="v-foot-row">
-        <span>Hardware concept for MacBook Air · 2026</span>
-        <a href="product.html#gallery">Product gallery ↗</a>
-        <a href="#overview">Back to top ↑</a>
+  <!-- Footer -->
+  <footer class="lk-footer" id="updates">
+    <div class="lk-footer-inner">
+      <div class="lk-footer-top">
+        <div class="lk-footer-brand">
+          <a class="lk-logo lk-logo--lg" href="#main" aria-label="Rutta Bar home"><svg viewBox="-1 -1 21 26" width="32" height="40" aria-hidden="true"><use href="#rutta-mark"/></svg><span>rutta</span></a>
+          <p>A microphone for the side of your Mac</p>
+        </div>
+        <p class="lk-footer-line">Early updates.<br>Prototype tests.<br>Just for you.</p>
+        <form class="lk-signup" novalidate>
+          <label class="lk-sr" for="signup-email">Email</label>
+          <input id="signup-email" type="email" placeholder="Enter your email" autocomplete="email" required>
+          <div class="lk-signup-row">
+            <p class="lk-signup-note" aria-live="polite">Sign up for updates and the chance to test an early prototype.</p>
+            <button type="submit" aria-label="Sign up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-5-5 5 5-5 5"/></svg></button>
+          </div>
+        </form>
+      </div>
+      <div class="lk-footer-links">
+        <div><h3>Rutta Bar</h3><a href="#how">How it works</a><a href="#hardware">Hardware</a><a href="product.html#gallery">Gallery</a><a href="#faq">Specs</a></div>
+        <div><h3>Stories</h3><a href="#stories">Design review</a><a href="#stories">Research interview</a><a href="#stories">Tutoring</a></div>
+        <div><h3>Project</h3><a href="#people">Who it’s for</a><a href="product.html#details">Design details</a><button type="button" data-film>Unboxing film</button></div>
+        <p class="lk-footer-copy">©Rutta 2026 · Hardware concept for MacBook Air</p>
       </div>
     </div>
   </footer>
-  <script defer src="assets/v2/site.js"></script>
-  <script defer src="assets/landing/unboxing.js"></script>
+
+  <!-- Film dialog -->
+  <dialog class="lk-film" aria-label="Rutta Bar unboxing film">
+    <button type="button" class="lk-film-close" aria-label="Close film">×</button>
+    <video id="unboxing-film" width="864" height="1080" controls muted playsinline preload="none" poster="assets/landing/unboxing-poster.webp?v=logo-left-1">
+      <source src="assets/landing/unboxing.mp4?v=logo-left-1" type="video/mp4">
+      <a href="assets/landing/unboxing.mp4?v=logo-left-1">Open the unboxing film (MP4)</a>
+    </video>
+    <p>9-second silent film · Packaging concept render</p>
+  </dialog>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="rutta-mark" viewBox="-1 -1 21 26"><path fill="currentColor" d="M0 2.3Q0 0 2.2 0h8.2C18.3 0 20.5 10.7 12.2 15.1l5.7 7.55q.8 1.15-.7 1.15h-2.7q-1.55 0-2.63-1.55C9.8 18.75 8.15 15.4 8.15 10.7h3.1q.75 0 .32-.62L7.76 5.25q-.85-1.12-1.75.1L2.5 10.03q-.5.67.31.67h2.71c-.88 3.9-1.73 8.44-1.91 13.1H2.25Q0 23.8 0 21.6Z"/></symbol>
+  </svg>
+
+  <script defer src="assets/looki/site.js"></script>
   <script defer src="assets/landing/switch.js?v=logo-left-1"></script>
   <script defer src="assets/landing/explore.js?v=logo-left-1"></script>
-  <script defer src="assets/landing/notes.js"></script>
 </body>
 </html>
