@@ -12,7 +12,7 @@
     input: "The light stays amber while audio is being sent to your Mac.",
     mute: "The top light goes out. An orange marker in the switch track shows the microphone is muted."
   };
-  const source = mode => "assets/landing/switch-photo-" + mode + ".webp?v=top-only-2";
+  const source = mode => "assets/landing/switch-photo-" + mode + ".webp?v=logo-left-1";
   let beforeMute = "ready";
   const shot = section.querySelector(".rb-switch-shot");
   const mechanism = document.createElement("span");
