@@ -3,8 +3,8 @@
   --sw-ink: #153a2d;
   --sw-field: #c5e5b5;
   --sw-accent: #448262;
-  --sw-slot-x: 20.19%;
-  --sw-slot-y: 64.44%;
+  --sw-slot-x: 16.4294%;
+  --sw-slot-y: 63.3898%;
   isolation: isolate;
   overflow: hidden;
   scroll-margin-top: 64px;
@@ -54,12 +54,12 @@
 }
 .rb-switch .rb-switch-still {
   display: block; width: 100%; max-width: none; height: auto; margin: 0;
-  aspect-ratio: 1421 / 394;
+  aspect-ratio: 1428 / 320;
   filter: drop-shadow(0 11px 7px rgb(38 45 35 / .15)) drop-shadow(2px 27px 21px rgb(38 45 35 / .12));
 }
 .rb-switch .rb-switch-dim {
   display: block; position: absolute; inset: 0; width: 100%; height: 100%; margin: 0;
-  pointer-events: none; opacity: 0; clip-path: ellipse(1.3% 3.2% at 23.19% 17.50%);
+  pointer-events: none; opacity: 0; clip-path: ellipse(1.3% 3.2% at 26.954% 16.505%);
 }
 .rb-switch[data-state="ready"] .rb-switch-dim { animation: rb-sw-breathe 4s ease-in-out infinite }
 @keyframes rb-sw-breathe { 0%,100% { opacity: .08 } 52% { opacity: .86 } }
@@ -144,9 +144,9 @@
 .rb-switch-mechanism img {
   position: absolute; display: block; max-width: none; height: auto; margin: 0;
 }
-.rb-switch-track { left: 10.626%; top: 52.03%; width: 19.1429% }
+.rb-switch-track { left: 8.6571%; top: 50.9113%; width: 15.5567% }
 .rb-switch-knob {
-  left: calc(11.893% + var(--sw-travel, 1) * 4.9261%); top: 57.614%;
-  width: 11.682%; filter: drop-shadow(0 .6px .6px rgb(0 0 0 / .48));
+  left: calc(9.6867% + var(--sw-travel, 1) * 4.0033%); top: 56.5261%;
+  width: 9.4935%; filter: drop-shadow(0 .6px .6px rgb(0 0 0 / .48));
 }
 .rb-switch-shot[data-dragging="true"] .rb-switch-mechanism { opacity: 1 }
