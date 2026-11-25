@@ -8,11 +8,11 @@
   const reading = section.querySelector(".rb-switch-reading");
   const choices = [...section.querySelectorAll("[data-mode]")];
   const messages = {
-    ready: "The green light breathes while the microphone is ready.",
+    ready: "The light on top breathes green while the microphone is ready.",
     input: "The light stays amber while audio is being sent to your Mac.",
-    mute: "The light goes out. An orange mark appears beside the switch."
+    mute: "The top light goes out. An orange marker in the switch track shows the microphone is muted."
   };
-  const source = mode => "assets/landing/switch-photo-" + mode + ".webp";
+  const source = mode => "assets/landing/switch-photo-" + mode + ".webp?v=top-only-2";
   let beforeMute = "ready";
   const shot = section.querySelector(".rb-switch-shot");
   const mechanism = document.createElement("span");

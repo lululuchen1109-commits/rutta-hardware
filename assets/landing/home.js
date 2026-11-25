@@ -20,7 +20,7 @@
     return ready;
   }
   function finishImage(key) {
-    return 'assets/landing/hero-' + key + '.webp';
+    return 'assets/landing/hero-' + key + '.webp?v=top-center-2';
   }
   finishes.forEach(button => {
     const prepare = () => loadImage(studioCache, finishImage(button.dataset.tone)).catch(() => {});
@@ -67,7 +67,7 @@
   let displayRequest = 0;
 
   function address(index) {
-    return 'assets/landing/fit-' + String(index).padStart(2, '0') + '.webp';
+    return 'assets/landing/fit-' + String(index).padStart(2, '0') + '.webp?v=top-center-2';
   }
   async function display(index) {
     const request = ++displayRequest;

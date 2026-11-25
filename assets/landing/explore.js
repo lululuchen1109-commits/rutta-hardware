@@ -27,7 +27,7 @@
     mute: {
       angle: -0.16, pitch: 0.19, magnification: 2.08, target: [-5.5, 20, 0],
       text: "Slide the switch to mute. An orange mark appears in the track so you can see its position.",
-      photo: "explore-mute.webp", alt: "The silver physical mute switch and the status light beside it"
+      photo: "explore-mute.webp?v=top-only-2", alt: "The mute switch at its left stop with an orange marker in the track"
     }
   };
   let selected = "home";
@@ -78,7 +78,7 @@
     if (loading) return loading;
     const scriptReady = window.RuttaViewer ? Promise.resolve() : new Promise((resolve, reject) => {
       const script = document.createElement("script");
-      script.src = "assets/viewer.js?v=inline-1";
+      script.src = "assets/landing/explore-viewer.js?v=top-only-2";
       script.onload = resolve;
       script.onerror = reject;
       document.head.append(script);
