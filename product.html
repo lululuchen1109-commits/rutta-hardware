@@ -37,6 +37,7 @@
 @media(max-width:720px){.finish-block{margin-top:8px;padding-top:9px}.finish-row{gap:5px}.finish-row button{font-size:11px;padding:6px 9px}.finish-row i{width:15px;height:15px}}
 .model-finishes{margin-left:auto}.model-finishes button{display:grid;place-items:center;padding:3px;min-height:29px;width:29px}.model-finishes button i{width:20px;height:20px}.model-finishes button:not([aria-pressed=true]){border-color:transparent}.model-finishes button:hover{border-color:#aaa}@media(max-width:390px){.model-finishes{gap:2px}.model-finishes button{width:26px;min-height:26px}}
 .single-label{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px;color:var(--sub);font-size:12px}.single-label strong{font-size:14px;color:var(--ink);font-weight:650}.single-label span{font-size:11px}
+.photo-notice:not([hidden]){position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:20px;background:#fffffff5;color:#34433b;font-size:12px;z-index:2}.photo-notice button:not([hidden]){cursor:pointer;color:#254f39;text-decoration:underline;width:auto;height:auto;padding:4px}
 </style></head><body>
 <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
 <symbol id="cube" viewBox="0 0 24 24"><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="m12 2 9 5v10l-9 5-9-5V7z M3.4 7.2 12 12l8.6-4.8 M12 12v9.5 M8 4.3l8.7 4.8"/></g></symbol>
@@ -219,7 +220,7 @@
 <dialog id="photoDialog" class="dialog" aria-labelledby="photoTitle"><div class="dialog-head"><div><div class="small" id="lightAlbum">商品大图</div><h2 id="photoTitle">外观</h2></div><button class="icon-btn" data-icon="close" data-close aria-label="关闭大图"></button></div><div id="lightArea" class="dialog-body" style="touch-action:none"><img id="lightImage" alt=""></div><div class="dialog-foot"><div class="toolbar"><button id="lightPrev" class="icon-btn" data-icon="prev" aria-label="上一张大图"></button><span id="lightCount" aria-live="polite"></span><button id="lightNext" class="icon-btn" data-icon="next" aria-label="下一张大图"></button></div><div class="toolbar"><button id="lightZoom" aria-pressed="false">放大 2×</button></div></div></dialog>
 <dialog id="modelDialog" class="dialog" aria-labelledby="modelTitle"><div class="dialog-head"><div><div class="small" id="modelFinish">Rutta Bar · 银色 · 模拟 USB 供电</div><h2 id="modelTitle">3D 视图</h2></div><div class="model-finishes finish-row" role="group" aria-label="3D 模型配色"><button type="button" data-finish="silver" title="银色" aria-label="银色" aria-pressed="true"><i class="tone-silver" aria-hidden="true"></i></button><button type="button" data-finish="sky" title="天蓝色" aria-label="天蓝色" aria-pressed="false"><i class="tone-sky" aria-hidden="true"></i></button><button type="button" data-finish="starlight" title="星光色" aria-label="星光色" aria-pressed="false"><i class="tone-starlight" aria-hidden="true"></i></button><button type="button" data-finish="midnight" title="午夜色" aria-label="午夜色" aria-pressed="false"><i class="tone-midnight" aria-hidden="true"></i></button></div><button class="icon-btn" data-icon="close" data-close aria-label="关闭 3D 视图"></button></div><div class="dialog-body"><canvas id="modelCanvas" tabindex="0" aria-label="Rutta Bar 互动模型，拖动旋转或使用下方预设视角"></canvas><span class="instructions" id="modelHint">拖动旋转 · 滚轮或双指缩放</span><div id="modelFallback" class="fallback" hidden><img data-asset="single-back" alt="配件背面与 USB-C 插头"><p>当前浏览器未能显示 3D 模型。商品图集可查看各个角度。</p><button class="secondary" data-close>返回图集</button></div></div>
 <div class="dialog-foot" id="modelTools"><div class="toolbar" id="viewPresets" aria-label="模型视角"><button data-view="home" aria-pressed="true">总览</button><button data-view="front" aria-pressed="false">灯面</button><button data-view="back" aria-pressed="false">插头</button><button data-view="top" aria-pressed="false">俯视</button></div><div class="toolbar"><button class="icon-btn" id="zoomOut" aria-label="缩小模型">−</button><button class="icon-btn" id="zoomIn" aria-label="放大模型">＋</button><button id="resetModel">复位</button></div><div class="toolbar" aria-label="模拟供电状态"><button id="stateOn" aria-pressed="true">开启</button><button id="stateVoice" aria-pressed="false">正在输入</button><button id="stateOff" aria-pressed="false">静音</button></div></div></dialog>
-<script>window.RUTTA_PINS={"openwide": [25.771313497464952, 80.00589734187915], "overhead": [13.4683960849799, 75.06721955627094]};window.RUTTA_ASSETS=Object.fromEntries(Object.entries({"single-front": "assets/single-front.jpg?v=v12", "single-back": "assets/single-back.jpg?v=v12", "single-top": "assets/single-top.jpg?v=v12", "single-bottom": "assets/single-bottom.jpg?v=v12", "single-switch": "assets/single-switch.jpg?v=v12", "single-usb": "assets/single-usb.jpg?v=v12", "openwide": "assets/openwide.jpg?v=v12", "overhead": "assets/overhead.jpg?v=v12", "openside": "assets/openside.jpg?v=v12", "closedside": "assets/closedside.jpg?v=v12", "closedoblique": "assets/closedoblique.jpg?v=v12", "portmacro": "assets/portmacro.jpg?v=v12", "single-front@sky": "assets/single-front-sky.jpg?v=v12", "single-back@sky": "assets/single-back-sky.jpg?v=v12", "single-top@sky": "assets/single-top-sky.jpg?v=v12", "single-bottom@sky": "assets/single-bottom-sky.jpg?v=v12", "single-switch@sky": "assets/single-switch-sky.jpg?v=v12", "single-usb@sky": "assets/single-usb-sky.jpg?v=v12", "openwide@sky": "assets/openwide-sky.jpg?v=v12", "overhead@sky": "assets/overhead-sky.jpg?v=v12", "openside@sky": "assets/openside-sky.jpg?v=v12", "closedside@sky": "assets/closedside-sky.jpg?v=v12", "closedoblique@sky": "assets/closedoblique-sky.jpg?v=v12", "portmacro@sky": "assets/portmacro-sky.jpg?v=v12", "single-front@starlight": "assets/single-front-starlight.jpg?v=v12", "single-back@starlight": "assets/single-back-starlight.jpg?v=v12", "single-top@starlight": "assets/single-top-starlight.jpg?v=v12", "single-bottom@starlight": "assets/single-bottom-starlight.jpg?v=v12", "single-switch@starlight": "assets/single-switch-starlight.jpg?v=v12", "single-usb@starlight": "assets/single-usb-starlight.jpg?v=v12", "openwide@starlight": "assets/openwide-starlight.jpg?v=v12", "overhead@starlight": "assets/overhead-starlight.jpg?v=v12", "openside@starlight": "assets/openside-starlight.jpg?v=v12", "closedside@starlight": "assets/closedside-starlight.jpg?v=v12", "closedoblique@starlight": "assets/closedoblique-starlight.jpg?v=v12", "portmacro@starlight": "assets/portmacro-starlight.jpg?v=v12", "single-front@midnight": "assets/single-front-midnight.jpg?v=v12", "single-back@midnight": "assets/single-back-midnight.jpg?v=v12", "single-top@midnight": "assets/single-top-midnight.jpg?v=v12", "single-bottom@midnight": "assets/single-bottom-midnight.jpg?v=v12", "single-switch@midnight": "assets/single-switch-midnight.jpg?v=v12", "single-usb@midnight": "assets/single-usb-midnight.jpg?v=v12", "openwide@midnight": "assets/openwide-midnight.jpg?v=v12", "overhead@midnight": "assets/overhead-midnight.jpg?v=v12", "openside@midnight": "assets/openside-midnight.jpg?v=v12", "closedside@midnight": "assets/closedside-midnight.jpg?v=v12", "closedoblique@midnight": "assets/closedoblique-midnight.jpg?v=v12", "portmacro@midnight": "assets/portmacro-midnight.jpg?v=v12", "single-front-current": "assets/single-front-current.jpg?v=v12", "mute": "assets/mute.webp?v=v12", "active": "assets/active.webp?v=v12", "voice": "assets/voice.webp?v=v12", "acoustic": "assets/acoustic.webp?v=v12", "breath": "assets/breath.png?v=v12"}).map(([k,p])=>[k,new URL(p,document.baseURI).href]));</script><script src="assets/viewer.js?v=v12"></script><script>(() => {
+<script>window.RUTTA_PINS={"openwide": [25.771313497464952, 80.00589734187915], "overhead": [13.4683960849799, 75.06721955627094]};window.RUTTA_ASSETS=Object.fromEntries(Object.entries({"single-front": "assets/single-front.jpg?v=v12", "single-back": "assets/single-back.jpg?v=v12", "single-top": "assets/single-top.jpg?v=v12", "single-bottom": "assets/single-bottom.jpg?v=v12", "single-switch": "assets/single-switch.jpg?v=v12", "single-usb": "assets/single-usb.jpg?v=v12", "openwide": "assets/openwide.jpg?v=v12", "overhead": "assets/overhead.jpg?v=v12", "openside": "assets/openside.jpg?v=v12", "closedside": "assets/closedside.jpg?v=v12", "closedoblique": "assets/closedoblique.jpg?v=v12", "portmacro": "assets/portmacro.jpg?v=v12", "single-front@sky": "assets/single-front-sky.jpg?v=v12", "single-back@sky": "assets/single-back-sky.jpg?v=v12", "single-top@sky": "assets/single-top-sky.jpg?v=v12", "single-bottom@sky": "assets/single-bottom-sky.jpg?v=v12", "single-switch@sky": "assets/single-switch-sky.jpg?v=v12", "single-usb@sky": "assets/single-usb-sky.jpg?v=v12", "openwide@sky": "assets/openwide-sky.jpg?v=v12", "overhead@sky": "assets/overhead-sky.jpg?v=v12", "openside@sky": "assets/openside-sky.jpg?v=v12", "closedside@sky": "assets/closedside-sky.jpg?v=v12", "closedoblique@sky": "assets/closedoblique-sky.jpg?v=v12", "portmacro@sky": "assets/portmacro-sky.jpg?v=v12", "single-front@starlight": "assets/single-front-starlight.jpg?v=v12", "single-back@starlight": "assets/single-back-starlight.jpg?v=v12", "single-top@starlight": "assets/single-top-starlight.jpg?v=v12", "single-bottom@starlight": "assets/single-bottom-starlight.jpg?v=v12", "single-switch@starlight": "assets/single-switch-starlight.jpg?v=v12", "single-usb@starlight": "assets/single-usb-starlight.jpg?v=v12", "openwide@starlight": "assets/openwide-starlight.jpg?v=v12", "overhead@starlight": "assets/overhead-starlight.jpg?v=v12", "openside@starlight": "assets/openside-starlight.jpg?v=v12", "closedside@starlight": "assets/closedside-starlight.jpg?v=v12", "closedoblique@starlight": "assets/closedoblique-starlight.jpg?v=v12", "portmacro@starlight": "assets/portmacro-starlight.jpg?v=v12", "single-front@midnight": "assets/single-front-midnight.jpg?v=v12", "single-back@midnight": "assets/single-back-midnight.jpg?v=v12", "single-top@midnight": "assets/single-top-midnight.jpg?v=v12", "single-bottom@midnight": "assets/single-bottom-midnight.jpg?v=v12", "single-switch@midnight": "assets/single-switch-midnight.jpg?v=v12", "single-usb@midnight": "assets/single-usb-midnight.jpg?v=v12", "openwide@midnight": "assets/openwide-midnight.jpg?v=v12", "overhead@midnight": "assets/overhead-midnight.jpg?v=v12", "openside@midnight": "assets/openside-midnight.jpg?v=v12", "closedside@midnight": "assets/closedside-midnight.jpg?v=v12", "closedoblique@midnight": "assets/closedoblique-midnight.jpg?v=v12", "portmacro@midnight": "assets/portmacro-midnight.jpg?v=v12", "single-front-current": "assets/single-front-current.jpg?v=v12", "mute": "assets/mute.webp?v=v12", "active": "assets/active.webp?v=v12", "voice": "assets/voice.webp?v=v12", "acoustic": "assets/acoustic.webp?v=v12", "breath": "assets/breath.png?v=v12"}).map(([k,p])=>[k,new URL(p,document.baseURI).href]));window.RUTTA_THUMBS=Object.fromEntries(Object.entries({"single-front": "assets/thumb-single-front.jpg?v=v12", "single-back": "assets/thumb-single-back.jpg?v=v12", "single-top": "assets/thumb-single-top.jpg?v=v12", "single-bottom": "assets/thumb-single-bottom.jpg?v=v12", "single-switch": "assets/thumb-single-switch.jpg?v=v12", "single-usb": "assets/thumb-single-usb.jpg?v=v12", "openwide": "assets/thumb-openwide.jpg?v=v12", "overhead": "assets/thumb-overhead.jpg?v=v12", "openside": "assets/thumb-openside.jpg?v=v12", "closedside": "assets/thumb-closedside.jpg?v=v12", "closedoblique": "assets/thumb-closedoblique.jpg?v=v12", "portmacro": "assets/thumb-portmacro.jpg?v=v12", "single-front@sky": "assets/thumb-single-front-sky.jpg?v=v12", "single-back@sky": "assets/thumb-single-back-sky.jpg?v=v12", "single-top@sky": "assets/thumb-single-top-sky.jpg?v=v12", "single-bottom@sky": "assets/thumb-single-bottom-sky.jpg?v=v12", "single-switch@sky": "assets/thumb-single-switch-sky.jpg?v=v12", "single-usb@sky": "assets/thumb-single-usb-sky.jpg?v=v12", "openwide@sky": "assets/thumb-openwide-sky.jpg?v=v12", "overhead@sky": "assets/thumb-overhead-sky.jpg?v=v12", "openside@sky": "assets/thumb-openside-sky.jpg?v=v12", "closedside@sky": "assets/thumb-closedside-sky.jpg?v=v12", "closedoblique@sky": "assets/thumb-closedoblique-sky.jpg?v=v12", "portmacro@sky": "assets/thumb-portmacro-sky.jpg?v=v12", "single-front@starlight": "assets/thumb-single-front-starlight.jpg?v=v12", "single-back@starlight": "assets/thumb-single-back-starlight.jpg?v=v12", "single-top@starlight": "assets/thumb-single-top-starlight.jpg?v=v12", "single-bottom@starlight": "assets/thumb-single-bottom-starlight.jpg?v=v12", "single-switch@starlight": "assets/thumb-single-switch-starlight.jpg?v=v12", "single-usb@starlight": "assets/thumb-single-usb-starlight.jpg?v=v12", "openwide@starlight": "assets/thumb-openwide-starlight.jpg?v=v12", "overhead@starlight": "assets/thumb-overhead-starlight.jpg?v=v12", "openside@starlight": "assets/thumb-openside-starlight.jpg?v=v12", "closedside@starlight": "assets/thumb-closedside-starlight.jpg?v=v12", "closedoblique@starlight": "assets/thumb-closedoblique-starlight.jpg?v=v12", "portmacro@starlight": "assets/thumb-portmacro-starlight.jpg?v=v12", "single-front@midnight": "assets/thumb-single-front-midnight.jpg?v=v12", "single-back@midnight": "assets/thumb-single-back-midnight.jpg?v=v12", "single-top@midnight": "assets/thumb-single-top-midnight.jpg?v=v12", "single-bottom@midnight": "assets/thumb-single-bottom-midnight.jpg?v=v12", "single-switch@midnight": "assets/thumb-single-switch-midnight.jpg?v=v12", "single-usb@midnight": "assets/thumb-single-usb-midnight.jpg?v=v12", "openwide@midnight": "assets/thumb-openwide-midnight.jpg?v=v12", "overhead@midnight": "assets/thumb-overhead-midnight.jpg?v=v12", "openside@midnight": "assets/thumb-openside-midnight.jpg?v=v12", "closedside@midnight": "assets/thumb-closedside-midnight.jpg?v=v12", "closedoblique@midnight": "assets/thumb-closedoblique-midnight.jpg?v=v12", "portmacro@midnight": "assets/thumb-portmacro-midnight.jpg?v=v12", "single-front-current": "assets/thumb-single-front-current.jpg?v=v12"}).map(([k,p])=>[k,new URL(p,document.baseURI).href]));</script><script src="assets/viewer.js?v=v12"></script><script>(() => {
   "use strict";
 
   const asset = window.RUTTA_ASSETS;
@@ -245,14 +246,16 @@
   const mountedEl = (currentId, legacyId) => byId(currentId) || byId(legacyId);
   const all = (selector, scope = document) => [...scope.querySelectorAll(selector)];
   const svgIcon = name => `<svg class="glyph" aria-hidden="true"><use href="#${name}"/></svg>`;
-  const finishAsset = key => asset[finish === "silver" ? key : `${key}@${finish}`] || asset[key];
+  const finishKey = key => finish === "silver" ? key : `${key}@${finish}`;
+  const finishAsset = key => asset[finishKey(key)];
+  const thumb = window.RUTTA_THUMBS || asset;
 
   let finish = "silver";
   let active = 0;
   let currentSilverFront = false;
-  function productPhoto(key) {
-    if (key === "single-front" && finish === "silver" && currentSilverFront) return asset["single-front-current"];
-    return finishAsset(key);
+  function productKey(key) {
+    if (key === "single-front" && finish === "silver" && currentSilverFront) return "single-front-current";
+    return finishKey(key);
   }
   let mountedActive = 3;
   let tabs = [];
@@ -265,14 +268,10 @@
   let muted = false;
   let voice = false;
   let ignoreClickUntil = 0;
-  let stageLoadToken = 0;
-  let lightLoadToken = 0;
-  let mountedLoadToken = 0;
-  let tabsBuildToken = 0;
-  let mountedBuildToken = 0;
+
 
   all("[data-icon]").forEach(button => { button.innerHTML = svgIcon(button.dataset.icon); });
-  all("img[data-asset]").forEach(img => { img.loading = "eager"; img.decoding = "async"; img.src = asset[img.dataset.asset]; });
+  all("img[data-asset]:not(#modelFallback img)").forEach(img => { img.loading = "eager"; img.decoding = "async"; img.src = asset[img.dataset.asset]; });
 
   const photoDialog = byId("photoDialog");
   const modelDialog = byId("modelDialog");
@@ -291,32 +290,62 @@
       button.setAttribute("aria-pressed", String(button.dataset.finish === finish));
     });
     viewer?.setFinish(finish);
-    byId("modelFallback").querySelector("img").src = finishAsset("single-back");
+
     buildTabs();
     select(active, false);
     buildMountedGallery();
   }
 
-  function showAfterLoad(target, src, slot) {
-    const token = slot === "stage" ? ++stageLoadToken : slot === "light" ? ++lightLoadToken : ++mountedLoadToken;
-    const preload = new Image();
-    preload.loading = "eager";
-    preload.decoding = "async";
-    preload.addEventListener("load", () => {
-      const current = slot === "stage" ? stageLoadToken : slot === "light" ? lightLoadToken : mountedLoadToken;
-      if (token === current) target.src = src;
-    }, { once: true });
-    preload.addEventListener("error", () => {
-      const current = slot === "stage" ? stageLoadToken : slot === "light" ? lightLoadToken : mountedLoadToken;
-      if (token === current && !target.src) target.src = src;
-    }, { once: true });
-    preload.src = src;
+  function showPhoto(target, src, slot) {
+    if (target.src === src && target.complete && target.naturalWidth && target.style.visibility !== "hidden") return;
+    const host = target.closest(".stage, .rd-mounted-stage, #lightArea");
+    let notice = host.querySelector(".photo-notice");
+    if (!notice) {
+      notice = document.createElement("div");
+      notice.className = "photo-notice";
+      notice.dataset.slot = slot;
+      notice.innerHTML = '<span role="status"></span><button type="button" hidden>重新加载</button>';
+      host.append(notice);
+    }
+    const message = notice.querySelector("span");
+    const retry = notice.querySelector("button");
+    const load = () => {
+      notice.hidden = false;
+      retry.hidden = true;
+      message.textContent = "图片加载中…";
+      target.style.visibility = "hidden";
+      target.onload = () => {
+        if (!target.complete || target.currentSrc !== src || !target.naturalWidth) return;
+        target.style.visibility = "";
+        notice.hidden = true;
+      };
+      target.onerror = () => {
+        if (target.src !== src) return;
+        message.textContent = "图片未能加载";
+        retry.hidden = false;
+      };
+      target.src = src;
+    };
+    retry.onclick = event => { event.stopPropagation(); load(); };
+    load();
+  }
+
+  function setThumbnail(image, key, label) {
+    image.loading = "eager";
+    image.decoding = "async";
+    image.alt = "";
+    image.onerror = () => {
+      if (image.src !== asset[key]) image.src = asset[key];
+      else {
+        image.alt = label;
+        image.title = "点按查看此角度";
+      }
+    };
+    image.src = thumb[key];
   }
 
   function buildTabs() {
     const container = byId("thumbs");
-    const buildToken = ++tabsBuildToken;
-    const ready = [];
     const nextTabs = gallery.map(([key, label], index) => {
       const button = document.createElement("button");
       button.className = "thumb";
@@ -325,14 +354,7 @@
       const frame = document.createElement("span");
       frame.className = "img-ring";
       const image = new Image();
-      image.loading = "eager";
-      image.decoding = "async";
-      ready.push(new Promise(resolve => {
-        image.addEventListener("load", () => resolve(true), { once: true });
-        image.addEventListener("error", () => resolve(false), { once: true });
-      }));
-      image.src = productPhoto(key);
-      image.alt = "";
+      setThumbnail(image, productKey(key), label);
       frame.append(image);
       const text = document.createElement("span");
       text.textContent = label;
@@ -341,33 +363,19 @@
       return button;
     });
     tabs = nextTabs;
-    if (!container.childElementCount) container.replaceChildren(...nextTabs);
-    Promise.all(ready).then(results => {
-      if (buildToken !== tabsBuildToken || !results.every(Boolean)) return;
-      container.replaceChildren(...nextTabs);
-      select(active, false);
-    });
+    container.replaceChildren(...nextTabs);
   }
 
   function buildMountedGallery() {
     const container = mountedEl("mountedThumbs", "rdMountThumbs");
     if (!container) return;
-    const buildToken = ++mountedBuildToken;
-    const ready = [];
     const nextTabs = mountedGallery.map(([key, label], index) => {
       const button = document.createElement("button");
       button.className = "rd-mounted-thumb";
       button.type = "button";
       button.setAttribute("aria-label", `查看${label}安装图`);
       const image = new Image();
-      image.loading = "eager";
-      image.decoding = "async";
-      ready.push(new Promise(resolve => {
-        image.addEventListener("load", () => resolve(true), { once: true });
-        image.addEventListener("error", () => resolve(false), { once: true });
-      }));
-      image.src = finishAsset(key);
-      image.alt = "";
+      setThumbnail(image, finishKey(key), label);
       const text = document.createElement("span");
       text.textContent = label;
       button.append(image, text);
@@ -375,12 +383,7 @@
       return button;
     });
     mountedTabs = nextTabs;
-    if (!container.childElementCount) container.replaceChildren(...nextTabs);
-    Promise.all(ready).then(results => {
-      if (buildToken !== mountedBuildToken || !results.every(Boolean)) return;
-      container.replaceChildren(...nextTabs);
-      selectMounted(mountedActive, false);
-    });
+    container.replaceChildren(...nextTabs);
     selectMounted(mountedActive, false);
   }
 
@@ -393,17 +396,17 @@
     const frontToggle = byId("frontVariantToggle");
     frontToggle.hidden = !silverFront;
     frontToggle.textContent = currentSilverFront ? "看原始首图" : "看本版正面";
-    const photo = productPhoto(key);
+    const photo = asset[productKey(key)];
     const image = byId("stageImage");
     image.alt = `${finishLabels[finish]}，${label}。${caption}`;
-    showAfterLoad(image, photo, "stage");
+    showPhoto(image, photo, "stage");
     byId("frameTitle").textContent = label;
     byId("imageCount").textContent = `${String(active + 1).padStart(2, "0")} / 06`;
     byId("lightCount").textContent = `${String(active + 1).padStart(2, "0")} / 06`;
     byId("photoCaption").textContent = caption;
     byId("photoTitle").textContent = silverFront ? (original ? "正面 · 原始首图" : "正面 · 本版") : label;
     byId("lightAlbum").textContent = `商品大图 · ${finishLabels[finish]}`;
-    showAfterLoad(lightImage, photo, "light");
+    if (photoDialog.open) showPhoto(lightImage, photo, "light");
     lightImage.alt = image.alt;
     tabs.forEach((button, item) => {
       const selected = item === active;
@@ -427,7 +430,7 @@
     const image = mountedEl("mountedMainImage", "rdMountImage");
     if (!image) return;
     image.alt = `${finishLabels[finish]}，${label}。${caption}`;
-    showAfterLoad(image, finishAsset(key), "mounted");
+    showPhoto(image, finishAsset(key), "mounted");
     mountedEl("mountedTitle", "rdMountTitle").textContent = label;
     mountedEl("mountedCaption", "rdMountCaption").textContent = caption;
     mountedEl("mountedCount", "rdMountCount").textContent = `${String(mountedActive + 1).padStart(2, "0")} / 06`;
@@ -446,7 +449,7 @@
   all("[data-finish]").forEach(button => button.addEventListener("click", () => setFinish(button.dataset.finish)));
   byId("frontVariantToggle").addEventListener("click", () => {
     currentSilverFront = !currentSilverFront;
-    tabs[0].querySelector("img").src = productPhoto("single-front");
+    setThumbnail(tabs[0].querySelector("img"), productKey("single-front"), "正面");
     select(0, false);
   });
 
@@ -478,7 +481,7 @@
   let photoKind = "product";
   function chooseMountedPhoto() {
     const [key, label, caption] = mountedGallery[mountedActive];
-    lightImage.src = finishAsset(key);
+    showPhoto(lightImage, finishAsset(key), "light");
     lightImage.alt = label + "。" + caption;
     byId("photoTitle").textContent = label;
     byId("lightAlbum").textContent = "装机大图 · " + finishLabels[finish];
@@ -501,8 +504,8 @@
   function openPhoto() {
     if (performance.now() < ignoreClickUntil) return;
     photoKind = "product";
-    select(active, false);
     openDialog(photoDialog);
+    select(active, false);
     renderPhotoTransform();
   }
   stage.addEventListener("click", openPhoto);
@@ -521,7 +524,7 @@
   function bindPhotoGesture(element, lightbox) {
     let drag = null;
     element.addEventListener("pointerdown", event => {
-      if (!event.isPrimary || event.button !== 0) return;
+      if (!event.isPrimary || event.button !== 0 || event.target.closest(".photo-notice")) return;
       drag = { x: event.clientX, y: event.clientY, px: panX, py: panY };
       element.setPointerCapture(event.pointerId);
     });
@@ -568,6 +571,7 @@
     byId("stateOff").setAttribute("aria-pressed", String(muted));
   }
   function fallback() {
+    byId("modelFallback").querySelector("img").src = finishAsset("single-back");
     byId("modelFallback").hidden = false;
     byId("modelHint").hidden = true;
     byId("modelTools").style.display = "none";
@@ -679,10 +683,7 @@
   window.addEventListener("resize", () => { renderPhotoTransform(); setActiveNav(); });
 
   const finishFromLink = new URLSearchParams(location.search).get("finish");
-  buildTabs();
-  buildMountedGallery();
-  select(0, false);
-  if (finishFromLink && Object.hasOwn(finishLabels, finishFromLink)) setFinish(finishFromLink);
+  setFinish(Object.hasOwn(finishLabels, finishFromLink) ? finishFromLink : "silver");
   setActiveNav();
 })();
 </script>
