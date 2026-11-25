@@ -2,7 +2,7 @@
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const V = '?v=logo-left-1';
+  const V = '?v=pair-center-1';
   const cache = new Map();
   const load = src => {
     if (cache.has(src)) return cache.get(src);

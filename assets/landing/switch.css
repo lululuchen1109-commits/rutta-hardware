@@ -59,7 +59,7 @@
 }
 .rb-switch .rb-switch-dim {
   display: block; position: absolute; inset: 0; width: 100%; height: 100%; margin: 0;
-  pointer-events: none; opacity: 0; clip-path: ellipse(1.3% 3.2% at 26.954% 16.505%);
+  pointer-events: none; opacity: 0; clip-path: ellipse(1.3% 3.2% at 23.821% 16.384%);
 }
 .rb-switch[data-state="ready"] .rb-switch-dim { animation: rb-sw-breathe 4s ease-in-out infinite }
 @keyframes rb-sw-breathe { 0%,100% { opacity: .08 } 52% { opacity: .86 } }
