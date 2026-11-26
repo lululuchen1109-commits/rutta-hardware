@@ -129,9 +129,11 @@
 
     lastSignup = {
       type: 'waitlist',
+      name: (form.elements.name?.value || '').trim(),
       email: email.value.trim(),
       mac: mac.value,
       useCase: useCase.value,
+      note: (form.elements.note?.value || '').trim(),
       prototype: Boolean(form.elements.prototype?.checked),
       consent: true,
       headline: variant,

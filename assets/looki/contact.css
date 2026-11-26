@@ -1,0 +1,208 @@
+/* ---------- standalone contact & waitlist page ---------- */
+.lk-contact-body {
+  background: #f5f0e8;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+.ct-header {
+  border-bottom: 1px solid #e4ddd2;
+  background: rgba(245, 240, 232, .92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.ct-header-inner {
+  max-width: 1280px;
+  margin: auto;
+  height: 68px;
+  padding: 0 clamp(18px, 4vw, 48px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.ct-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 640;
+  letter-spacing: -.02em;
+  color: #171819;
+  white-space: nowrap;
+}
+.ct-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.5vw, 32px);
+}
+.ct-nav a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 540;
+  color: #46484b;
+  white-space: nowrap;
+}
+.ct-nav a:hover { color: #171819; text-decoration: underline; text-underline-offset: 4px; }
+
+.ct-main {
+  flex: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  padding: clamp(32px, 4.8vw, 68px) clamp(18px, 4vw, 48px) clamp(56px, 7vw, 96px);
+}
+.ct-stage {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(380px, 1fr);
+  gap: clamp(32px, 5.5vw, 84px);
+  align-items: start;
+}
+
+.ct-info h1 {
+  margin-top: 14px;
+  font-size: clamp(36px, 4.2vw, 60px);
+  line-height: 1.04;
+  letter-spacing: -.04em;
+  font-weight: 620;
+  color: #171819;
+  text-wrap: balance;
+}
+.ct-lead {
+  margin-top: 16px;
+  max-width: 46ch;
+  font-size: clamp(16px, 1.25vw, 19px);
+  line-height: 1.54;
+  color: #54514c;
+}
+
+.ct-hardware-card {
+  margin-top: 28px;
+  padding: 26px 24px 18px;
+  border-radius: 16px;
+  background: radial-gradient(ellipse at 65% 24%, #ffffff 0%, #ede9e0 82%);
+  border: 1px solid #e4ded3;
+}
+.ct-hardware-card img {
+  display: block;
+  width: min(90%, 380px);
+  height: auto;
+  margin: 0 auto 16px;
+  transform: rotate(-6deg);
+  filter: drop-shadow(0 16px 10px rgb(48 38 28 / .2));
+}
+.ct-hardware-card figcaption {
+  font-size: 12px;
+  color: #5d5a54;
+  text-align: center;
+  line-height: 1.45;
+}
+
+.ct-facts {
+  margin: 28px 0 0;
+  border-top: 1px solid #dfd8cc;
+}
+.ct-facts > div {
+  padding: 15px 0;
+  border-bottom: 1px solid #dfd8cc;
+}
+.ct-facts dt {
+  font-size: 14px;
+  font-weight: 620;
+  color: #171819;
+  margin-bottom: 4px;
+}
+.ct-facts dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #585550;
+}
+.ct-facts a {
+  color: #8a4a24;
+  text-underline-offset: 3px;
+  font-weight: 560;
+}
+
+.ct-card {
+  position: sticky;
+  top: 90px;
+}
+.ct-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 22px;
+  border-radius: 12px;
+  background: #ffffff12;
+}
+.ct-tabs button {
+  border: 0;
+  border-radius: 9px;
+  padding: 10px 12px;
+  background: transparent;
+  color: #c5c8ce;
+  font-size: 13px;
+  font-weight: 580;
+  transition: background-color .18s, color .18s;
+}
+.ct-tabs button[aria-selected=true] {
+  background: #fff;
+  color: #171819;
+}
+
+.ct-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.ct-opt {
+  color: #93969c;
+  font-size: 12px;
+  font-weight: 450;
+}
+.lk-research-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ffffff3d;
+  border-radius: 10px;
+  background: #fff;
+  color: #191919;
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.48;
+  resize: vertical;
+  min-height: 104px;
+}
+.lk-research-field textarea::placeholder { color: #86898e; }
+.lk-research-field textarea:focus { outline: 3px solid #ff9d4c; outline-offset: 2px; border-color: transparent; }
+
+.ct-after-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 22px;
+}
+.ct-after-actions .lk-share-btn {
+  width: 100%;
+  min-height: 42px;
+}
+
+@media (max-width: 900px) {
+  .ct-stage { grid-template-columns: 1fr; gap: 28px; }
+  .ct-card { position: static; }
+  .ct-hardware-card { display: none; }
+}
+@media (max-width: 560px) {
+  .ct-header-inner { height: 56px; padding-inline: 16px; gap: 10px; }
+  .ct-brand { font-size: 17px; }
+  .ct-brand img { width: 16px; height: 20px; }
+  .ct-nav { gap: 12px; }
+  .ct-nav a { font-size: 12.5px; }
+  .ct-two-col { grid-template-columns: 1fr; gap: 0; }
+}

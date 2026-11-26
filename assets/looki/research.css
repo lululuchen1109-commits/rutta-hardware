@@ -58,6 +58,17 @@
   border-radius: 50%;
   background: #e56f35;
 }
+.lk-research-contact {
+  margin-top: 18px;
+  font-size: 13px;
+  color: #5e5a54;
+}
+.lk-research-contact a {
+  color: #8a4a24;
+  font-weight: 580;
+  text-underline-offset: 3px;
+}
+.lk-research-contact a:hover { color: #191919; }
 .lk-research-product {
   display: block;
   width: min(86%, 360px);
