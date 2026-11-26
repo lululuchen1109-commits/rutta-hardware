@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="assets/looki/hero.css">
 <link rel="stylesheet" href="assets/looki/story.css">
 <link rel="stylesheet" href="assets/looki/hardware.css?v=switch-axis-26">
+<link rel="stylesheet" href="assets/looki/research.css">
 </head>
 <body id="top"><a class="lk-skip" href="#story">Skip to content</a>
 <div class="lk-announcement"><a href="#unboxing">Inside the box with Rutta Bar <span>Watch the 9-second film ↗</span></a></div>
@@ -16,7 +17,7 @@
   <header class="lk-topbar">
     <a class="lk-brand" href="#overview" aria-label="Rutta Bar home"><img alt="" width="22" height="26" src="assets/landing/monogram.svg"><span>Rutta Bar</span></a>
     <nav class="lk-links" id="lk-navigation" aria-label="Page navigation">
-      <a href="#story">How it works</a><a href="#scenes">Use cases</a><a href="#hardware">Hardware</a><a href="#unboxing">Unboxing</a>
+      <a href="#story">How it works</a><a href="#scenes">Use cases</a><a href="#hardware">Hardware</a><a href="#research">Join research</a>
     </nav>
     <a class="lk-gallery" href="product.html#gallery">Product gallery <span aria-hidden="true">↗</span></a>
     <button class="lk-nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="lk-navigation"><span></span><span></span></button>
@@ -137,6 +138,34 @@
     <article><div class="lk-person-photo"><img src="assets/v2/persona-teacher-720.webp" alt="Illustrated portrait of a university tutor" width="720" height="900" loading="lazy"><strong>University tutor</strong></div><div class="lk-person-note"><small>Before the next lesson</small><p>Leave the table with the next problem to try, written down in the student’s own words.</p><a href="#scenes" data-tutor>See the tutorial ↗</a></div></article>
   </div>
 </section>
+<section id="research" class="lk-research" aria-labelledby="research-title">
+  <div class="lk-research-copy">
+    <p class="lk-research-kicker"><span aria-hidden="true"></span> Early concept research</p>
+    <h2 id="research-title">Help decide what Rutta Bar should hear next.</h2>
+    <p>Tell us what you record at your desk. We’re shaping the next MacBook Air microphone around real conversations, reviews and calls.</p>
+    <ul class="lk-research-points" aria-label="Research invitation details">
+      <li>Choose one setup</li><li>Share an email</li><li>Hear when the next prototype is ready</li>
+    </ul>
+  </div>
+  <form class="lk-research-form" data-research-form novalidate>
+    <fieldset>
+      <legend>Where would you use it?</legend>
+      <div class="lk-research-choices" role="group" aria-label="Choose a use case">
+        <button type="button" data-use-case="Design reviews" aria-pressed="false">Design reviews</button>
+        <button type="button" data-use-case="User interviews" aria-pressed="false">User interviews</button>
+        <button type="button" data-use-case="Remote calls" aria-pressed="false">Remote calls</button>
+        <button type="button" data-use-case="Teaching or tutoring" aria-pressed="false">Teaching or tutoring</button>
+      </div>
+      <input type="hidden" name="useCase" required>
+    </fieldset>
+    <label class="lk-research-email">Email address
+      <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required>
+    </label>
+    <label class="lk-research-check"><input type="checkbox" name="prototype"> I’d like to hear about an early physical prototype.</label>
+    <button class="lk-research-submit" type="submit">Join the research <span aria-hidden="true">↗</span></button>
+    <p class="lk-research-note" data-research-note role="status" aria-live="polite">Concept research · 2 minutes · No purchase required.</p>
+  </form>
+</section>
 <section id="hardware" class="lk-hardware" aria-labelledby="lk-hardware-title">
   <header class="lk-hw-heading">
     <h2 id="lk-hardware-title">A closer look at Rutta Bar</h2>
@@ -225,7 +254,7 @@
 </main>
 <footer class="lk-footer"><div class="lk-foot-inner">
   <div class="lk-foot-brand"><img src="assets/landing/monogram.svg" width="28" height="34" alt=""> Rutta Bar</div>
-  <div class="lk-foot-links"><div><strong>Experience</strong><a href="#story">Companion demo</a><a href="#scenes">Use cases</a><a href="#unboxing">Unboxing film</a></div><div><strong>Hardware</strong><a href="product.html#gallery">Product gallery</a><a href="#hardware">Explore Rutta Bar</a><a href="#specs">Specifications</a></div></div>
+  <div class="lk-foot-links"><div><strong>Experience</strong><a href="#story">Companion demo</a><a href="#scenes">Use cases</a><a href="#unboxing">Unboxing film</a></div><div><strong>Hardware</strong><a href="product.html#gallery">Product gallery</a><a href="#hardware">Explore Rutta Bar</a><a href="#specs">Specifications</a></div><div><strong>Stay close</strong><a href="#research">Join the research</a><a href="#research">Share your setup</a></div></div>
   <p class="lk-foot-legal">Rutta Bar · Industrial design concept</p><a class="lk-foot-top" href="#top">Back to top ↑</a>
 </div></footer>
 <script defer src="assets/looki/hero.js"></script>
@@ -233,4 +262,5 @@
 <script defer src="assets/looki/sections.js"></script>
 <script defer src="assets/looki/hardware.js?v=switch-axis-26"></script>
 <script defer src="assets/landing/switch.js?v=switch-axis-26"></script>
-<script defer src="assets/landing/explore.js?v=switch-axis-26"></script></body></html>
+<script defer src="assets/landing/explore.js?v=switch-axis-26"></script>
+<script defer src="assets/looki/research.js"></script></body></html>
