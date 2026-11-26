@@ -11,7 +11,7 @@
   const views = {
     home: {
       angle: -0.50, pitch: 0.51, magnification: 1.27, target: [-2.2, 16, 0],
-      text: "Rutta Bar in silver", photo: "hero-silver.webp?v=pair-center-1",
+      text: "Rutta Bar in silver", photo: "hero-silver.webp?v=switch-axis-26",
       alt: "Rutta Bar in silver, seen from above"
     },
     ports: {
@@ -25,9 +25,9 @@
       photo: "explore-plug.webp?v=pair-center-1", alt: "The reversible USB-C plug on the rear of the aluminum body"
     },
     mute: {
-      angle: -0.16, pitch: 0.19, magnification: 2.37, target: [-5.5, 26.7, 0],
+      angle: 0, pitch: 0.32, magnification: 1.95, target: [-2.8, 26, 0.65],
       text: "Slide the switch to mute. An orange mark appears in the track so you can see its position.",
-      photo: "explore-mute.webp?v=pair-center-1", alt: "The mute switch at its left stop with an orange marker in the track"
+      photo: "explore-mute.webp?v=switch-axis-26", alt: "The mute switch at its left stop with an orange marker in the track"
     }
   };
   let selected = "home";
@@ -78,7 +78,7 @@
     if (loading) return loading;
     const scriptReady = window.RuttaViewer ? Promise.resolve() : new Promise((resolve, reject) => {
       const script = document.createElement("script");
-      script.src = "assets/landing/explore-viewer.js?v=pair-center-1";
+      script.src = "assets/landing/explore-viewer.js?v=switch-axis-26";
       script.onload = resolve;
       script.onerror = reject;
       document.head.append(script);

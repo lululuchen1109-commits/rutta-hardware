@@ -6,7 +6,9 @@
   const finishHex = Object.freeze({"silver":"#c7c9ca","sky":"#aec3d7","starlight":"#d6c9ad","midnight":"#374454"});
   const positions = {
     home: [-0.27, 0.48],
-    front: [-0.05, 0.32],
+    // In this orthographic view, horizontal position depends only on the
+    // body's long axis, so the plug, top markings and switch can be compared.
+    front: [0, 0.43],
     back: [Math.PI - 0.44, 0.50],
     top: [-0.24, 1.48],
     bottom: [Math.PI - 0.88, -1.14],
