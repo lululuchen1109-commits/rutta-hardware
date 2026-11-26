@@ -79,8 +79,8 @@
         if (request !== change) return;
         photo.src = url;
         const name = button.getAttribute('aria-label');
-        photo.alt = name + ' Rutta Bar, viewed from its outer face.';
-        label.textContent = name;
+        photo.alt = 'R1 in ' + name + ', viewed from its outer face.';
+        label.textContent = 'R1 · ' + name;
         hardware.querySelector('#finish').dataset.finish = color;
         finishes.forEach(item => item.setAttribute('aria-pressed',String(item === button)));
       } catch {
@@ -130,7 +130,9 @@
 
   const film = hardware.querySelector('#unboxing-film');
   const sourceError = hardware.querySelector('.unboxing-error');
-  const onMediaError = () => {sourceError.hidden = false;};
-  film.addEventListener('error', onMediaError);
-  film.querySelector('source').addEventListener('error', onMediaError);
+  if (film && sourceError) {
+    const onMediaError = () => {sourceError.hidden = false;};
+    film.addEventListener('error', onMediaError);
+    film.querySelector('source')?.addEventListener('error', onMediaError);
+  }
 })();

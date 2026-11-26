@@ -28,11 +28,11 @@
   }
   const attribution = () => store.get('rutta-attribution', { referrer: document.referrer || '' });
 
-  /* Optional Hero headline A/B testing via ?h=a|b|c (defaults cleanly to a) */
+  /* Optional Hero headline A/B testing via ?h=a|b|c */
   const headlines = {
-    a: 'The mic your MacBook Air was missing.',
-    b: 'Clear voices from across the table.',
-    c: 'A better microphone that lives on the side of your Mac.'
+    a: 'Never lose a spoken decision.',
+    b: 'Turn desk talk into team knowledge and tasks.',
+    c: 'Always-on team memory for the side of your Mac.'
   };
   const requested = params.get('h');
   let variant = headlines[requested] ? requested : 'a';
@@ -49,152 +49,232 @@
     el.addEventListener('click', () => track('cta_click', { cta: el.dataset.track, variant }));
   });
 
-  /* Waitlist & optional post-signup survey */
-  const form = document.querySelector('[data-research-form]');
-  if (!form) return;
-
-  const choices = [...form.querySelectorAll('[data-use-case]')];
-  const useCase = form.elements.useCase;
-  const mac = form.elements.mac;
-  const email = form.elements.email;
-  const consent = form.elements.consent;
-  const note = form.querySelector('[data-research-note]');
-  const submitBtn = form.querySelector('.lk-research-submit');
-  const thanks = document.querySelector('[data-research-thanks]');
-  const thanksStatus = document.querySelector('[data-thanks-status]');
-  const surveyForm = document.querySelector('[data-survey-form]');
-  const shareBtn = document.querySelector('[data-share-copy]');
-  const endpoint = (form.dataset.endpoint || '').trim();
-  let lastSignup = null;
-
-  function setNote(message, tone) {
-    if (!note) return;
-    note.textContent = message;
-    if (tone) note.dataset.tone = tone;
-    else delete note.dataset.tone;
-  }
-
-  async function sendPayload(payload) {
-    if (endpoint) {
-      const res = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      if (!res.ok) throw new Error('Request failed');
-      return 'remote';
-    }
-    const list = store.get('rutta-waitlist-v2', []);
-    list.push(payload);
-    store.set('rutta-waitlist-v2', list);
-    return 'local';
-  }
-
-  let started = false;
-  form.addEventListener('focusin', () => {
-    if (!started) {
-      started = true;
-      track('waitlist_start', { variant });
-    }
-  });
-
-  choices.forEach(choice => choice.addEventListener('click', () => {
-    choices.forEach(button => button.setAttribute('aria-pressed', String(button === choice)));
-    useCase.value = choice.dataset.useCase;
-    setNote('No purchase required · Milestones only, no spam.');
-  }));
-
-  form.addEventListener('submit', async event => {
-    event.preventDefault();
-    if (!useCase.value) {
-      setNote('Choose where you’d use Rutta Bar most.', 'error');
-      choices[0].focus();
-      return;
-    }
-    if (!mac.value) {
-      setNote('Choose which Mac you use.', 'error');
-      mac.focus();
-      return;
-    }
-    if (!email.value.trim() || !email.checkValidity()) {
-      setNote('Enter a valid email address so we know where to reach you.', 'error');
-      email.focus();
-      return;
-    }
-    if (!consent.checked) {
-      setNote('Tick the consent box so we can send you Rutta Bar updates.', 'error');
-      consent.focus();
-      return;
-    }
-
-    lastSignup = {
-      type: 'waitlist',
-      name: (form.elements.name?.value || '').trim(),
-      email: email.value.trim(),
-      mac: mac.value,
-      useCase: useCase.value,
-      note: (form.elements.note?.value || '').trim(),
-      prototype: Boolean(form.elements.prototype?.checked),
-      consent: true,
-      headline: variant,
-      page: location.pathname,
-      savedAt: new Date().toISOString(),
-      ...attribution()
-    };
-
-    submitBtn.disabled = true;
-    try {
-      const mode = await sendPayload(lastSignup);
-      track('waitlist_submit', { variant, mac: mac.value, useCase: useCase.value });
-      form.hidden = true;
-      if (thanks) {
-        if (thanksStatus) {
-          thanksStatus.textContent = mode === 'remote'
-            ? 'We’ll reach out when prototype testing and early pricing open.'
-            : 'Preview mode: saved in this browser until the live waitlist backend is connected.';
+  /* Sanitize rich-text HTML to safe minimal inline & list markup */
+  function sanitizeRichHtml(raw) {
+    const tpl = document.createElement('template');
+    tpl.innerHTML = raw;
+    const allowed = new Set(['B', 'STRONG', 'I', 'EM', 'U', 'BR', 'P', 'DIV', 'UL', 'OL', 'LI']);
+    const walk = node => {
+      [...node.childNodes].forEach(child => {
+        if (child.nodeType === 1) {
+          if (!allowed.has(child.tagName)) {
+            const text = document.createTextNode(child.textContent || '');
+            child.replaceWith(text);
+          } else {
+            [...child.attributes].forEach(attr => child.removeAttribute(attr.name));
+            walk(child);
+          }
         }
-        thanks.hidden = false;
-        thanks.focus();
+      });
+    };
+    walk(tpl.content);
+    return tpl.innerHTML.trim();
+  }
+
+  /* Bind every waitlist form on the page */
+  document.querySelectorAll('[data-research-form]').forEach(form => {
+    const card = form.closest('.lk-research-card');
+    const choices = [...form.querySelectorAll('[data-use-case]')];
+    const useCase = form.elements.useCase;
+    const otherWrap = form.querySelector('[data-other-wrap]');
+    const otherInput = form.elements.otherScenario;
+    const email = form.elements.email;
+    const consent = form.elements.consent;
+    const note = form.querySelector('[data-research-note]');
+    const submitBtn = form.querySelector('.lk-research-submit');
+    const thanks = card?.querySelector('[data-research-thanks]');
+    const thanksStatus = card?.querySelector('[data-thanks-status]');
+    const surveyForm = card?.querySelector('[data-survey-form]');
+    const shareBtn = card?.querySelector('[data-share-copy]');
+    const endpoint = (form.dataset.endpoint || '').trim();
+    let lastSignup = null;
+
+    /* Rich Text Editor setup */
+    const rteRoot = form.querySelector('[data-rte]');
+    const rteEditor = rteRoot?.querySelector('.lk-rte-editor');
+    const rteToolbarButtons = rteRoot ? [...rteRoot.querySelectorAll('[data-cmd]')] : [];
+
+    function syncRte() {
+      if (!rteEditor) return;
+      const text = (rteEditor.innerText || '').trim();
+      if (!text) rteEditor.innerHTML = '';
+      if (form.elements.notesText) form.elements.notesText.value = text;
+      if (form.elements.notesHtml) form.elements.notesHtml.value = text ? sanitizeRichHtml(rteEditor.innerHTML) : '';
+    }
+
+    function updateToolbarState() {
+      rteToolbarButtons.forEach(btn => {
+        const cmd = btn.dataset.cmd;
+        if (cmd === 'removeFormat') return;
+        try {
+          btn.setAttribute('aria-pressed', String(document.queryCommandState(cmd)));
+        } catch {}
+      });
+    }
+
+    if (rteEditor) {
+      rteToolbarButtons.forEach(btn => {
+        btn.addEventListener('mousedown', e => e.preventDefault());
+        btn.addEventListener('click', () => {
+          rteEditor.focus();
+          const cmd = btn.dataset.cmd;
+          if (cmd === 'removeFormat') {
+            document.execCommand('removeFormat', false);
+            const plain = rteEditor.innerText;
+            rteEditor.textContent = plain;
+          } else {
+            document.execCommand(cmd, false);
+          }
+          syncRte();
+          updateToolbarState();
+        });
+      });
+      rteEditor.addEventListener('input', () => { syncRte(); updateToolbarState(); });
+      rteEditor.addEventListener('keyup', updateToolbarState);
+      rteEditor.addEventListener('mouseup', updateToolbarState);
+    }
+
+    function setNote(message, tone) {
+      if (!note) return;
+      note.textContent = message;
+      if (tone) note.dataset.tone = tone;
+      else delete note.dataset.tone;
+    }
+
+    async function sendPayload(payload) {
+      if (endpoint) {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok) throw new Error('Request failed');
+        return 'remote';
       }
-    } catch {
-      setNote('Something went wrong. Please try again in a moment.', 'error');
-    } finally {
-      submitBtn.disabled = false;
+      const list = store.get('rutta-waitlist-r1', []);
+      list.push(payload);
+      store.set('rutta-waitlist-r1', list);
+      return 'local';
+    }
+
+    let started = false;
+    form.addEventListener('focusin', () => {
+      if (!started) {
+        started = true;
+        track('waitlist_start', { variant });
+      }
+    });
+
+    choices.forEach(choice => choice.addEventListener('click', () => {
+      choices.forEach(button => button.setAttribute('aria-pressed', String(button === choice)));
+      useCase.value = choice.dataset.useCase;
+      const isOther = useCase.value === 'Others';
+      if (otherWrap) {
+        otherWrap.hidden = !isOther;
+        if (isOther && otherInput) otherInput.focus();
+      }
+      setNote('Concept validation · No purchase or pre-order required.');
+    }));
+
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      syncRte();
+
+      if (!email.value.trim() || !email.checkValidity()) {
+        setNote('Enter a valid work email so we know where to reach you.', 'error');
+        email.focus();
+        return;
+      }
+      if (!useCase.value) {
+        setNote('Choose the primary scenario where R1 would help most.', 'error');
+        choices[0]?.focus();
+        return;
+      }
+      if (useCase.value === 'Others' && otherInput && !otherInput.value.trim()) {
+        setNote('Tell us briefly what scenario you have in mind.', 'error');
+        otherInput.focus();
+        return;
+      }
+      if (!consent.checked) {
+        setNote('Tick the consent box so we can send you R1 updates.', 'error');
+        consent.focus();
+        return;
+      }
+
+      lastSignup = {
+        type: 'waitlist',
+        model: 'R1',
+        email: email.value.trim(),
+        useCase: useCase.value === 'Others' && otherInput?.value.trim()
+          ? 'Others: ' + otherInput.value.trim()
+          : useCase.value,
+        name: (form.elements.name?.value || '').trim(),
+        teamSize: form.elements.teamSize?.value || '',
+        mac: form.elements.mac?.value || '',
+        notesText: (form.elements.notesText?.value || '').trim(),
+        notesHtml: (form.elements.notesHtml?.value || '').trim(),
+        consent: true,
+        headline: variant,
+        page: location.pathname,
+        savedAt: new Date().toISOString(),
+        ...attribution()
+      };
+
+      submitBtn.disabled = true;
+      try {
+        const mode = await sendPayload(lastSignup);
+        track('waitlist_submit', { variant, useCase: useCase.value, teamSize: lastSignup.teamSize });
+        form.hidden = true;
+        if (thanks) {
+          if (thanksStatus) {
+            thanksStatus.textContent = mode === 'remote'
+              ? 'We’ll reach out with R1 validation updates and optional 15-min team chats.'
+              : 'Preview mode: saved in this browser until the live waitlist backend is connected.';
+          }
+          thanks.hidden = false;
+          thanks.focus();
+        }
+      } catch {
+        setNote('Something went wrong. Please try again in a moment.', 'error');
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+
+    if (surveyForm) {
+      surveyForm.addEventListener('submit', async event => {
+        event.preventDefault();
+        const data = Object.fromEntries(new FormData(surveyForm).entries());
+        if (!Object.values(data).some(v => String(v).trim())) return;
+        try {
+          await sendPayload({
+            type: 'survey',
+            model: 'R1',
+            email: lastSignup?.email || '',
+            ...data,
+            savedAt: new Date().toISOString()
+          });
+        } catch {}
+        track('survey_submit', { priceReaction: data.priceReaction || '', interviewPref: data.interviewPref || '' });
+        const done = document.createElement('p');
+        done.className = 'lk-thanks-sub';
+        done.textContent = 'Thank you—this directly guides what we build next.';
+        surveyForm.replaceWith(done);
+      });
+    }
+
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        const code = lastSignup ? btoa(lastSignup.email).replace(/[^a-z0-9]/gi, '').slice(0, 8) : 'team';
+        const url = location.origin + location.pathname + '?ref=' + code;
+        try {
+          await navigator.clipboard.writeText(url);
+          shareBtn.textContent = 'Link copied ✓';
+        } catch {
+          shareBtn.textContent = url;
+        }
+        track('share_copy');
+      });
     }
   });
-
-  if (surveyForm) {
-    surveyForm.addEventListener('submit', async event => {
-      event.preventDefault();
-      const data = Object.fromEntries(new FormData(surveyForm).entries());
-      if (!Object.values(data).some(v => String(v).trim())) return;
-      try {
-        await sendPayload({
-          type: 'survey',
-          email: lastSignup?.email || '',
-          ...data,
-          savedAt: new Date().toISOString()
-        });
-      } catch {}
-      track('survey_submit', { price: data.price || '', currentSetup: data.currentSetup || '' });
-      const done = document.createElement('p');
-      done.className = 'lk-thanks-sub';
-      done.textContent = 'Thank you—that helps shape the first batch.';
-      surveyForm.replaceWith(done);
-    });
-  }
-
-  if (shareBtn) {
-    shareBtn.addEventListener('click', async () => {
-      const code = lastSignup ? btoa(lastSignup.email).replace(/[^a-z0-9]/gi, '').slice(0, 8) : 'friend';
-      const url = location.origin + location.pathname + '?ref=' + code;
-      try {
-        await navigator.clipboard.writeText(url);
-        shareBtn.textContent = 'Link copied ✓';
-      } catch {
-        shareBtn.textContent = url;
-      }
-      track('share_copy');
-    });
-  }
 })();

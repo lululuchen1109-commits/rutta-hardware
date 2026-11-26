@@ -11,8 +11,8 @@
   const views = {
     home: {
       angle: -0.50, pitch: 0.51, magnification: 1.27, target: [-2.2, 16, 0],
-      text: "Rutta Bar in silver", photo: "hero-silver.webp?v=studio-v7",
-      alt: "Rutta Bar in silver, seen from above"
+      text: "R1 in silver", photo: "hero-silver.webp?v=studio-v7",
+      alt: "R1 in silver, seen from above"
     },
     ports: {
       angle: -0.78, pitch: 0.24, magnification: 1.65, target: [-4.2, 7.8, 0],

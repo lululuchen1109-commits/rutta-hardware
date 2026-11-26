@@ -1,9 +1,9 @@
 (() => {
-  /* Three hardware details strip */
+  /* Three core principles strip */
   const detailCopy = {
-    plug: 'One integrated USB-C plug carries power from your Mac and audio back to it. No cable across the table, no battery to charge.',
-    inlets: 'Two Ø 0.40 mm acoustic inlets—one centered on the short end, one mid-side 15.5 mm away—create a 15.7 mm physical dual-mic baseline.',
-    mute: 'Slide the centered aluminum switch back to mute. The top light goes dark and an orange mechanical marker appears in the track.'
+    always: 'Most real decisions happen in two-minute desk chats, never when someone opens a recorder. R1 stays online whenever your Mac is open—no start button, no battery to charge.',
+    voiceprint: 'Designed to recognize enrolled teammates so R1 knows who said what and who owns each task—while discarding visitors and non-enrolled colleagues.',
+    agents: 'Confirmed decisions and tasks stream straight into your knowledge base, task tracker, and AI Agents via MCP, API, and CLI—never locked inside our app.'
   };
   const detailButtons = [...document.querySelectorAll('[data-detail]')];
   const explainer = document.getElementById('detail-explainer');
@@ -21,17 +21,17 @@
   const privacyStates = {
     ready: {
       src: 'assets/landing/privacy-ready.webp?v=studio-v7',
-      alt: 'Close-up of Rutta Bar ready: top status light glowing green next to the R mark, aluminum switch in the open position.',
-      caption: 'Green breathing light on top · Switch open, microphone ready.'
+      alt: 'Close-up of R1 ready: top status light glowing green next to the R mark, aluminum switch in the open position.',
+      caption: 'Green breathing light on top · Switch open, R1 ready.'
     },
     input: {
       src: 'assets/landing/privacy-input.webp?v=studio-v7',
-      alt: 'Close-up of Rutta Bar sending audio: top status light glowing solid amber next to the R mark, aluminum switch in the open position.',
-      caption: 'Solid amber light on top · Audio is actively going to your Mac.'
+      alt: 'Close-up of R1 active: top status light glowing solid amber next to the R mark, aluminum switch in the open position.',
+      caption: 'Solid amber light on top · Enrolled speech active.'
     },
     mute: {
       src: 'assets/landing/privacy-mute.webp?v=studio-v7',
-      alt: 'Close-up of Rutta Bar muted: top status light off and aluminum switch slid back to reveal an orange mechanical marker.',
+      alt: 'Close-up of R1 muted: top status light off and aluminum switch slid back to reveal an orange mechanical marker.',
       caption: 'Light off · Orange mechanical marker visible in the switch track.'
     }
   };
@@ -56,18 +56,6 @@
     });
   }
 
-  /* Auto-play unboxing video when clicking unboxing links */
-  const film = document.querySelector('#unboxing-film');
-  if (film) {
-    for (const link of document.querySelectorAll('a[href="#unboxing"]')) {
-      link.addEventListener('click', event => {
-        if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
-        if (film.ended) film.currentTime = 0;
-        film.play().catch(() => {});
-      });
-    }
-  }
-
   /* Privacy notice dialog */
   const dialog = document.getElementById('privacy-dialog');
   if (dialog) {
@@ -89,12 +77,14 @@
   /* Backwards-compatible hash anchors */
   const equivalents = {
     research: 'waitlist',
-    story: 'why',
-    how: 'why',
-    stories: 'why',
-    scenes: 'why',
-    notes: 'why',
+    why: 'scenarios',
+    story: 'scenarios',
+    how: 'workflow',
+    stories: 'scenarios',
+    scenes: 'scenarios',
+    notes: 'workflow',
     people: 'privacy',
+    unboxing: 'hardware',
     more: 'journal',
     main: 'overview'
   };
