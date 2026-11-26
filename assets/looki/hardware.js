@@ -70,7 +70,7 @@
   let change = 0;
   finishes.forEach(button => {
     const color = button.dataset.tone;
-    const url = 'assets/landing/hero-' + color + '.webp?v=switch-axis-26';
+    const url = 'assets/landing/hero-' + color + '.webp?v=studio-v7';
     button.addEventListener('pointerenter', () => preload(url).catch(() => {}), {once:true});
     button.addEventListener('click', async () => {
       const request = ++change;
@@ -93,7 +93,7 @@
   let shown = 0;
   async function fitTo(n) {
     const request = ++sequence;
-    const url = 'assets/landing/fit-' + String(n).padStart(2, '0') + '.webp?v=switch-axis-26';
+    const url = 'assets/landing/fit-' + String(n).padStart(2, '0') + '.webp?v=studio-v7';
     try {
       await preload(url);
       if (request !== sequence) return false;

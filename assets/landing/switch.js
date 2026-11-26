@@ -12,7 +12,7 @@
     input: "The light stays amber while audio is being sent to your Mac.",
     mute: "The top light goes out. An orange marker in the switch track shows the microphone is muted."
   };
-  const source = mode => "assets/landing/switch-photo-" + mode + ".webp?v=switch-axis-26";
+  const source = mode => "assets/landing/switch-photo-" + mode + ".webp?v=studio-v7";
   let beforeMute = "ready";
   const shot = section.querySelector(".rb-switch-shot");
   const mechanism = document.createElement("span");
@@ -21,7 +21,7 @@
   ["track", "knob"].forEach(part => {
     const image = new Image();
     image.alt = "";
-    image.src = "assets/landing/switch-" + part + ".webp?v=switch-axis-26";
+    image.src = "assets/landing/switch-" + part + ".webp";
     image.className = "rb-switch-" + part;
     mechanism.append(image);
   });
@@ -65,7 +65,7 @@
     if (drag?.id !== event.pointerId) return;
     const distance = event.clientX - drag.start;
     if (!suppressClick && Math.abs(distance) < 4) return;
-    const travel = Math.max(18, shot.offsetWidth * 0.03987435);
+    const travel = Math.max(18, shot.offsetWidth * 0.040033);
     const fraction = Math.max(0, Math.min(1, drag.initial + distance / travel));
     shot.dataset.dragging = "true";
     shot.style.setProperty("--sw-travel", fraction);
