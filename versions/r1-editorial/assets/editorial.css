@@ -40,10 +40,13 @@ body {
 .lk-slide-arrow:hover { background:rgba(21,24,28,.82); }
 .lk-pagination button { width:clamp(44px,5.4vw,92px); }
 .detail-strip,.lk-value,.lk-workflow,.lk-scenarios,.lk-privacy,.lk-hardware,.lk-faq-band,.field { background:var(--r1-paper) !important; }
-.detail-strip { border-bottom:1px solid var(--r1-line); }
-.detail-strip button { color:#8a9096; font-weight:530; letter-spacing:-.025em; }
-.detail-strip button[aria-pressed=true] { color:var(--r1-ink); transform:none; }
-.detail-strip p { color:var(--r1-ink-soft); }
+.detail-strip { display:grid; grid-template-columns:minmax(360px,.9fr) minmax(0,1.1fr); gap:clamp(28px,6vw,96px); align-items:start; padding:clamp(22px,3vw,42px) clamp(24px,7vw,120px); border-bottom:1px solid var(--r1-line); }
+.detail-strip > div { display:flex; border-block:1px solid var(--r1-line-strong); }
+.detail-strip button { appearance:none; border:0; border-right:1px solid var(--r1-line); border-radius:0; background:transparent; color:#8a9096; cursor:pointer; font:inherit; font-weight:530; letter-spacing:-.025em; line-height:1.2; padding:15px 18px; text-align:left; transition:background .2s ease,color .2s ease; }
+.detail-strip button:last-child { border-right:0; }
+.detail-strip button:hover { color:var(--r1-ink); background:#f0f3f4; }
+.detail-strip button[aria-pressed=true] { color:var(--r1-ink); background:#e9eef0; box-shadow:inset 0 -2px 0 var(--r1-teal); transform:none; }
+.detail-strip p { margin:0; max-width:48ch; color:var(--r1-ink-soft); line-height:1.55; padding-top:13px; }
 .lk-value { padding-block:clamp(74px,9vw,138px); }
 .lk-value-head h2,.lk-heading h2,.lk-wf-head h2,.lk-privacy-copy h2,.lk-faq-wrap h2,.lk-hw-heading h2,.lk-pricing-head h2,.lk-research h2 { color:var(--r1-ink); font-family:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue","PingFang SC",sans-serif; font-weight:560; letter-spacing:-.045em; }
 .lk-value-lead,.lk-heading p:not(.lk-kicker),.lk-privacy-lead,.lk-pricing-head p:not(.lk-kicker) { color:var(--r1-ink-soft); }
@@ -136,6 +139,10 @@ body {
   .lk-sc-card,.lk-privacy-grid li { border-right:0; }
   .lk-wf-steps li { margin-right:0; }
   .lk-research { padding-block:64px !important; }
+  .detail-strip { grid-template-columns:1fr; gap:18px; padding:22px 20px 28px; }
+  .detail-strip > div { overflow-x:auto; }
+  .detail-strip button { flex:1 0 auto; padding:13px 14px; font-size:14px; }
+  .detail-strip p { padding-top:0; }
 }
 /* Keep the contact card architectural in the editorial version. */
 .lk-research-form .lk-research-choices { gap:8px; flex-wrap:wrap; }
