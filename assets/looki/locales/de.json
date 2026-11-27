@@ -42,7 +42,6 @@
   "stage.syn.r2": "Angebots-Aufgabe Sam für Montag zugewiesen",
   "stage.syn.ask": "„Wann launchen wir jetzt eigentlich?“",
   "stage.syn.ans": "Am 10. Dez. — bestätigt von Maya & Sam am Dienstag. Drei abhängige Aufgaben wurden angepasst.",
-  "stage.note": "Beispielszenario im Konzeptstadium · Dienstagnachmittag am Schreibtisch. Niemand schrieb ein Wort.",
   "value.1.h": "Mündliche Entscheidungen bleiben fest",
   "value.1.p": "Was laut beschlossen wird, wird automatisch dokumentiert — inklusive Wer und Wann.",
   "value.2.h": "Zusagen bekommen Verantwortliche",
@@ -299,5 +298,13 @@
   "foot.fn1": "1. Rutta R1 befindet sich in der Konzeptprüfung. Produktrenderings, 3D-Ansichten und Szenarien sind beispielhaft — es gibt noch keinen physischen Prototyp und keinen Vorverkauf.",
   "foot.fn2": "2. Die Passform orientiert sich am USB-C-Layout des 13\" MacBook Air (M4). Interaktive Schalter- und LED-Demos laufen lokal im Browser und greifen nie auf dein Mikrofon zu.",
   "foot.copy": "© 2026 Rutta · R1 — USB-C-Teammikrofon für Mac",
-  "foot.status": "Konzeptphase · Keine Zahlung oder Vorbestellung"
+  "foot.status": "Konzeptphase · Keine Zahlung oder Vorbestellung",
+  "close.eyebrow": "RUTTA BAR · R1",
+  "close.h2": "Einstecken.\nStummschalten.\nTeam-Wissen bereit.",
+  "close.unit": "/ Gerät (Konzept-Testpreis)",
+  "close.badge": "Konzeptphase · Kostenlos",
+  "close.3d": "3D-Modell öffnen →",
+  "close.meta": "Kostenlose Warteliste · Keine Zahlung · Jederzeit abmeldbar",
+  "value.kicker": "Warum R1 einfach stecken bleibt",
+  "value.aside": "Arbeit entsteht in kurzen Gesprächen. R1 hält sie fest, ohne den Flow zu unterbrechen."
 }

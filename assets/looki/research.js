@@ -44,22 +44,6 @@
     el.addEventListener('click', () => track('cta_click', { cta: el.dataset.track, variant }));
   });
 
-  /* Keep rich-text notes to simple, safe markup */
-  function sanitizeRichHtml(raw) {
-    const tpl = document.createElement('template');
-    tpl.innerHTML = raw;
-    const allowed = new Set(['B', 'STRONG', 'I', 'EM', 'U', 'BR', 'P', 'DIV', 'UL', 'OL', 'LI']);
-    const walk = node => {
-      [...node.childNodes].forEach(child => {
-        if (child.nodeType !== 1) return;
-        if (!allowed.has(child.tagName)) child.replaceWith(document.createTextNode(child.textContent || ''));
-        else { [...child.attributes].forEach(a => child.removeAttribute(a.name)); walk(child); }
-      });
-    };
-    walk(tpl.content);
-    return tpl.innerHTML.trim();
-  }
-
   document.querySelectorAll('[data-research-form]').forEach(form => {
     const card = form.closest('.r1-research-card');
     const choices = [...form.querySelectorAll('[data-use-case]')];
@@ -76,39 +60,6 @@
     const shareBtn = card?.querySelector('[data-share-copy]');
     const endpoint = (form.dataset.endpoint || '').trim();
     let lastSignup = null;
-
-    /* Rich text editor */
-    const rteRoot = form.querySelector('[data-rte]');
-    const rteEditor = rteRoot?.querySelector('.r1-rte-editor');
-    const rteButtons = rteRoot ? [...rteRoot.querySelectorAll('[data-cmd]')] : [];
-    function syncRte() {
-      if (!rteEditor) return;
-      const text = (rteEditor.innerText || '').trim();
-      if (!text) rteEditor.innerHTML = '';
-      if (form.elements.notesText) form.elements.notesText.value = text;
-      if (form.elements.notesHtml) form.elements.notesHtml.value = text ? sanitizeRichHtml(rteEditor.innerHTML) : '';
-    }
-    function updateToolbar() {
-      rteButtons.forEach(btn => {
-        if (btn.dataset.cmd === 'removeFormat') return;
-        try { btn.setAttribute('aria-pressed', String(document.queryCommandState(btn.dataset.cmd))); } catch {}
-      });
-    }
-    if (rteEditor) {
-      rteButtons.forEach(btn => {
-        btn.addEventListener('mousedown', e => e.preventDefault());
-        btn.addEventListener('click', () => {
-          rteEditor.focus();
-          if (btn.dataset.cmd === 'removeFormat') rteEditor.textContent = rteEditor.innerText;
-          else document.execCommand(btn.dataset.cmd, false);
-          syncRte();
-          updateToolbar();
-        });
-      });
-      rteEditor.addEventListener('input', () => { syncRte(); updateToolbar(); });
-      rteEditor.addEventListener('keyup', updateToolbar);
-      rteEditor.addEventListener('mouseup', updateToolbar);
-    }
 
     function setNote(key, tone) {
       if (!note) return;
@@ -150,12 +101,12 @@
 
     form.addEventListener('submit', async event => {
       event.preventDefault();
-      syncRte();
       if (!email.value.trim() || !email.checkValidity()) { setNote('err.email', 'error'); email.focus(); return; }
       if (!useCase.value) { setNote('err.usecase', 'error'); choices[0]?.focus(); return; }
       if (useCase.value === 'Others' && otherInput && !otherInput.value.trim()) { setNote('err.other', 'error'); otherInput.focus(); return; }
       if (!consent.checked) { setNote('err.consent', 'error'); consent.focus(); return; }
 
+      const notesVal = (form.elements.notes?.value || '').trim();
       const regionInfo = window.ruttaRegionInfo ? window.ruttaRegionInfo() : { locale: 'en', timeZone: '', browserLocale: '' };
       lastSignup = {
         type: 'waitlist',
@@ -164,8 +115,8 @@
         useCase: useCase.value === 'Others' && otherInput?.value.trim() ? 'Others: ' + otherInput.value.trim() : useCase.value,
         name: (form.elements.name?.value || '').trim(),
         teamSize: form.elements.teamSize?.value || '',
-        notesText: (form.elements.notesText?.value || '').trim(),
-        notesHtml: (form.elements.notesHtml?.value || '').trim(),
+        notesText: notesVal,
+        notesHtml: notesVal,
         consent: true,
         locale: regionInfo.locale,
         browserLocale: regionInfo.browserLocale,

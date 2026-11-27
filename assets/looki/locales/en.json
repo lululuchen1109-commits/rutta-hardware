@@ -42,7 +42,6 @@
   "stage.syn.r2": "Quote task assigned to Sam for Monday",
   "stage.syn.ask": "“When are we launching now?”",
   "stage.syn.ans": "Dec 10 — confirmed by Maya & Sam on Tuesday. Three related tasks shifted.",
-  "stage.note": "Illustrative concept scenario · Tuesday afternoon, at a desk. No one wrote a word.",
   "value.1.h": "Spoken decisions stay on record",
   "value.1.p": "What gets decided out loud is written down automatically, with who said it and when.",
   "value.2.h": "Commitments get owners",
@@ -299,5 +298,13 @@
   "foot.fn1": "1. Rutta R1 is currently in the concept validation stage. Product renders, 3D views and team scenarios shown on this page are illustrative — no physical prototype or pre-order is available yet.",
   "foot.fn2": "2. Target host clearance is modeled on the 13-inch MacBook Air (M4) USB-C port layout. Interactive mute switch and status light demos on this page run locally and never access your microphone.",
   "foot.copy": "© 2026 Rutta · R1 — USB-C team microphone for Mac",
-  "foot.status": "Concept validation · No payment or pre-order"
+  "foot.status": "Concept validation · No payment or pre-order",
+  "close.eyebrow": "RUTTA BAR · R1",
+  "close.h2": "Plug in.\nSlide to mute.\nTeam notes ready.",
+  "close.unit": "/ device (concept test price)",
+  "close.badge": "Concept stage · Free waitlist",
+  "close.3d": "Explore in 3D →",
+  "close.meta": "Free waitlist · No payment or pre-order · Unsubscribe anytime",
+  "value.kicker": "Why teams leave R1 plugged in",
+  "value.aside": "Work moves in quick spoken moments. R1 catches them without breaking flow."
 }

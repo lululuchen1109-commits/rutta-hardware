@@ -42,7 +42,6 @@
   "stage.syn.r2": "Tarea de presupuesto asignada a Sam para el lunes",
   "stage.syn.ask": "«¿Cuándo lanzamos ahora?»",
   "stage.syn.ans": "El 10 de dic. — confirmado por Maya y Sam el martes. Tres tareas relacionadas se reprogramaron.",
-  "stage.note": "Escenario ilustrativo · martes por la tarde junto al escritorio. Nadie escribió una palabra.",
   "value.1.h": "Las decisiones habladas quedan registradas",
   "value.1.p": "Lo que se acuerda en voz alta queda por escrito automáticamente, indicando quién lo dijo y cuándo.",
   "value.2.h": "Los compromisos tienen responsable",
@@ -299,5 +298,13 @@
   "foot.fn1": "1. Rutta R1 está en fase de validación de concepto. Los renders, vistas 3D y escenarios mostrados son ilustrativos — aún no existe prototipo físico ni preventa.",
   "foot.fn2": "2. El ajuste se modela sobre los puertos USB-C del MacBook Air de 13\" (M4). Las demos interactivas del interruptor y la luz se ejecutan localmente y nunca acceden a tu micrófono.",
   "foot.copy": "© 2026 Rutta · R1 — Micrófono USB-C de equipo para Mac",
-  "foot.status": "Fase de concepto · Sin pago ni preventa"
+  "foot.status": "Fase de concepto · Sin pago ni preventa",
+  "close.eyebrow": "RUTTA BAR · R1",
+  "close.h2": "Conecta.\nSilencia al instante.\nNotas de equipo listas.",
+  "close.unit": "/ unidad (precio de prueba)",
+  "close.badge": "Fase concepto · Gratis",
+  "close.3d": "Ver modelo 3D →",
+  "close.meta": "Lista gratuita · Sin pago ni reserva · Baja en cualquier momento",
+  "value.kicker": "Por qué R1 siempre se queda conectado",
+  "value.aside": "El trabajo avanza en charlas rápidas. R1 las captura sin interrumpir tu flujo."
 }

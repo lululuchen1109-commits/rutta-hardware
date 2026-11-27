@@ -22,9 +22,9 @@
   <link rel="icon" type="image/svg+xml" href="assets/landing/monogram.svg">
   <link rel="preload" as="font" href="assets/instrument.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="assets/inter-latin-var.woff2" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/looki/base.css?v=v8r2">
-  <link rel="stylesheet" href="assets/looki/research.css?v=v8r2">
-  <link rel="stylesheet" href="assets/looki/contact.css?v=v8r2">
+  <link rel="stylesheet" href="assets/looki/base.css?v=v9">
+  <link rel="stylesheet" href="assets/looki/research.css?v=v9">
+  <link rel="stylesheet" href="assets/looki/contact.css?v=v9">
 </head>
 <body id="top" class="r1-contact-body">
   <a class="r1-skip" href="#contact-main">Skip to form</a>
@@ -36,7 +36,7 @@
       </a>
       <nav class="ct-nav" aria-label="Secondary navigation">
         <a href="index.html" data-keep-lang data-i18n="ct.back">← Overview</a>
-        <a href="https://lululuchen1109-commits.github.io/rutta-bar-studio/product.html?v=040" target="_blank" rel="noopener" data-track="contact_gallery" data-i18n="nav.gallery">Product gallery ↗</a>
+        <a href="https://lululuchen1109-commits.github.io/rutta-bar-studio/product.html?v=28" target="_blank" rel="noopener" data-track="contact_gallery" data-i18n="nav.gallery">Product gallery ↗</a>
         <div class="r1-locale" data-locale-picker>
           <button type="button" class="r1-locale-btn" aria-haspopup="menu" aria-expanded="false" aria-label="Choose language">
             <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M2.5 10h15M10 2.5c2.2 2.2 3.2 4.8 3.2 7.5s-1 5.3-3.2 7.5c-2.2-2.2-3.2-4.8-3.2-7.5S7.8 4.7 10 2.5z"/></svg>
@@ -73,11 +73,11 @@
           <div><dt data-i18n="ct.f1.t">Who we’re talking to</dt><dd data-i18n="ct.f1.d">Startup teams of 3–15 who work side by side and move fast through desk chats, standups and quick decisions.</dd></div>
           <div><dt data-i18n="ct.f2.t">Test pricing</dt><dd data-i18n="ct.f2.d">Around <strong>$79 per device</strong> + <strong>$12 per member per month</strong> (about $1,115 in year one for a 5-person team). We’re not taking payment now.</dd></div>
           <div><dt data-i18n="ct.f3.t">Press, partners &amp; other questions</dt><dd data-i18n="ct.f3.d">Choose <strong>Others</strong> in the form and tell us in the notes — we read every message.</dd></div>
-          <div><dt data-i18n="ct.f4.t">Hardware details</dt><dd data-i18n="ct.f4.d">See every angle in the <a href="https://lululuchen1109-commits.github.io/rutta-bar-studio/product.html?v=040" target="_blank" rel="noopener">product gallery ↗</a>.</dd></div>
+          <div><dt data-i18n="ct.f4.t">Hardware details</dt><dd data-i18n="ct.f4.d">See every angle in the <a href="https://lululuchen1109-commits.github.io/rutta-bar-studio/product.html?v=28" target="_blank" rel="noopener">product gallery ↗</a>.</dd></div>
         </dl>
       </div>
 
-      <div class="ct-card-shell">
+      <div class="ct-card-shell" id="ct-form">
         <div class="r1-research-card ct-card">
           <form class="r1-research-form" data-research-form data-endpoint="" novalidate>
             <label class="r1-research-field r1-field-first"><span><span data-i18n="f.email">Work email</span> <b aria-hidden="true">*</b></span>
@@ -114,22 +114,9 @@
               </label>
             </div>
 
-            <div class="r1-research-field">
-              <span id="rte-label-contact"><span data-i18n="f.notes">Suggestions, or the last decision your team lost</span> <small class="r1-opt" data-i18n="f.opt">(optional)</small></span>
-              <div class="r1-rte" data-rte>
-                <div class="r1-rte-editor" contenteditable="true" role="textbox" aria-multiline="true" aria-labelledby="rte-label-contact" data-placeholder="e.g. “We agreed at someone’s desk to move the launch, and half the team never heard about it.”" data-i18n-dph="f.notes.ph"></div>
-                <div class="r1-rte-toolbar" role="toolbar" aria-label="Formatting">
-                  <button type="button" data-cmd="bold" aria-label="Bold" title="Bold"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 2.75h4.1a2.6 2.6 0 0 1 0 5.2H4.5zM4.5 7.95h4.8a2.65 2.65 0 0 1 0 5.3H4.5z"/></svg></button>
-                  <button type="button" data-cmd="italic" aria-label="Italic" title="Italic"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 2.75H6.75M9.25 13.25H5.5M8.6 2.75 7.4 13.25"/></svg></button>
-                  <span class="r1-rte-sep" aria-hidden="true"></span>
-                  <button type="button" data-cmd="insertUnorderedList" aria-label="Bulleted list" title="Bulleted list"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4h7.5M6 8h7.5M6 12h7.5"/><circle cx="3" cy="4" r=".9"/><circle cx="3" cy="8" r=".9"/><circle cx="3" cy="12" r=".9"/></svg></button>
-                  <button type="button" data-cmd="insertOrderedList" aria-label="Numbered list" title="Numbered list"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 4h7M6.5 8h7M6.5 12h7M2.4 2.9l.9-.5v3.1M2.2 9.3c.2-.6 1.6-.7 1.6.2 0 .7-1.6 1.2-1.6 1.9h1.7"/></svg></button>
-                  <button type="button" data-cmd="removeFormat" class="r1-rte-clear" aria-label="Clear formatting" title="Clear formatting"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3.5h7M6.5 3.5 5 12.5M9.5 9.5l4 4M13.5 9.5l-4 4"/></svg></button>
-                </div>
-                <input type="hidden" name="notesHtml">
-                <input type="hidden" name="notesText">
-              </div>
-            </div>
+            <label class="r1-research-field"><span><span data-i18n="f.notes">Suggestions, or the last decision your team lost</span> <small class="r1-opt" data-i18n="f.opt">(optional)</small></span>
+              <textarea name="notes" rows="4" placeholder="e.g. “We agreed at someone’s desk to move the launch, and half the team never heard about it.”" data-i18n-ph="f.notes.ph"></textarea>
+            </label>
 
             <label class="r1-research-check">
               <input type="checkbox" name="consent" required>
@@ -175,6 +162,30 @@
     </section>
   </main>
 
+  <section class="r1-closing-band" id="final-cta" aria-labelledby="closing-title">
+    <div class="r1-closing-inner">
+      <div class="r1-closing-photo">
+        <img src="assets/landing/r1-closing-mac.webp?v=v9" width="1200" height="800" loading="lazy" alt="Rutta Bar · R1 seated flush into the USB-C port of a closed silver MacBook.">
+      </div>
+      <div class="r1-closing-copy">
+        <p class="r1-closing-eyebrow" data-i18n="close.eyebrow">RUTTA BAR · R1</p>
+        <h2 id="closing-title" data-i18n="close.h2">Plug in.
+Slide to mute.
+Team notes ready.</h2>
+        <div class="r1-closing-price">
+          <strong data-i18n-usd="79">$79</strong>
+          <span class="r1-closing-unit" data-i18n="close.unit">/ device (concept test price)</span>
+          <span class="r1-closing-pill" data-i18n="close.badge">Concept stage · Free waitlist</span>
+        </div>
+        <div class="r1-closing-btns">
+          <a class="r1-closing-cta" href="#ct-form" data-track="closing_waitlist" data-i18n="hero.cta">Join the waitlist</a>
+          <a class="r1-closing-link" href="https://lululuchen1109-commits.github.io/rutta-bar-studio/product.html?v=28" target="_blank" rel="noopener" data-track="closing_gallery" data-i18n="close.3d">Explore in 3D →</a>
+        </div>
+        <p class="r1-closing-meta" data-i18n="close.meta">Free waitlist · No payment or pre-order · Unsubscribe anytime</p>
+      </div>
+    </div>
+  </section>
+
   <footer class="r1-footer">
     <div class="r1-foot-inner">
       <div class="r1-foot-top-grid">
@@ -210,7 +221,7 @@
         </div>
         <div class="r1-foot-col">
           <strong data-i18n="foot.c2">Specs &amp; Hardware</strong>
-          <a href="https://lululuchen1109-commits.github.io/rutta-bar-studio/product.html?v=040" target="_blank" rel="noopener" data-i18n="nav.gallery">Product gallery ↗</a>
+          <a href="https://lululuchen1109-commits.github.io/rutta-bar-studio/product.html?v=28" target="_blank" rel="noopener" data-i18n="nav.gallery">Product gallery ↗</a>
           <a href="index.html#hardware" data-keep-lang data-i18n="foot.hw3d">Hardware &amp; 3D view</a>
           <a href="index.html#specs" data-keep-lang data-i18n="foot.specs">Technical details</a>
           <a href="index.html#faq" data-keep-lang data-i18n="foot.faq">Pricing &amp; FAQ</a>
@@ -251,8 +262,8 @@
     </div>
   </dialog>
 
-  <script defer src="assets/looki/i18n.js?v=v8r2"></script>
-  <script defer src="assets/looki/sections.js?v=v8r2"></script>
-  <script defer src="assets/looki/research.js?v=v8r2"></script>
+  <script defer src="assets/looki/i18n.js?v=v9"></script>
+  <script defer src="assets/looki/sections.js?v=v9"></script>
+  <script defer src="assets/looki/research.js?v=v9"></script>
 </body>
 </html>

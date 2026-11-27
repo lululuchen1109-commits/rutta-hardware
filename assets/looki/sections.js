@@ -103,15 +103,31 @@
     syncArrows();
   });
 
+  /* 3b. Workflow connected horizontal progress rail */
+  document.querySelectorAll('[data-wf-rail]').forEach(rail => {
+    const items = [...rail.querySelectorAll('[data-wf-step]')];
+    const setActive = idx => {
+      items.forEach((li, i) => li.classList.toggle('is-active', i <= idx));
+      const pct = items.length > 1 ? (idx / (items.length - 1)) * 100 : 100;
+      rail.style.setProperty('--wf-progress', pct + '%');
+    };
+    items.forEach((li, idx) => {
+      li.addEventListener('mouseenter', () => setActive(idx));
+      li.addEventListener('focus', () => setActive(idx));
+      li.addEventListener('click', () => setActive(idx));
+    });
+    setActive(0);
+  });
+
   /* 4. Privacy status preview — pure transparent R1 hardware macro + volumetric studio state aura */
   const privacyPhoto = document.getElementById('privacy-photo');
   const privacyStage = document.querySelector('.r1-privacy-stage');
   const privacyCaption = document.getElementById('privacy-caption');
   const privacyButtons = [...document.querySelectorAll('[data-pstate]')];
   const privacySrc = {
-    ready: 'assets/landing/switch-photo-ready.webp?v=studio-v7',
-    input: 'assets/landing/switch-photo-input.webp?v=studio-v7',
-    mute: 'assets/landing/switch-photo-mute.webp?v=studio-v7'
+    ready: 'assets/looki/privacy-r1-ready.webp?v=v9',
+    input: 'assets/looki/privacy-r1-input.webp?v=v9',
+    mute: 'assets/looki/privacy-r1-mute.webp?v=v9'
   };
   if (privacyPhoto && privacyButtons.length) {
     const warm = () => Object.values(privacySrc).forEach(src => { const i = new Image(); i.src = src; });
@@ -134,10 +150,14 @@
     });
   }
 
-  /* 5. Privacy notice dialog & footer specs opener */
+  /* 5. Privacy notice dialog, footer specs opener & closing 3D tab opener */
   document.querySelectorAll('[data-open-specs]').forEach(a => a.addEventListener('click', () => {
     const specs = document.getElementById('specs');
     if (specs) specs.open = true;
+  }));
+  document.querySelectorAll('[data-open-3d]').forEach(a => a.addEventListener('click', () => {
+    const tab = document.getElementById('hw-tab-explore');
+    if (tab) tab.click();
   }));
   const dialog = document.getElementById('privacy-dialog');
   if (dialog) {

@@ -42,7 +42,6 @@
   "stage.syn.r2": "Tâche devis assignée à Sam pour lundi",
   "stage.syn.ask": "« On lance quand finalement ? »",
   "stage.syn.ans": "Le 10 déc. — confirmé mardi par Maya et Sam. Trois tâches liées ont été décalées.",
-  "stage.note": "Scénario illustratif · mardi après-midi au bureau. Personne n’a écrit un seul mot.",
   "value.1.h": "Les décisions orales restent tracées",
   "value.1.p": "Ce qui est décidé à voix haute est consigné automatiquement, avec qui l’a dit et quand.",
   "value.2.h": "Chaque engagement a un responsable",
@@ -299,5 +298,13 @@
   "foot.fn1": "1. Rutta R1 est actuellement en phase de validation de concept. Les rendus, vues 3D et scénarios présentés sont illustratifs — aucun prototype physique ni précommande n’est disponible.",
   "foot.fn2": "2. L’encombrement cible est modélisé sur les ports USB-C du MacBook Air 13 pouces (M4). Les démonstrations d’interrupteur et de voyant s’exécutent localement et n’accèdent jamais à votre micro.",
   "foot.copy": "© 2026 Rutta · R1 — Micro d’équipe USB-C pour Mac",
-  "foot.status": "Phase de concept · Sans paiement ni précommande"
+  "foot.status": "Phase de concept · Sans paiement ni précommande",
+  "close.eyebrow": "RUTTA BAR · R1",
+  "close.h2": "Branchez.\nCoupez d’un geste.\nNotes d’équipe prêtes.",
+  "close.unit": "/ appareil (prix test)",
+  "close.badge": "Phase concept · Gratuit",
+  "close.3d": "Explorer en 3D →",
+  "close.meta": "Liste d’attente gratuite · Sans paiement · Désinscription libre",
+  "value.kicker": "Pourquoi R1 reste branché",
+  "value.aside": "Le travail avance au fil des échanges. R1 capture l’essentiel sans casser votre rythme."
 }
