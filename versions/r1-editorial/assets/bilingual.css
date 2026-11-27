@@ -1,0 +1,44 @@
+.r1-language-toggle {
+  position: fixed;
+  top: 14px;
+  right: 20px;
+  z-index: 60;
+  border: 1px solid rgba(255,255,255,.38);
+  border-radius: 999px;
+  padding: 8px 14px;
+  background: rgba(17,17,22,.72);
+  color: #fff;
+  font: 600 12px/1.1 Inter, system-ui, sans-serif;
+  letter-spacing: .02em;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.r1-language-toggle:hover { background: rgba(255,158,76,.94); border-color: transparent; color: #111116; transform: translateY(-1px); }
+.r1-language-toggle:focus-visible { outline: 3px solid #ff9e4c; outline-offset: 3px; }
+.lk-research-submit { justify-content: center !important; gap: 10px; text-align: center; }
+.lk-research-submit span { position: static !important; }
+.lk-research-form textarea[name="notesText"] {
+  display: block;
+  width: 100%;
+  min-height: 112px;
+  resize: vertical;
+  border: 1px solid #d6d7d8;
+  border-radius: 12px;
+  padding: 13px 14px;
+  background: #fff;
+  color: #171819;
+  font: inherit;
+  line-height: 1.55;
+  box-sizing: border-box;
+}
+.lk-research-form textarea[name="notesText"]::placeholder { color: #92969b; }
+.lk-research-form textarea[name="notesText"]:focus { outline: 3px solid rgba(255,158,76,.3); border-color: #ff9e4c; }
+@media (min-width: 761px) {
+  .r1-language-toggle { top: 18px; right: 24px; }
+  .lk-topbar .lk-cta { margin-right: 72px; }
+}
+@media (max-width: 760px) {
+  .r1-language-toggle { top: 66px; right: 14px; padding: 7px 11px; }
+  .lk-topbar .lk-cta { margin-right: 50px; }
+}
