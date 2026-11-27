@@ -1,5 +1,5 @@
-/* ---------- standalone contact & waitlist page (Looki Hybrid: Crisp Gallery White + Dark Hardware Stage) ---------- */
-.lk-contact-body {
+/* ---------- standalone contact & waitlist page ---------- */
+.r1-contact-body {
   background: #ffffff;
   min-height: 100dvh;
   display: flex;
@@ -58,9 +58,9 @@
 
 .ct-info h1 {
   font-family: var(--font-display);
-  font-size: clamp(36px, 4.2vw, 58px);
-  line-height: 1.05;
-  letter-spacing: -.04em;
+  font-size: clamp(32px, 3.6vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -.035em;
   font-weight: 600;
   color: var(--ink);
   text-wrap: balance;
@@ -73,7 +73,7 @@
   color: var(--muted);
 }
 
-/* Dark Leica studio hardware plate floating on crisp gallery white */
+/* Dark studio hardware plate on crisp gallery white */
 .ct-hardware-card {
   margin-top: 30px;
   padding: 0;

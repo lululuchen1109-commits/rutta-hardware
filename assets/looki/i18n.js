@@ -1,7 +1,7 @@
-/* Rutta R1 · Multi-Region i18n Engine (v6)
+/* Rutta R1 · Multi-Region i18n Engine (v7)
    - Supported locales: en, zh-CN, zh-TW, ja, ko, de, fr, es
    - Detection order: ?lang= query -> localStorage('rutta-lang') -> navigator.languages -> 'en'
-   - Loads modular JSON packs from assets/looki/locales/<locale>.json with in-memory caching. */
+   - Loads modular JSON packs from /assets/locales/<locale>.json with in-memory caching. */
 (() => {
   const LOCALES = {
     'en':    { short: 'EN',    name: 'English',  dir: 'ltr', intl: 'en-US' },
@@ -15,7 +15,7 @@
   };
   const SUPPORTED = Object.keys(LOCALES);
   const STORAGE_KEY = 'rutta-lang';
-  const PACK_VER = 'v7';
+  const PACK_VER = 'v8r2';
 
   /* English fallback for dynamic script-driven strings (HTML already carries full EN) */
   const EN_BASE = {
@@ -165,7 +165,7 @@
   }
 
   function syncInternalLinks() {
-    document.querySelectorAll('a[data-keep-lang], a[href^="contact.html"], a[href^="index.html"]').forEach(a => {
+    document.querySelectorAll('a[data-keep-lang], a[href^="/waitlist/r1"], a[href="/"]').forEach(a => {
       const raw = a.dataset.baseHref || a.getAttribute('href');
       if (!a.dataset.baseHref) a.dataset.baseHref = raw;
       if (!raw || raw.startsWith('#') || /^https?:\/\//i.test(raw)) return;
@@ -238,16 +238,16 @@
       pickers.forEach(p => {
         if (p === except) return;
         p.classList.remove('is-open');
-        const btn = p.querySelector('.lk-locale-btn');
-        const menu = p.querySelector('.lk-locale-menu');
+        const btn = p.querySelector('.r1-locale-btn');
+        const menu = p.querySelector('.r1-locale-menu');
         btn?.setAttribute('aria-expanded', 'false');
         if (menu) menu.hidden = true;
       });
     }
 
     pickers.forEach(picker => {
-      const trigger = picker.querySelector('.lk-locale-btn');
-      const menu = picker.querySelector('.lk-locale-menu');
+      const trigger = picker.querySelector('.r1-locale-btn');
+      const menu = picker.querySelector('.r1-locale-menu');
       const items = [...picker.querySelectorAll('[data-lang]')];
       if (!trigger || !menu) return;
 

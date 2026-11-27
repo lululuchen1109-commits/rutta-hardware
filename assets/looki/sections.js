@@ -1,7 +1,7 @@
 (() => {
   const SET = (el, key) => { if (el && window.ruttaSet) window.ruttaSet(el, key); };
 
-  /* 1. Looki tabbed stage showcase */
+  /* 1. Tabbed workflow showcase */
   document.querySelectorAll('[data-stage]').forEach(stage => {
     const tabs = [...stage.querySelectorAll('[data-stage-tab]')];
     const panels = [...stage.querySelectorAll('[data-stage-panel]')];
@@ -36,13 +36,13 @@
     });
   });
 
-  /* 3. Looki horizontal expandable scenario rail */
+  /* 3. Horizontal expandable scenario rail */
   document.querySelectorAll('[data-story-rail]').forEach(rail => {
-    const track = rail.querySelector('.lk-story-track');
-    const cards = [...rail.querySelectorAll('.lk-story')];
-    const prev = rail.querySelector('.lk-story-arrow--prev');
-    const next = rail.querySelector('.lk-story-arrow--next');
-    const dots = [...rail.querySelectorAll('.lk-story-dots button')];
+    const track = rail.querySelector('.r1-story-track');
+    const cards = [...rail.querySelectorAll('.r1-story')];
+    const prev = rail.querySelector('.r1-story-arrow--prev');
+    const next = rail.querySelector('.r1-story-arrow--next');
+    const dots = [...rail.querySelectorAll('.r1-story-dots button')];
     if (!track || !cards.length) return;
 
     let current = 0;
@@ -58,7 +58,7 @@
       cards.forEach((card, i) => {
         const open = i === current;
         card.classList.toggle('is-open', open);
-        const btn = card.querySelector('.lk-story-toggle');
+        const btn = card.querySelector('.r1-story-toggle');
         if (btn) btn.setAttribute('aria-expanded', String(open));
       });
       dots.forEach((dot, i) => dot.setAttribute('aria-current', String(i === current)));
@@ -83,7 +83,7 @@
     }
 
     cards.forEach((card, idx) => {
-      const toggle = card.querySelector('.lk-story-toggle');
+      const toggle = card.querySelector('.r1-story-toggle');
       card.addEventListener('click', e => {
         if (e.target.closest('a')) return;
         if (!card.classList.contains('is-open')) openCard(idx, true);
@@ -105,7 +105,7 @@
 
   /* 4. Privacy status preview — pure transparent R1 hardware macro + volumetric studio state aura */
   const privacyPhoto = document.getElementById('privacy-photo');
-  const privacyStage = document.querySelector('.lk-privacy-stage');
+  const privacyStage = document.querySelector('.r1-privacy-stage');
   const privacyCaption = document.getElementById('privacy-caption');
   const privacyButtons = [...document.querySelectorAll('[data-pstate]')];
   const privacySrc = {
@@ -134,7 +134,11 @@
     });
   }
 
-  /* 5. Privacy notice dialog */
+  /* 5. Privacy notice dialog & footer specs opener */
+  document.querySelectorAll('[data-open-specs]').forEach(a => a.addEventListener('click', () => {
+    const specs = document.getElementById('specs');
+    if (specs) specs.open = true;
+  }));
   const dialog = document.getElementById('privacy-dialog');
   if (dialog) {
     document.querySelectorAll('[data-open-privacy]').forEach(btn => btn.addEventListener('click', () => dialog.showModal()));

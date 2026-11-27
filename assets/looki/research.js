@@ -61,7 +61,7 @@
   }
 
   document.querySelectorAll('[data-research-form]').forEach(form => {
-    const card = form.closest('.lk-research-card');
+    const card = form.closest('.r1-research-card');
     const choices = [...form.querySelectorAll('[data-use-case]')];
     const useCase = form.elements.useCase;
     const otherWrap = form.querySelector('[data-other-wrap]');
@@ -69,7 +69,7 @@
     const email = form.elements.email;
     const consent = form.elements.consent;
     const note = form.querySelector('[data-research-note]');
-    const submitBtn = form.querySelector('.lk-research-submit');
+    const submitBtn = form.querySelector('.r1-research-submit');
     const thanks = card?.querySelector('[data-research-thanks]');
     const thanksStatus = card?.querySelector('[data-thanks-status]');
     const surveyForm = card?.querySelector('[data-survey-form]');
@@ -79,7 +79,7 @@
 
     /* Rich text editor */
     const rteRoot = form.querySelector('[data-rte]');
-    const rteEditor = rteRoot?.querySelector('.lk-rte-editor');
+    const rteEditor = rteRoot?.querySelector('.r1-rte-editor');
     const rteButtons = rteRoot ? [...rteRoot.querySelectorAll('[data-cmd]')] : [];
     function syncRte() {
       if (!rteEditor) return;
@@ -204,7 +204,7 @@
         } catch {}
         track('survey_submit', { priceReaction: data.priceReaction || '', interviewPref: data.interviewPref || '' });
         const done = document.createElement('p');
-        done.className = 'lk-thanks-sub';
+        done.className = 'r1-thanks-sub';
         SET(done, 'sv.done');
         surveyForm.replaceWith(done);
       });

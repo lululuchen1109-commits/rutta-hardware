@@ -1,19 +1,19 @@
 (() => {
-  const root = document.querySelector('.lk-hero');
+  const root = document.querySelector('.r1-hero');
   if (!root) return;
-  const slides = [...root.querySelectorAll('.lk-slide')];
-  const dots = [...root.querySelectorAll('.lk-pagination button')];
+  const slides = [...root.querySelectorAll('.r1-slide')];
+  const dots = [...root.querySelectorAll('.r1-pagination button')];
   let index = 0;
   function selectSlide(next) {
     index = (next + slides.length) % slides.length;
     slides.forEach((slide, i) => { slide.hidden = i !== index; });
     dots.forEach((button, i) => { button.setAttribute('aria-pressed', String(i === index)); });
   }
-  root.querySelector('.lk-prev').addEventListener('click', () => selectSlide(index - 1));
-  root.querySelector('.lk-next').addEventListener('click', () => selectSlide(index + 1));
+  root.querySelector('.r1-prev').addEventListener('click', () => selectSlide(index - 1));
+  root.querySelector('.r1-next').addEventListener('click', () => selectSlide(index + 1));
   dots.forEach((button, i) => button.addEventListener('click', () => selectSlide(i)));
   root.addEventListener('keydown', event => {
-    if (!event.target.closest('.lk-slide-arrow, .lk-pagination')) return;
+    if (!event.target.closest('.r1-slide-arrow, .r1-pagination')) return;
     if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
       event.preventDefault();
       selectSlide(index + (event.key === 'ArrowRight' ? 1 : -1));
@@ -31,8 +31,8 @@
     if (Math.abs(dx) > 50 && Math.abs(dx) > 1.5 * Math.abs(dy)) selectSlide(index + (dx < 0 ? 1 : -1));
     touchStart = null;
   });
-  const topbar = root.querySelector('.lk-topbar');
-  const toggle = topbar.querySelector('.lk-nav-toggle');
+  const topbar = root.querySelector('.r1-topbar');
+  const toggle = topbar.querySelector('.r1-nav-toggle');
   function setMenu(open) {
     topbar.classList.toggle('is-open', open);
     toggle.setAttribute('aria-expanded', String(open));

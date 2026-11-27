@@ -1,7 +1,7 @@
 (() => {
-  const hardware = document.querySelector('.lk-hardware');
+  const hardware = document.querySelector('.r1-hardware');
   if (!hardware) return;
-  const tabs = [...hardware.querySelectorAll('.lk-hw-tabs a')];
+  const tabs = [...hardware.querySelectorAll('.r1-hw-tabs a')];
   const panels = tabs.map(tab => document.getElementById(tab.getAttribute('aria-controls'))).filter(Boolean);
   const slider = hardware.querySelector('#fit-range');
   const frame = hardware.querySelector('#fit-frame');
@@ -30,7 +30,7 @@
     const id = location.hash.slice(1);
     if (panels.some(panel => panel.id === id)) {
       displayPanel(id);
-      if (shouldScroll) hardware.querySelector('.lk-hw-workbench').scrollIntoView({ block: 'start', behavior: 'instant' });
+      if (shouldScroll) hardware.querySelector('.r1-hw-workbench').scrollIntoView({ block: 'start', behavior: 'instant' });
     } else if (id === 'specs') {
       const sp = hardware.querySelector('#specs');
       if (sp) sp.open = true;
@@ -58,8 +58,8 @@
   });
 
   const finishes = [...hardware.querySelectorAll('[data-tone]')];
-  const photo = hardware.querySelector('#lk-finish-image');
-  const label = hardware.querySelector('#lk-finish-name');
+  const photo = hardware.querySelector('#r1-finish-image');
+  const label = hardware.querySelector('#r1-finish-name');
   const loaded = new Map();
   function preload(url) {
     if (!loaded.has(url)) {
@@ -72,7 +72,7 @@
   let change = 0;
   finishes.forEach(button => {
     const color = button.dataset.tone;
-    const url = 'assets/landing/hero-' + color + '.webp?v=studio-v7';
+    const url = 'assets/looki/hero-' + color + '.webp?v=studio-v7';
     button.addEventListener('pointerenter', () => preload(url).catch(() => {}), { once: true });
     button.addEventListener('click', async () => {
       const request = ++change;
@@ -96,7 +96,7 @@
     let shown = 0;
     async function fitTo(n) {
       const request = ++sequence;
-      const url = 'assets/landing/fit-' + String(n).padStart(2, '0') + '.webp?v=studio-v7';
+      const url = 'assets/looki/fit-' + String(n).padStart(2, '0') + '.webp?v=studio-v7';
       try {
         await preload(url);
         if (request !== sequence) return false;
