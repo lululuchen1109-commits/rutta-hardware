@@ -84,7 +84,6 @@
     const submitBtn = form.querySelector('.lk-research-submit');
     const thanks = card?.querySelector('[data-research-thanks]');
     const thanksStatus = card?.querySelector('[data-thanks-status]');
-    const surveyForm = card?.querySelector('[data-survey-form]');
     const shareBtn = card?.querySelector('[data-share-copy]');
     const endpoint = (form.dataset.endpoint || '').trim();
     let lastSignup = null;
@@ -240,28 +239,6 @@
         submitBtn.disabled = false;
       }
     });
-
-    if (surveyForm) {
-      surveyForm.addEventListener('submit', async event => {
-        event.preventDefault();
-        const data = Object.fromEntries(new FormData(surveyForm).entries());
-        if (!Object.values(data).some(v => String(v).trim())) return;
-        try {
-          await sendPayload({
-            type: 'survey',
-            model: 'R1',
-            email: lastSignup?.email || '',
-            ...data,
-            savedAt: new Date().toISOString()
-          });
-        } catch {}
-        track('survey_submit', { priceReaction: data.priceReaction || '', interviewPref: data.interviewPref || '' });
-        const done = document.createElement('p');
-        done.className = 'lk-thanks-sub';
-        done.textContent = 'Thank you—this directly guides what we build next.';
-        surveyForm.replaceWith(done);
-      });
-    }
 
     if (shareBtn) {
       shareBtn.addEventListener('click', async () => {
