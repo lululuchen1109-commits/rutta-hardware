@@ -12,9 +12,9 @@
   position: absolute;
   inset-inline: 0;
   bottom: 0;
-  height: 120px;
+  height: 76px;
   z-index: 1;
-  background: linear-gradient(to top, #06070b, transparent);
+  background: linear-gradient(to top, rgba(6, 7, 11, .56), transparent);
   pointer-events: none;
 }
 .lk-topbar {

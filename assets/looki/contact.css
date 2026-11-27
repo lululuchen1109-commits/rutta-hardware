@@ -1,13 +1,13 @@
-/* ---------- standalone contact & waitlist page (Obsidian & Titanium Apple Pro) ---------- */
+/* ---------- standalone contact & waitlist page (Looki Hybrid: Crisp Gallery White + Dark Hardware Stage) ---------- */
 .lk-contact-body {
-  background: radial-gradient(ellipse 75% 45% at 50% 0%, rgba(41, 151, 255, .09), transparent 68%), #06070a;
+  background: #ffffff;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
 .ct-header {
   border-bottom: 1px solid var(--border);
-  background: rgba(6, 7, 10, .82);
+  background: rgba(255, 255, 255, .86);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   position: sticky;
@@ -30,17 +30,17 @@
   padding: 4px 2px;
   text-decoration: none;
 }
-.ct-brand img { display: block; width: 26px; height: 31px; filter: brightness(0) invert(1); }
+.ct-brand img { display: block; width: 26px; height: 31px; }
 .ct-nav { display: flex; align-items: center; gap: clamp(14px, 2.4vw, 28px); }
 .ct-nav a {
   text-decoration: none;
   font-family: var(--font-display);
   font-size: 14px;
-  font-weight: 520;
+  font-weight: 540;
   color: var(--ink-2);
   white-space: nowrap;
 }
-.ct-nav a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+.ct-nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
 
 .ct-main {
   flex: 1;
@@ -62,11 +62,8 @@
   line-height: 1.05;
   letter-spacing: -.04em;
   font-weight: 600;
+  color: var(--ink);
   text-wrap: balance;
-  background: linear-gradient(180deg, #ffffff 18%, #bcc5d4 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
 }
 .ct-lead {
   margin-top: 18px;
@@ -76,14 +73,15 @@
   color: var(--muted);
 }
 
+/* Dark Leica studio hardware plate floating on crisp gallery white */
 .ct-hardware-card {
   margin-top: 30px;
   padding: 0;
-  border-radius: 22px;
+  border-radius: 24px;
   overflow: hidden;
   background: #0c0f15;
-  border: 1px solid var(--border-strong);
-  box-shadow: 0 30px 64px -30px rgba(0, 0, 0, .9), var(--rim);
+  border: 1px solid rgba(11, 13, 20, .12);
+  box-shadow: 0 32px 68px -32px rgba(11, 13, 20, .42), var(--rim);
 }
 .ct-hardware-card img {
   display: block;
@@ -94,10 +92,10 @@
 }
 .ct-hardware-card figcaption {
   padding: 13px 18px;
-  border-top: 1px solid rgba(255, 255, 255, .07);
-  background: rgba(9, 11, 16, .92);
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  background: #0a0c12;
   font-size: 12.5px;
-  color: var(--muted);
+  color: #9aa3b6;
   text-align: center;
   line-height: 1.45;
 }
@@ -113,8 +111,8 @@
 .ct-facts dt {
   font-family: var(--font-display);
   font-size: 14.5px;
-  font-weight: 600;
-  color: #fff;
+  font-weight: 620;
+  color: var(--ink);
   margin-bottom: 4px;
 }
 .ct-facts dd {
@@ -123,7 +121,7 @@
   line-height: 1.6;
   color: var(--muted);
 }
-.ct-facts dd strong { color: var(--ink-2); }
+.ct-facts dd strong { color: var(--ink); }
 .ct-facts a {
   color: var(--accent);
   text-decoration: none;
@@ -131,20 +129,24 @@
 }
 .ct-facts a:hover { color: var(--accent-hover); text-decoration: underline; text-underline-offset: 3px; }
 
+/* Dark titanium iridescent outer bezel framing the crisp white form card */
 .ct-card-shell {
   position: sticky;
   top: 90px;
   padding: 12px;
-  border-radius: 28px;
-  background: linear-gradient(160deg, #161b27 0%, #0c0f16 100%);
-  border: 1px solid var(--border-strong);
-  box-shadow: 0 32px 72px -34px rgba(0, 0, 0, .9), var(--rim);
+  border-radius: 30px;
+  background:
+    radial-gradient(ellipse 75% 65% at 15% 100%, rgba(129, 140, 248, .24), transparent 64%),
+    radial-gradient(ellipse 65% 60% at 95% 0%, rgba(255, 122, 61, .22), transparent 62%),
+    linear-gradient(155deg, #131726 0%, #0a0d15 100%);
+  border: 1px solid rgba(11, 13, 20, .12);
+  box-shadow: 0 34px 74px -36px rgba(11, 13, 20, .38);
 }
 .ct-card { box-shadow: none; }
 
 @media (max-width: 900px) {
   .ct-stage { grid-template-columns: 1fr; gap: 28px; }
-  .ct-card-shell { position: static; padding: 0; background: transparent; border: 0; box-shadow: none; }
+  .ct-card-shell { position: static; padding: 10px; border-radius: 26px; }
   .ct-hardware-card { display: none; }
 }
 @media (max-width: 560px) {
