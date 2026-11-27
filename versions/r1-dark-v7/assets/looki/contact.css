@@ -1,0 +1,156 @@
+/* ---------- standalone contact & waitlist page (Obsidian & Titanium Apple Pro) ---------- */
+.lk-contact-body {
+  background: radial-gradient(ellipse 75% 45% at 50% 0%, rgba(41, 151, 255, .09), transparent 68%), #06070a;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+.ct-header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(6, 7, 10, .82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.ct-header-inner {
+  max-width: 1280px;
+  margin: auto;
+  height: 68px;
+  padding: 0 clamp(18px, 4vw, 48px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.ct-brand {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 2px;
+  text-decoration: none;
+}
+.ct-brand img { display: block; width: 26px; height: 31px; filter: brightness(0) invert(1); }
+.ct-nav { display: flex; align-items: center; gap: clamp(14px, 2.4vw, 28px); }
+.ct-nav a {
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 520;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.ct-nav a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+
+.ct-main {
+  flex: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  padding: clamp(36px, 5vw, 76px) clamp(18px, 4vw, 48px) clamp(60px, 7.5vw, 104px);
+}
+.ct-stage {
+  display: grid;
+  grid-template-columns: minmax(0, .88fr) minmax(380px, 1fr);
+  gap: clamp(32px, 5.5vw, 84px);
+  align-items: start;
+}
+
+.ct-info h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4.2vw, 58px);
+  line-height: 1.05;
+  letter-spacing: -.04em;
+  font-weight: 600;
+  text-wrap: balance;
+  background: linear-gradient(180deg, #ffffff 18%, #bcc5d4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.ct-lead {
+  margin-top: 18px;
+  max-width: 46ch;
+  font-size: clamp(16px, 1.25vw, 18.5px);
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.ct-hardware-card {
+  margin-top: 30px;
+  padding: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #0c0f15;
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 30px 64px -30px rgba(0, 0, 0, .9), var(--rim);
+}
+.ct-hardware-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  height: auto;
+}
+.ct-hardware-card figcaption {
+  padding: 13px 18px;
+  border-top: 1px solid rgba(255, 255, 255, .07);
+  background: rgba(9, 11, 16, .92);
+  font-size: 12.5px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.45;
+}
+
+.ct-facts {
+  margin: 30px 0 0;
+  border-top: 1px solid var(--border-strong);
+}
+.ct-facts > div {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.ct-facts dt {
+  font-family: var(--font-display);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.ct-facts dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.ct-facts dd strong { color: var(--ink-2); }
+.ct-facts a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 560;
+}
+.ct-facts a:hover { color: var(--accent-hover); text-decoration: underline; text-underline-offset: 3px; }
+
+.ct-card-shell {
+  position: sticky;
+  top: 90px;
+  padding: 12px;
+  border-radius: 28px;
+  background: linear-gradient(160deg, #161b27 0%, #0c0f16 100%);
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 32px 72px -34px rgba(0, 0, 0, .9), var(--rim);
+}
+.ct-card { box-shadow: none; }
+
+@media (max-width: 900px) {
+  .ct-stage { grid-template-columns: 1fr; gap: 28px; }
+  .ct-card-shell { position: static; padding: 0; background: transparent; border: 0; box-shadow: none; }
+  .ct-hardware-card { display: none; }
+}
+@media (max-width: 560px) {
+  .ct-header-inner { height: 58px; padding-inline: 16px; gap: 10px; }
+  .ct-brand img { width: 22px; height: 26px; }
+  .ct-nav { gap: 10px; }
+  .ct-nav a { font-size: 12.5px; }
+  .ct-nav a[target="_blank"] { display: none; }
+}
