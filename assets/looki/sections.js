@@ -103,20 +103,18 @@
     syncArrows();
   });
 
-  /* 3b. Workflow connected horizontal progress rail */
-  document.querySelectorAll('[data-wf-rail]').forEach(rail => {
-    const items = [...rail.querySelectorAll('[data-wf-step]')];
-    const setActive = idx => {
-      items.forEach((li, i) => li.classList.toggle('is-active', i <= idx));
-      const pct = items.length > 1 ? (idx / (items.length - 1)) * 100 : 100;
-      rail.style.setProperty('--wf-progress', pct + '%');
-    };
-    items.forEach((li, idx) => {
-      li.addEventListener('mouseenter', () => setActive(idx));
-      li.addEventListener('focus', () => setActive(idx));
-      li.addEventListener('click', () => setActive(idx));
+  /* 3b. Workflow 5-panel expanding visual accordion */
+  document.querySelectorAll('[data-wf-acc]').forEach(acc => {
+    const panels = [...acc.querySelectorAll('[data-wf-panel]')];
+    const open = idx => panels.forEach((p, i) => p.classList.toggle('is-open', i === idx));
+    panels.forEach((p, idx) => {
+      p.addEventListener('click', () => open(idx));
+      p.addEventListener('mouseenter', () => { if (window.innerWidth > 940) open(idx); });
+      p.addEventListener('focus', () => open(idx));
+      p.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(idx); }
+      });
     });
-    setActive(0);
   });
 
   /* 4. Privacy status preview — pure transparent R1 hardware macro + volumetric studio state aura */

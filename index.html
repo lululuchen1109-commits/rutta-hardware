@@ -22,10 +22,10 @@
   <link rel="icon" type="image/svg+xml" href="assets/landing/monogram.svg">
   <link rel="preload" as="font" href="assets/instrument.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="assets/inter-latin-var.woff2" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/looki/base.css?v=v9">
-  <link rel="stylesheet" href="assets/looki/hero.css?v=v9">
-  <link rel="stylesheet" href="assets/looki/hardware.css?v=v9">
-  <link rel="stylesheet" href="assets/looki/research.css?v=v9">
+  <link rel="stylesheet" href="assets/looki/base.css?v=v10">
+  <link rel="stylesheet" href="assets/looki/hero.css?v=v10">
+  <link rel="stylesheet" href="assets/looki/hardware.css?v=v10">
+  <link rel="stylesheet" href="assets/looki/research.css?v=v10">
 </head>
 <body id="top">
   <a class="r1-skip" href="#value">Skip to content</a>
@@ -68,8 +68,8 @@
 
     <article class="r1-slide" data-shot="0" role="group" aria-label="1 of 2">
       <picture>
-        <source media="(max-width: 700px)" srcset="assets/looki/hero-r1-twilight-portrait.webp?v=v9">
-        <img src="assets/looki/hero-r1-twilight-wide.webp?v=v9" width="1920" height="880" fetchpriority="high" alt="R1 plugged flush into the USB-C port of a MacBook Pro in a studio.">
+        <source media="(max-width: 700px)" srcset="assets/looki/hero-r1-twilight-portrait.webp?v=v10">
+        <img src="assets/looki/hero-r1-twilight-wide.webp?v=v10" width="1920" height="880" fetchpriority="high" alt="R1 plugged flush into the USB-C port of a MacBook Pro in a studio.">
       </picture>
       <div class="r1-hero-panel">
         <h1 data-headline data-i18n="hero.h1.a">What your team says becomes what your team knows.</h1>
@@ -191,39 +191,115 @@
           </div>
         </div>
       </div>
-      <div class="r1-pillars-split">
-        <div class="r1-pillars-aside">
-          <span class="r1-pillars-kicker" data-i18n="value.kicker">Why teams leave R1 plugged in</span>
-          <h3 class="r1-pillars-lead" data-i18n="value.aside">Work moves in quick spoken moments. R1 catches them without breaking flow.</h3>
-          <span class="r1-pillars-rule" aria-hidden="true"></span>
-        </div>
-        <ul class="r1-pillars" aria-label="Core value of R1">
-          <li>
-            <span class="r1-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 6h14M5 11h10M5 16h6"/><path d="m14.5 16.5 2 2 4-4.5"/></svg></span>
+      <!-- Core Value 5-Card Rich Visual Bento (editorial photo + warm ivory + generative graphics) -->
+      <div class="r1-val-bento" aria-label="Core value of R1">
+        <!-- 1. Editorial Photographic Feature Card -->
+        <article class="r1-vb r1-vb--photo">
+          <img class="r1-vb-bg" src="assets/looki/value-decisions-editorial.webp?v=v10" width="1280" height="960" loading="lazy" alt="Two teammates talking beside a MacBook with R1 plugged into the side in warm afternoon studio light.">
+          <div class="r1-vb-top">
+            <span class="r1-vb-pill r1-vb-pill--dark" data-i18n="vb.tag1">Auto-captured</span>
+            <span class="r1-vb-stamp" data-i18n="vb.chip1">2:15 PM · Maya · Confirmed</span>
+          </div>
+          <div class="r1-vb-foot">
             <h3 data-i18n="value.1.h">Spoken decisions stay on record</h3>
             <p data-i18n="value.1.p">What gets decided out loud is written down automatically, with who said it and when.</p>
-          </li>
-          <li>
-            <span class="r1-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9.5" cy="8.5" r="3.5"/><path d="M3.5 19.5c0-3.2 2.7-5 6-5s6 1.8 6 5"/><path d="m16.5 11.5 1.8 1.8 3.2-3.6"/></svg></span>
+          </div>
+        </article>
+
+        <!-- 2. Warm Ivory-Sand Card + Floating Task Ownership Micro-UI -->
+        <article class="r1-vb r1-vb--sand">
+          <div class="r1-vb-copy">
             <h3 data-i18n="value.2.h">Commitments get owners</h3>
             <p data-i18n="value.2.p">What people promise turns into tasks with an owner and a due date, instead of being forgotten after the conversation.</p>
-          </li>
-          <li>
-            <span class="r1-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3"/></svg></span>
+          </div>
+          <div class="r1-vb-task" aria-hidden="true">
+            <div class="r1-vb-task-row">
+              <span class="r1-av r1-av--b">S</span>
+              <div>
+                <strong data-i18n="vb.task.t">Send revised quote Monday</strong>
+                <small data-i18n="vb.task.m">Owner: Sam · Auto-assigned</small>
+              </div>
+              <span class="r1-vb-check">✓</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Deep Obsidian AI Acoustic Spectrum Graphic Card -->
+        <article class="r1-vb r1-vb--obsidian">
+          <div class="r1-vb-art" aria-hidden="true">
+            <svg viewBox="0 0 360 130" fill="none">
+              <defs>
+                <linearGradient id="vbW1" x1="0" y1="65" x2="360" y2="65" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
+                  <stop offset="30%" stop-color="#38bdf8"/>
+                  <stop offset="65%" stop-color="#818cf8"/>
+                  <stop offset="100%" stop-color="#ff7d40" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="vbW2" x1="0" y1="65" x2="360" y2="65" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#a855f7" stop-opacity="0"/>
+                  <stop offset="45%" stop-color="#ff7d40"/>
+                  <stop offset="78%" stop-color="#34d399"/>
+                  <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0 72 C55 24, 115 112, 180 58 C245 6, 305 98, 360 54" stroke="url(#vbW1)" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M0 60 C70 104, 130 18, 195 70 C255 116, 310 34, 360 66" stroke="url(#vbW2)" stroke-width="2" stroke-linecap="round" opacity=".82"/>
+              <path d="M0 84 C65 56, 125 90, 185 46 C240 22, 300 84, 360 44" stroke="url(#vbW1)" stroke-width="1.2" stroke-linecap="round" opacity=".45"/>
+            </svg>
+          </div>
+          <div class="r1-vb-foot">
             <h3 data-i18n="value.3.h">Zero extra work for anyone</h3>
             <p data-i18n="value.3.p">No notes tool to open, nothing to write up afterwards, no re-briefing your Agents.</p>
-          </li>
-          <li>
-            <span class="r1-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6.5" r="2.5"/><circle cx="18" cy="17.5" r="2.5"/><path d="M8.3 11 15.6 7.4M8.3 13l7.3 3.6"/></svg></span>
+          </div>
+        </article>
+
+        <!-- 4. Crisp White + Generative Radial Coral-Indigo Stream Graphic -->
+        <article class="r1-vb r1-vb--stream">
+          <div class="r1-vb-art r1-vb-art--stream" aria-hidden="true">
+            <svg viewBox="0 0 360 132" fill="none">
+              <defs>
+                <linearGradient id="vbStr" x1="48" y1="66" x2="340" y2="66" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#6366f1"/>
+                  <stop offset="52%" stop-color="#ff6b35"/>
+                  <stop offset="100%" stop-color="#f59e0b" stop-opacity=".2"/>
+                </linearGradient>
+              </defs>
+              <g stroke="url(#vbStr)" stroke-width="1.25" opacity=".78">
+                <path d="M52 66 Q165 66 346 12"/><path d="M52 66 Q165 66 346 26"/><path d="M52 66 Q165 66 346 40"/>
+                <path d="M52 66 Q165 66 346 54"/><path d="M52 66 Q165 66 346 66"/><path d="M52 66 Q165 66 346 78"/>
+                <path d="M52 66 Q165 66 346 92"/><path d="M52 66 Q165 66 346 106"/><path d="M52 66 Q165 66 346 120"/>
+              </g>
+              <circle cx="52" cy="66" r="22" fill="#ffffff" stroke="#6366f1" stroke-width="1.5"/>
+              <circle cx="52" cy="66" r="14" fill="#eef2ff"/>
+              <text x="52" y="71" text-anchor="middle" font-size="14" font-weight="800" fill="#1e1b4b" font-family="Instrument Sans,sans-serif">R</text>
+            </svg>
+            <div class="r1-vb-tools"><span>Notion</span><span>Linear</span><span>Slack</span><span>Agents</span></div>
+          </div>
+          <div class="r1-vb-foot">
             <h3 data-i18n="value.4.h">Flows to your own tools</h3>
             <p data-i18n="value.4.p">Everything lands in your Rutta team knowledge base and flows on to your docs, task tools and Agents. It always belongs to your team.</p>
-          </li>
-          <li>
-            <span class="r1-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.6 3 8.1 7 9.5 4-1.4 7-4.9 7-9.5V6l-7-3z"/><path d="M9.5 12v-1.5m2.5 3v-4.5m2.5 3.5V10"/></svg></span>
+          </div>
+        </article>
+
+        <!-- 5. Cool Ice-Mint Card + Voiceprint Filter Graphic -->
+        <article class="r1-vb r1-vb--mint">
+          <div class="r1-vb-vp" aria-hidden="true">
+            <div class="r1-vb-vp-row is-on">
+              <span class="r1-vb-vp-tag" data-i18n="vb.vp.on">Enrolled</span>
+              <span class="r1-vb-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+              <span class="r1-vb-vp-mark">✓</span>
+            </div>
+            <div class="r1-vb-vp-row is-off">
+              <span class="r1-vb-vp-tag" data-i18n="vb.vp.off">Guest · Discarded</span>
+              <span class="r1-vb-dash"></span>
+              <span class="r1-vb-vp-mark">×</span>
+            </div>
+          </div>
+          <div class="r1-vb-foot">
             <h3 data-i18n="value.5.h">Only people who opted in</h3>
             <p data-i18n="value.5.p">R1 is designed to process only enrolled teammates, and only at work. Lunch, hallways and private time are out of scope.</p>
-          </li>
-        </ul>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -386,46 +462,95 @@
         <header class="r1-heading">
           <h2 id="workflow-title" data-i18n="wf.h2">Plug it in once. Your team just keeps working.</h2>
         </header>
-        <div class="r1-wf-rail" data-wf-rail style="--wf-progress:20%">
-          <span class="r1-wf-track" aria-hidden="true"><i></i></span>
-          <ol class="r1-wf-steps">
-            <li class="is-active" data-wf-step="1" tabindex="0">
-              <span class="r1-wf-node" aria-hidden="true">01</span>
-              <div class="r1-wf-body">
-                <strong data-i18n="wf.1.t">Plug in</strong>
-                <p data-i18n="wf.1.p">Plug R1 into your Mac. It’s on whenever your Mac is.</p>
+        <!-- 5-Panel Expanding Interactive Visual Accordion -->
+        <ol class="r1-wf-acc" data-wf-acc aria-label="How R1 works">
+          <!-- 01. Plug in (Hardware twilight photography) -->
+          <li class="r1-wf-panel r1-wf-panel--photo is-open" data-wf-panel="0" tabindex="0">
+            <img class="r1-wf-bg" src="assets/looki/hero-r1-twilight-wide.webp?v=v10" width="1920" height="880" loading="lazy" alt="R1 plugged flush into a MacBook USB-C port.">
+            <span class="r1-wf-num">01</span>
+            <div class="r1-wf-copy">
+              <strong data-i18n="wf.1.t">Plug in</strong>
+              <p data-i18n="wf.1.p">Plug R1 into your Mac. It’s on whenever your Mac is.</p>
+            </div>
+            <span class="r1-wf-plus" aria-hidden="true"></span>
+          </li>
+
+          <!-- 02. Enroll (Bright graphic card with colorful voiceprint curve UI) -->
+          <li class="r1-wf-panel r1-wf-panel--enroll" data-wf-panel="1" tabindex="0">
+            <span class="r1-wf-num">02</span>
+            <div class="r1-wf-stage" aria-hidden="true">
+              <div class="r1-wf-avatars">
+                <span class="r1-av r1-av--a">M</span>
+                <span class="r1-av r1-av--b">S</span>
+                <span class="r1-av r1-av--c">A</span>
+                <em data-i18n="wa.enrolled">Voice enrolled</em>
               </div>
-            </li>
-            <li data-wf-step="2" tabindex="0">
-              <span class="r1-wf-node" aria-hidden="true">02</span>
-              <div class="r1-wf-body">
-                <strong data-i18n="wf.2.t">Enroll</strong>
-                <p data-i18n="wf.2.p">Each teammate records a short voice sample once. Leave anytime.</p>
+              <svg class="r1-wf-eq" viewBox="0 0 320 110" fill="none">
+                <defs>
+                  <linearGradient id="wfEq" x1="0" y1="55" x2="320" y2="55" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#0ea5e9"/><stop offset="48%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#ff6b35"/>
+                  </linearGradient>
+                  <linearGradient id="wfEqFill" x1="0" y1="0" x2="0" y2="110" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".26"/><stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0 78 C36 76, 52 24, 88 44 C124 64, 144 16, 178 46 C210 74, 232 28, 266 54 C290 72, 306 64, 320 60 L320 110 L0 110 Z" fill="url(#wfEqFill)"/>
+                <path d="M0 78 C36 76, 52 24, 88 44 C124 64, 144 16, 178 46 C210 74, 232 28, 266 54 C290 72, 306 64, 320 60" stroke="url(#wfEq)" stroke-width="2.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="r1-wf-copy">
+              <strong data-i18n="wf.2.t">Enroll</strong>
+              <p data-i18n="wf.2.p">Each teammate records a short voice sample once. Leave anytime.</p>
+            </div>
+            <span class="r1-wf-plus" aria-hidden="true"></span>
+          </li>
+
+          <!-- 03. Work as usual (Warm sunlit vertical studio photograph) -->
+          <li class="r1-wf-panel r1-wf-panel--photo" data-wf-panel="2" tabindex="0">
+            <img class="r1-wf-bg" src="assets/looki/wf-work-editorial.webp?v=v10" width="960" height="1280" loading="lazy" alt="Sunlit studio desk with MacBook and R1 ready during team discussion.">
+            <span class="r1-wf-num">03</span>
+            <div class="r1-wf-copy">
+              <strong data-i18n="wf.3.t">Work as usual</strong>
+              <p data-i18n="wf.3.p">Talk at your desk or in the meeting room. Nothing to start or stop.</p>
+            </div>
+            <span class="r1-wf-plus" aria-hidden="true"></span>
+          </li>
+
+          <!-- 04. Confirm (Sleek dark obsidian micro-UI panel) -->
+          <li class="r1-wf-panel r1-wf-panel--confirm" data-wf-panel="3" tabindex="0">
+            <span class="r1-wf-num">04</span>
+            <div class="r1-wf-stage" aria-hidden="true">
+              <div class="r1-wf-sheet">
+                <span class="r1-wf-sheet-tag" data-i18n="wa.private">Participants only</span>
+                <p data-i18n="wa.item">Launch date → Dec 10</p>
+                <span class="r1-wf-sheet-btn" data-i18n="wa.btn">Confirm sync</span>
               </div>
-            </li>
-            <li data-wf-step="3" tabindex="0">
-              <span class="r1-wf-node" aria-hidden="true">03</span>
-              <div class="r1-wf-body">
-                <strong data-i18n="wf.3.t">Work as usual</strong>
-                <p data-i18n="wf.3.p">Talk at your desk or in the meeting room. Nothing to start or stop.</p>
+            </div>
+            <div class="r1-wf-copy">
+              <strong data-i18n="wf.4.t">Confirm</strong>
+              <p data-i18n="wf.4.p">Only the people in the conversation see the note first. Once someone confirms, it goes to the team.</p>
+            </div>
+            <span class="r1-wf-plus" aria-hidden="true"></span>
+          </li>
+
+          <!-- 05. Flow (Warm ivory ecosystem routing panel) -->
+          <li class="r1-wf-panel r1-wf-panel--flow" data-wf-panel="4" tabindex="0">
+            <span class="r1-wf-num">05</span>
+            <div class="r1-wf-stage" aria-hidden="true">
+              <div class="r1-wf-hub">
+                <span class="r1-wf-hub-r">R</span>
+                <div class="r1-wf-hub-nodes">
+                  <span>Notion</span><span>Linear</span><span>Slack</span><span>Agent</span>
+                </div>
               </div>
-            </li>
-            <li data-wf-step="4" tabindex="0">
-              <span class="r1-wf-node" aria-hidden="true">04</span>
-              <div class="r1-wf-body">
-                <strong data-i18n="wf.4.t">Confirm</strong>
-                <p data-i18n="wf.4.p">Only the people in the conversation see the note first. Once someone confirms, it goes to the team.</p>
-              </div>
-            </li>
-            <li data-wf-step="5" tabindex="0">
-              <span class="r1-wf-node" aria-hidden="true">05</span>
-              <div class="r1-wf-body">
-                <strong data-i18n="wf.5.t">Flow</strong>
-                <p data-i18n="wf.5.p">Decisions go to your knowledge base, tasks to your tracker with owners, and Agents can look it all up.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
+            </div>
+            <div class="r1-wf-copy">
+              <strong data-i18n="wf.5.t">Flow</strong>
+              <p data-i18n="wf.5.p">Decisions go to your knowledge base, tasks to your tracker with owners, and Agents can look it all up.</p>
+            </div>
+            <span class="r1-wf-plus" aria-hidden="true"></span>
+          </li>
+        </ol>
 
         <div class="r1-apps">
           <p class="r1-apps-label" data-i18n="wf.apps">Designed to connect via MCP, API and CLI to the tools and Agents you already use</p>
@@ -460,7 +585,7 @@
 
         <div class="r1-privacy-media">
           <div class="r1-privacy-stage" data-pstate="mute">
-            <img id="privacy-photo" src="assets/looki/privacy-r1-mute.webp?v=v9" width="1600" height="900" loading="lazy" alt="Three-quarter studio view of R1 muted beside a MacBook USB-C port: top light off and physical switch slid back to show an orange marker.">
+            <img id="privacy-photo" src="assets/looki/privacy-r1-mute.webp?v=v10" width="1600" height="900" loading="lazy" alt="Three-quarter studio view of R1 muted beside a MacBook USB-C port: top light off and physical switch slid back to show an orange marker.">
           </div>
           <div class="r1-privacy-bar">
             <div class="r1-privacy-states" role="group" aria-label="Preview R1 status">
@@ -472,35 +597,73 @@
           </div>
         </div>
 
-        <ol class="r1-privacy-grid">
-          <li>
-            <span class="r1-pv-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z"/><circle cx="12" cy="12" r="2.5"/></svg></span>
-            <h3 data-i18n="pv.1.h">People in the conversation see it first</h3>
+        <!-- 6 Tinted Visual Privacy Feature Cards -->
+        <ol class="r1-pv-cards">
+          <!-- 1. Ice Periwinkle — People in conversation see it first -->
+          <li class="r1-pv-card r1-pv-card--ice">
+            <span class="r1-pv-pill"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z"/><circle cx="12" cy="12" r="2.5"/></svg></i><span data-i18n="pv.1.h">People in the conversation see it first</span></span>
+            <div class="r1-pv-vis" aria-hidden="true">
+              <div class="r1-pv-gate">
+                <div class="r1-pv-gate-box is-open"><span class="r1-av r1-av--a">M</span><span class="r1-av r1-av--b">S</span><em data-i18n="pv.ui.priv">Maya &amp; Sam only</em></div>
+                <div class="r1-pv-gate-box is-lock"><span>🔒</span><em data-i18n="pv.ui.team">Team space · Locked</em></div>
+              </div>
+            </div>
             <p data-i18n="pv.1.p">Notes are visible only to the people who spoke. Nothing reaches the team until one of them shares it.</p>
           </li>
-          <li>
-            <span class="r1-pv-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12v-2m4 5V9m4 7V8m4 6v-4m4 3v-2"/></svg></span>
-            <h3 data-i18n="pv.2.h">Only enrolled voices</h3>
+
+          <!-- 2. Ice Mint — Only enrolled voices -->
+          <li class="r1-pv-card r1-pv-card--mint">
+            <span class="r1-pv-pill"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12v-2m4 5V9m4 7V8m4 6v-4m4 3v-2"/></svg></i><span data-i18n="pv.2.h">Only enrolled voices</span></span>
+            <div class="r1-pv-vis" aria-hidden="true">
+              <div class="r1-pv-waves">
+                <div class="r1-pv-wrow is-keep"><b data-i18n="pv.ui.keep">Enrolled · Kept</b><span class="r1-vb-bars"><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+                <div class="r1-pv-wrow is-drop"><b data-i18n="pv.ui.drop">Unknown · Dropped</b><span class="r1-vb-dash"></span></div>
+              </div>
+            </div>
             <p data-i18n="pv.2.p">Designed to keep only enrolled teammates’ speech. Visitors and others are discarded — not transcribed, not saved.</p>
           </li>
-          <li>
-            <span class="r1-pv-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>
-            <h3 data-i18n="pv.3.h">Admins never get raw audio</h3>
+
+          <!-- 3. Deep Obsidian — Admins never get raw audio -->
+          <li class="r1-pv-card r1-pv-card--dark">
+            <span class="r1-pv-pill"><i aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></i><span data-i18n="pv.3.h">Admins never get raw audio</span></span>
+            <div class="r1-pv-vis" aria-hidden="true">
+              <div class="r1-pv-acl">
+                <div><span data-i18n="pv.ui.adm1">Members &amp; tools</span><em class="is-ok">✓</em></div>
+                <div><span data-i18n="pv.ui.adm2">Raw audio files</span><em class="is-no" data-i18n="pv.ui.no">No access</em></div>
+              </div>
+            </div>
             <p data-i18n="pv.3.p">Admins can manage members and settings, but can’t access recordings.</p>
           </li>
-          <li>
-            <span class="r1-pv-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7.5" width="18" height="9" rx="4.5"/><circle cx="8.5" cy="12" r="2.5"/></svg></span>
-            <h3 data-i18n="pv.4.h">Physical mute and a visible light</h3>
+
+          <!-- 4. Macro Hardware Photo — Physical mute and a visible light -->
+          <li class="r1-pv-card r1-pv-card--photo">
+            <img class="r1-pv-bg" src="assets/looki/privacy-r1-mute.webp?v=v10" width="1600" height="900" loading="lazy" alt="Close-up of R1 physical mute switch showing orange indicator.">
+            <span class="r1-pv-pill"><i aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7.5" width="18" height="9" rx="4.5"/><circle cx="8.5" cy="12" r="2.5"/></svg></i><span data-i18n="pv.4.h">Physical mute and a visible light</span></span>
             <p data-i18n="pv.4.p">A real switch on the side, and a light everyone at the table can see.</p>
           </li>
-          <li>
-            <span class="r1-pv-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg></span>
-            <h3 data-i18n="pv.5.h">Audio stays on your Mac</h3>
+
+          <!-- 5. Warm Sand-Ivory — Audio stays on your Mac -->
+          <li class="r1-pv-card r1-pv-card--sand">
+            <span class="r1-pv-pill"><i aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg></i><span data-i18n="pv.5.h">Audio stays on your Mac</span></span>
+            <div class="r1-pv-vis" aria-hidden="true">
+              <div class="r1-pv-mac">
+                <div class="r1-pv-mac-chip"><span>Mac</span><small data-i18n="pv.ui.mac">Audio stays local</small></div>
+                <span class="r1-pv-mac-arr">→</span>
+                <div class="r1-pv-mac-txt" data-i18n="pv.ui.txt">Confirmed text only</div>
+              </div>
+            </div>
             <p data-i18n="pv.5.p">Audio is processed on your Mac and not uploaded — only text from enrolled teammates syncs. Anyone can delete records they’re in.</p>
           </li>
-          <li>
-            <span class="r1-pv-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.6 3 8.1 7 9.5 4-1.4 7-4.9 7-9.5V6l-7-3z"/><path d="m9.5 12 1.8 1.8 3.5-3.8"/></svg></span>
-            <h3 data-i18n="pv.6.h">Never used to train models</h3>
+
+          <!-- 6. Soft Lavender — Never used to train models -->
+          <li class="r1-pv-card r1-pv-card--lilac">
+            <span class="r1-pv-pill"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.6 3 8.1 7 9.5 4-1.4 7-4.9 7-9.5V6l-7-3z"/><path d="m9.5 12 1.8 1.8 3.5-3.8"/></svg></i><span data-i18n="pv.6.h">Never used to train models</span></span>
+            <div class="r1-pv-vis" aria-hidden="true">
+              <div class="r1-pv-zero">
+                <strong>0%</strong>
+                <span data-i18n="pv.ui.zero">0% model training</span>
+              </div>
+            </div>
             <p data-i18n="pv.6.p">Your team’s content is never used to train AI models.</p>
           </li>
         </ol>
@@ -725,7 +888,7 @@
     <section class="r1-closing-band" id="final-cta" aria-labelledby="closing-title">
       <div class="r1-closing-inner">
         <div class="r1-closing-photo">
-          <img src="assets/landing/r1-closing-mac.webp?v=v9" width="1200" height="800" loading="lazy" alt="Rutta Bar · R1 seated flush into the USB-C port of a closed silver MacBook.">
+          <img src="assets/landing/r1-closing-mac.webp?v=v10" width="1200" height="800" loading="lazy" alt="Rutta Bar · R1 seated flush into the USB-C port of a closed silver MacBook.">
         </div>
         <div class="r1-closing-copy">
           <p class="r1-closing-eyebrow" data-i18n="close.eyebrow">RUTTA BAR · R1</p>
@@ -824,12 +987,12 @@ Team notes ready.</h2>
     </div>
   </dialog>
 
-  <script defer src="assets/looki/i18n.js?v=v9"></script>
-  <script defer src="assets/looki/hero.js?v=v9"></script>
-  <script defer src="assets/looki/sections.js?v=v9"></script>
-  <script defer src="assets/looki/hardware.js?v=v9"></script>
-  <script defer src="assets/landing/switch.js?v=v9"></script>
-  <script defer src="assets/landing/explore.js?v=v9"></script>
-  <script defer src="assets/looki/research.js?v=v9"></script>
+  <script defer src="assets/looki/i18n.js?v=v10"></script>
+  <script defer src="assets/looki/hero.js?v=v10"></script>
+  <script defer src="assets/looki/sections.js?v=v10"></script>
+  <script defer src="assets/looki/hardware.js?v=v10"></script>
+  <script defer src="assets/landing/switch.js?v=v10"></script>
+  <script defer src="assets/landing/explore.js?v=v10"></script>
+  <script defer src="assets/looki/research.js?v=v10"></script>
 </body>
 </html>

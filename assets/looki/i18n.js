@@ -15,7 +15,7 @@
   };
   const SUPPORTED = Object.keys(LOCALES);
   const STORAGE_KEY = 'rutta-lang';
-  const PACK_VER = 'v9';
+  const PACK_VER = 'v10';
 
   /* English fallback for dynamic script-driven strings (HTML already carries full EN) */
   const EN_BASE = {
