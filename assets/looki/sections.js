@@ -64,10 +64,22 @@
       dots.forEach((dot, i) => dot.setAttribute('aria-current', String(i === current)));
       if (shouldScroll) {
         const target = cards[current];
-        const left = Math.max(0, target.offsetLeft - 12);
-        track.scrollTo({ left, behavior: 'smooth' });
+        const gap = parseFloat(getComputedStyle(track).gap) || 18;
+        const desktop = window.innerWidth > 940;
+        const estLeft = desktop
+          ? (current === cards.length - 1 ? track.scrollWidth + 420 : Math.max(0, current * (326 + gap) - 12))
+          : Math.max(0, target.offsetLeft - 12);
+        track.scrollTo({ left: estLeft, behavior: 'smooth' });
+        setTimeout(() => {
+          const settledLeft = current === cards.length - 1
+            ? track.scrollWidth
+            : Math.max(0, target.offsetLeft - 12);
+          track.scrollTo({ left: settledLeft, behavior: 'smooth' });
+          syncArrows();
+        }, 500);
+      } else {
+        setTimeout(syncArrows, 500);
       }
-      setTimeout(syncArrows, 380);
     }
 
     cards.forEach((card, idx) => {
@@ -91,14 +103,15 @@
     syncArrows();
   });
 
-  /* 4. Privacy status preview */
+  /* 4. Privacy status preview — pure transparent R1 hardware macro + volumetric studio state aura */
   const privacyPhoto = document.getElementById('privacy-photo');
+  const privacyStage = document.querySelector('.lk-privacy-stage');
   const privacyCaption = document.getElementById('privacy-caption');
   const privacyButtons = [...document.querySelectorAll('[data-pstate]')];
   const privacySrc = {
-    ready: 'assets/landing/privacy-ready.webp?v=studio-v7',
-    input: 'assets/landing/privacy-input.webp?v=studio-v7',
-    mute: 'assets/landing/privacy-mute.webp?v=studio-v7'
+    ready: 'assets/landing/switch-photo-ready.webp?v=studio-v7',
+    input: 'assets/landing/switch-photo-input.webp?v=studio-v7',
+    mute: 'assets/landing/switch-photo-mute.webp?v=studio-v7'
   };
   if (privacyPhoto && privacyButtons.length) {
     const warm = () => Object.values(privacySrc).forEach(src => { const i = new Image(); i.src = src; });
@@ -115,6 +128,7 @@
         if (!privacySrc[state]) return;
         privacyButtons.forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
         privacyPhoto.src = privacySrc[state];
+        if (privacyStage) privacyStage.dataset.pstate = state;
         SET(privacyCaption, 'pv.cap.' + state);
       });
     });

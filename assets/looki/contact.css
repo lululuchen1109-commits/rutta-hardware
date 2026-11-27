@@ -1,15 +1,15 @@
-/* ---------- standalone contact & waitlist page (pure white Apple canvas) ---------- */
+/* ---------- standalone contact & waitlist page (Obsidian & Titanium Apple Pro) ---------- */
 .lk-contact-body {
-  background: #ffffff;
+  background: radial-gradient(ellipse 75% 45% at 50% 0%, rgba(41, 151, 255, .09), transparent 68%), #06070a;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
 .ct-header {
   border-bottom: 1px solid var(--border);
-  background: rgba(255, 255, 255, .86);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: rgba(6, 7, 10, .82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   position: sticky;
   top: 0;
   z-index: 20;
@@ -30,7 +30,7 @@
   padding: 4px 2px;
   text-decoration: none;
 }
-.ct-brand img { display: block; width: 26px; height: 31px; }
+.ct-brand img { display: block; width: 26px; height: 31px; filter: brightness(0) invert(1); }
 .ct-nav { display: flex; align-items: center; gap: clamp(14px, 2.4vw, 28px); }
 .ct-nav a {
   text-decoration: none;
@@ -40,7 +40,7 @@
   color: var(--ink-2);
   white-space: nowrap;
 }
-.ct-nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+.ct-nav a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
 
 .ct-main {
   flex: 1;
@@ -62,33 +62,40 @@
   line-height: 1.05;
   letter-spacing: -.04em;
   font-weight: 600;
-  color: var(--ink);
   text-wrap: balance;
+  background: linear-gradient(180deg, #ffffff 18%, #bcc5d4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .ct-lead {
   margin-top: 18px;
   max-width: 46ch;
   font-size: clamp(16px, 1.25vw, 18.5px);
-  line-height: 1.58;
+  line-height: 1.6;
   color: var(--muted);
 }
 
 .ct-hardware-card {
   margin-top: 30px;
-  padding: 28px 24px 20px;
+  padding: 0;
   border-radius: 22px;
-  background: radial-gradient(ellipse at 65% 24%, #ffffff 0%, #eeeff3 80%);
-  border: 1px solid var(--border);
+  overflow: hidden;
+  background: #0c0f15;
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 30px 64px -30px rgba(0, 0, 0, .9), var(--rim);
 }
 .ct-hardware-card img {
   display: block;
-  width: min(90%, 370px);
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   height: auto;
-  margin: 0 auto 16px;
-  transform: rotate(-6deg);
-  filter: drop-shadow(0 18px 12px rgba(18, 22, 32, .16));
 }
 .ct-hardware-card figcaption {
+  padding: 13px 18px;
+  border-top: 1px solid rgba(255, 255, 255, .07);
+  background: rgba(9, 11, 16, .92);
   font-size: 12.5px;
   color: var(--muted);
   text-align: center;
@@ -107,37 +114,37 @@
   font-family: var(--font-display);
   font-size: 14.5px;
   font-weight: 600;
-  color: var(--ink);
+  color: #fff;
   margin-bottom: 4px;
 }
 .ct-facts dd {
   margin: 0;
   font-size: 14px;
-  line-height: 1.58;
+  line-height: 1.6;
   color: var(--muted);
 }
+.ct-facts dd strong { color: var(--ink-2); }
 .ct-facts a {
   color: var(--accent);
   text-decoration: none;
   font-weight: 560;
 }
-.ct-facts a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.ct-facts a:hover { color: var(--accent-hover); text-decoration: underline; text-underline-offset: 3px; }
 
 .ct-card-shell {
   position: sticky;
   top: 90px;
   padding: 12px;
   border-radius: 28px;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: linear-gradient(160deg, #161b27 0%, #0c0f16 100%);
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 32px 72px -34px rgba(0, 0, 0, .9), var(--rim);
 }
-.ct-card {
-  box-shadow: 0 18px 42px -28px rgba(15, 18, 28, .16);
-}
+.ct-card { box-shadow: none; }
 
 @media (max-width: 900px) {
   .ct-stage { grid-template-columns: 1fr; gap: 28px; }
-  .ct-card-shell { position: static; padding: 0; background: transparent; border: 0; }
+  .ct-card-shell { position: static; padding: 0; background: transparent; border: 0; box-shadow: none; }
   .ct-hardware-card { display: none; }
 }
 @media (max-width: 560px) {
