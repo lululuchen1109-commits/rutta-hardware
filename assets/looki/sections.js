@@ -1,8 +1,32 @@
 (() => {
-  const T = (key, fallback) => (window.ruttaT ? window.ruttaT(key, fallback) : fallback);
-  const SET = (el, key) => { if (window.ruttaSet) window.ruttaSet(el, key); };
+  const SET = (el, key) => { if (el && window.ruttaSet) window.ruttaSet(el, key); };
 
-  /* Three highlights strip */
+  /* 1. Looki tabbed stage showcase */
+  document.querySelectorAll('[data-stage]').forEach(stage => {
+    const tabs = [...stage.querySelectorAll('[data-stage-tab]')];
+    const panels = [...stage.querySelectorAll('[data-stage-panel]')];
+    function select(name) {
+      tabs.forEach(tab => {
+        const active = tab.dataset.stageTab === name;
+        tab.setAttribute('aria-selected', String(active));
+        tab.tabIndex = active ? 0 : -1;
+      });
+      panels.forEach(panel => { panel.hidden = panel.dataset.stagePanel !== name; });
+    }
+    tabs.forEach((tab, idx) => {
+      tab.addEventListener('click', () => select(tab.dataset.stageTab));
+      tab.addEventListener('keydown', e => {
+        const nextIdx = e.key === 'ArrowRight' ? (idx + 1) % tabs.length
+          : e.key === 'ArrowLeft' ? (idx + tabs.length - 1) % tabs.length : -1;
+        if (nextIdx < 0) return;
+        e.preventDefault();
+        tabs[nextIdx].click();
+        tabs[nextIdx].focus();
+      });
+    });
+  });
+
+  /* 2. Kinetic 3-word principle strip */
   const detailButtons = [...document.querySelectorAll('[data-detail]')];
   const explainer = document.getElementById('detail-explainer');
   detailButtons.forEach(button => {
@@ -12,7 +36,62 @@
     });
   });
 
-  /* Privacy status preview */
+  /* 3. Looki horizontal expandable scenario rail */
+  document.querySelectorAll('[data-story-rail]').forEach(rail => {
+    const track = rail.querySelector('.lk-story-track');
+    const cards = [...rail.querySelectorAll('.lk-story')];
+    const prev = rail.querySelector('.lk-story-arrow--prev');
+    const next = rail.querySelector('.lk-story-arrow--next');
+    const dots = [...rail.querySelectorAll('.lk-story-dots button')];
+    if (!track || !cards.length) return;
+
+    let current = 0;
+
+    function syncArrows() {
+      if (!prev || !next) return;
+      prev.disabled = track.scrollLeft <= 6;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 6;
+    }
+
+    function openCard(index, shouldScroll) {
+      current = (index + cards.length) % cards.length;
+      cards.forEach((card, i) => {
+        const open = i === current;
+        card.classList.toggle('is-open', open);
+        const btn = card.querySelector('.lk-story-toggle');
+        if (btn) btn.setAttribute('aria-expanded', String(open));
+      });
+      dots.forEach((dot, i) => dot.setAttribute('aria-current', String(i === current)));
+      if (shouldScroll) {
+        const target = cards[current];
+        const left = Math.max(0, target.offsetLeft - 12);
+        track.scrollTo({ left, behavior: 'smooth' });
+      }
+      setTimeout(syncArrows, 380);
+    }
+
+    cards.forEach((card, idx) => {
+      const toggle = card.querySelector('.lk-story-toggle');
+      card.addEventListener('click', e => {
+        if (e.target.closest('a')) return;
+        if (!card.classList.contains('is-open')) openCard(idx, true);
+      });
+      toggle?.addEventListener('click', e => {
+        e.stopPropagation();
+        if (card.classList.contains('is-open')) openCard((idx + 1) % cards.length, true);
+        else openCard(idx, true);
+      });
+    });
+
+    prev?.addEventListener('click', () => openCard(Math.max(0, current - 1), true));
+    next?.addEventListener('click', () => openCard(Math.min(cards.length - 1, current + 1), true));
+    dots.forEach((dot, idx) => dot.addEventListener('click', () => openCard(idx, true)));
+    track.addEventListener('scroll', syncArrows, { passive: true });
+    window.addEventListener('resize', syncArrows, { passive: true });
+    syncArrows();
+  });
+
+  /* 4. Privacy status preview */
   const privacyPhoto = document.getElementById('privacy-photo');
   const privacyCaption = document.getElementById('privacy-caption');
   const privacyButtons = [...document.querySelectorAll('[data-pstate]')];
@@ -41,7 +120,7 @@
     });
   }
 
-  /* Privacy notice dialog */
+  /* 5. Privacy notice dialog */
   const dialog = document.getElementById('privacy-dialog');
   if (dialog) {
     document.querySelectorAll('[data-open-privacy]').forEach(btn => btn.addEventListener('click', () => dialog.showModal()));
@@ -53,7 +132,7 @@
     });
   }
 
-  /* Old anchors keep working */
+  /* 6. Legacy anchor aliases */
   const equivalents = {
     research: 'waitlist', why: 'value', story: 'scenarios', how: 'workflow', stories: 'scenarios',
     scenes: 'scenarios', notes: 'workflow', people: 'privacy', unboxing: 'hardware', journal: 'hardware', main: 'overview'
@@ -64,5 +143,4 @@
   };
   followOldLink();
   window.addEventListener('hashchange', followOldLink);
-  void T;
 })();

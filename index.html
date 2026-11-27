@@ -3,19 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111116">
+  <meta name="theme-color" content="#0d0f14">
   <title data-i18n-title="meta.title">Rutta R1 | What your team says becomes what it knows</title>
-  <meta name="description" content="R1 plugs into your Mac and stays on through the workday. It recognizes enrolled teammates by voice, captures the decisions, to-dos and key facts you say out loud, and sends them to the tools and AI Agents your team already uses.">
-  <meta property="og:title" content="Rutta R1 | What your team says becomes what it knows">
+  <meta name="description" data-i18n-meta="meta.desc" content="R1 plugs into your Mac and stays on through the workday. It recognizes enrolled teammates by voice, captures the decisions, to-dos and key facts you say out loud, and sends them to the tools and AI Agents your team already uses.">
+  <meta property="og:title" data-i18n-meta="meta.title" content="Rutta R1 | What your team says becomes what it knows">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://lululuchen1109-commits.github.io/rutta-hardware/assets/looki/share-studio.jpg">
-  <meta property="og:description" content="Team memory for your Mac. Spoken decisions stay on record, commitments get owners, and your tools and Agents stay up to date — no one presses record.">
+  <meta property="og:description" data-i18n-meta="meta.desc" content="Team memory for your Mac. Spoken decisions stay on record, commitments get owners, and your tools and Agents stay up to date — no one presses record.">
+  <link rel="alternate" hreflang="en" href="?lang=en">
+  <link rel="alternate" hreflang="zh-Hans" href="?lang=zh-CN">
+  <link rel="alternate" hreflang="zh-Hant" href="?lang=zh-TW">
+  <link rel="alternate" hreflang="ja" href="?lang=ja">
+  <link rel="alternate" hreflang="ko" href="?lang=ko">
+  <link rel="alternate" hreflang="de" href="?lang=de">
+  <link rel="alternate" hreflang="fr" href="?lang=fr">
+  <link rel="alternate" hreflang="es" href="?lang=es">
+  <link rel="alternate" hreflang="x-default" href="?lang=en">
   <link rel="icon" type="image/svg+xml" href="assets/landing/monogram.svg">
+  <link rel="preload" as="font" href="assets/instrument.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="assets/inter-latin-var.woff2" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/looki/base.css?v=v5">
-  <link rel="stylesheet" href="assets/looki/hero.css?v=v5">
-  <link rel="stylesheet" href="assets/looki/hardware.css?v=v5">
-  <link rel="stylesheet" href="assets/looki/research.css?v=v5">
+  <link rel="stylesheet" href="assets/looki/base.css?v=v6">
+  <link rel="stylesheet" href="assets/looki/hero.css?v=v6">
+  <link rel="stylesheet" href="assets/looki/hardware.css?v=v6">
+  <link rel="stylesheet" href="assets/looki/research.css?v=v6">
 </head>
 <body id="top">
   <a class="lk-skip" href="#value">Skip to content</a>
@@ -35,12 +45,25 @@
         <a href="#workflow" data-i18n="nav.how">How it works</a>
         <a href="#privacy" data-i18n="nav.privacy">Privacy</a>
         <a href="https://lululuchen1109-commits.github.io/rutta-bar-studio/product.html?v=040" target="_blank" rel="noopener" data-track="nav_gallery" data-i18n="nav.gallery">Product gallery ↗</a>
-        <a href="contact.html" target="_blank" rel="noopener" data-track="nav_contact" data-i18n="nav.contact">Contact us ↗</a>
+        <a href="contact.html" target="_blank" rel="noopener" data-track="nav_contact" data-keep-lang data-i18n="nav.contact">Contact us ↗</a>
       </nav>
       <div class="lk-topbar-right">
-        <div class="lk-lang" role="group" aria-label="Language">
-          <button type="button" data-lang="en" aria-pressed="true">EN</button>
-          <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+        <div class="lk-locale" data-locale-picker>
+          <button type="button" class="lk-locale-btn" aria-haspopup="menu" aria-expanded="false" aria-label="Choose language">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M2.5 10h15M10 2.5c2.2 2.2 3.2 4.8 3.2 7.5s-1 5.3-3.2 7.5c-2.2-2.2-3.2-4.8-3.2-7.5S7.8 4.7 10 2.5z"/></svg>
+            <span data-locale-current>EN</span>
+            <svg class="lk-locale-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg>
+          </button>
+          <div class="lk-locale-menu" role="menu" hidden>
+            <button type="button" role="menuitemradio" data-lang="en" aria-checked="true"><span>English</span><span>Global</span></button>
+            <button type="button" role="menuitemradio" data-lang="zh-CN" aria-checked="false"><span>简体中文</span><span>中国大陆</span></button>
+            <button type="button" role="menuitemradio" data-lang="zh-TW" aria-checked="false"><span>繁體中文</span><span>台灣 / 香港</span></button>
+            <button type="button" role="menuitemradio" data-lang="ja" aria-checked="false"><span>日本語</span><span>日本</span></button>
+            <button type="button" role="menuitemradio" data-lang="ko" aria-checked="false"><span>한국어</span><span>대한민국</span></button>
+            <button type="button" role="menuitemradio" data-lang="de" aria-checked="false"><span>Deutsch</span><span>DACH</span></button>
+            <button type="button" role="menuitemradio" data-lang="fr" aria-checked="false"><span>Français</span><span>France</span></button>
+            <button type="button" role="menuitemradio" data-lang="es" aria-checked="false"><span>Español</span><span>España / LatAm</span></button>
+          </div>
         </div>
         <a class="lk-cta" href="#waitlist" data-track="nav_waitlist" data-i18n="nav.cta">Join waitlist</a>
       </div>
@@ -49,11 +72,10 @@
 
     <article class="lk-slide" data-shot="0" role="group" aria-label="1 of 2">
       <picture>
-        <source media="(max-width: 700px)" srcset="assets/looki/hero-desk-portrait.webp?v=studio-v7">
-        <img src="assets/looki/hero-desk-wide.webp?v=studio-v7" width="1920" height="850" fetchpriority="high" alt="R1 plugged into the left side of a MacBook Air on a desk.">
+        <source media="(max-width: 700px)" srcset="assets/looki/hero-r1-open-portrait.webp?v=v6">
+        <img src="assets/looki/hero-r1-open-wide.webp?v=v6" width="1920" height="850" fetchpriority="high" alt="R1 plugged into the left side of an open Midnight MacBook Air.">
       </picture>
       <div class="lk-hero-panel">
-        <p class="lk-eyebrow" data-i18n="hero.eyebrow">Rutta R1 · Team memory for your Mac</p>
         <h1 data-headline data-i18n="hero.h1.a">What your team says becomes what your team knows.</h1>
         <p data-i18n="hero.sub">R1 plugs into your Mac and stays on through the workday. It recognizes your teammates by voice, captures the decisions, to-dos and key facts you say out loud, and sends them to the tools and Agents your team already uses — no one has to press record.</p>
         <div class="lk-hero-actions">
@@ -65,11 +87,10 @@
 
     <article class="lk-slide" data-shot="1" role="group" aria-label="2 of 2" hidden>
       <picture>
-        <source media="(max-width: 700px)" srcset="assets/looki/hero-r1-midnight-portrait.webp?v=v4-r1">
-        <img src="assets/looki/hero-r1-midnight-wide.webp?v=v4-r1" width="1920" height="850" alt="R1 in Midnight seated flush on the side of a MacBook Air.">
+        <source media="(max-width: 700px)" srcset="assets/looki/hero-r1-silver-portrait.webp?v=v6">
+        <img src="assets/looki/hero-r1-silver-wide.webp?v=v6" width="1920" height="850" alt="R1 in Silver seated flush beside the USB-C port of a MacBook Air.">
       </picture>
       <div class="lk-hero-panel">
-        <p class="lk-eyebrow">R1</p>
         <h2 data-i18n="hero2.h2">No one presses record. Nothing slips through.</h2>
         <p data-i18n="hero2.sub">Two-minute desk chats, the words before and after a meeting, a quick “I’ll take it” at standup — R1 follows your Mac from desk to meeting room, so the conversations that move work forward get captured.</p>
         <div class="lk-hero-actions">
@@ -88,121 +109,275 @@
   </section>
 
   <main>
-    <!-- Three highlights -->
-    <section class="detail-strip" aria-label="Three highlights of R1">
-      <div role="group" aria-label="Choose a highlight">
+    <!-- 1. Looki-inspired tabbed visual showcase + borderless value pillars -->
+    <section id="value" class="lk-showcase" aria-labelledby="value-title">
+      <header class="lk-heading">
+        <h2 id="value-title" data-i18n="value.h2">The most useful things your team knows are said, not written.</h2>
+        <p data-i18n="value.lead">Decisions are made in passing, tasks are claimed out loud, context is shared at the desk. R1 captures it without anyone pressing record — and turns it into something your team can use.</p>
+      </header>
+
+      <div class="lk-stage" data-stage>
+        <img class="lk-stage-photo" src="assets/looki/stage-desk-wide.webp?v=v6" width="1800" height="800" loading="lazy" alt="Silver MacBook Air with R1 seated flush along the left edge.">
+        <div class="lk-stage-panel">
+          <div class="lk-stage-tabs" role="tablist" aria-label="How a spoken decision flows through R1">
+            <button type="button" role="tab" id="st-tab-capture" aria-controls="st-panel-capture" aria-selected="true" data-stage-tab="capture" data-i18n="stage.tab.capture">Capture</button>
+            <button type="button" role="tab" id="st-tab-confirm" aria-controls="st-panel-confirm" aria-selected="false" data-stage-tab="confirm" data-i18n="stage.tab.confirm">Confirm</button>
+            <button type="button" role="tab" id="st-tab-sync" aria-controls="st-panel-sync" aria-selected="false" data-stage-tab="sync" data-i18n="stage.tab.sync">Sync</button>
+          </div>
+
+          <div class="lk-stage-cards" id="st-panel-capture" role="tabpanel" aria-labelledby="st-tab-capture" data-stage-panel="capture">
+            <div class="lk-ui-card">
+              <div class="lk-ui-head">
+                <span class="lk-ui-pill"><i aria-hidden="true"></i><span data-i18n="stage.cap.chip">Tuesday 2:15 PM · Desk</span></span>
+              </div>
+              <ul class="lk-dialogue">
+                <li>
+                  <span class="lk-av lk-av--a" aria-hidden="true">M</span>
+                  <div>
+                    <b data-i18n="stage.cap.s1.n">Maya · Enrolled</b>
+                    <p data-i18n="stage.cap.s1.t">“Let’s push launch from Dec 3 to Dec 10 so QA has the weekend.”</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="lk-av lk-av--b" aria-hidden="true">S</span>
+                  <div>
+                    <b data-i18n="stage.cap.s2.n">Sam · Enrolled</b>
+                    <p data-i18n="stage.cap.s2.t">“Sounds good — I’ll send the revised quote Monday morning.”</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="lk-ui-foot">
+              <span data-i18n="stage.cap.foot">Voiceprint matched · no one pressed record</span>
+            </div>
+          </div>
+
+          <div class="lk-stage-cards" id="st-panel-confirm" role="tabpanel" aria-labelledby="st-tab-confirm" data-stage-panel="confirm" hidden>
+            <div class="lk-ui-card">
+              <div class="lk-ui-head">
+                <span class="lk-ui-pill lk-ui-pill--dark" data-i18n="stage.cnf.chip">Only Maya &amp; Sam see this first</span>
+              </div>
+              <dl class="lk-extract-list">
+                <div>
+                  <dt data-i18n="stage.cnf.d.l">Decision</dt>
+                  <dd data-i18n="stage.cnf.d.v">Move launch date from Dec 3 to Dec 10</dd>
+                </div>
+                <div>
+                  <dt data-i18n="stage.cnf.t.l">Action item</dt>
+                  <dd data-i18n="stage.cnf.t.v">Send revised quote · Owner: Sam · Due Mon</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="lk-ui-foot">
+              <span data-i18n="stage.cnf.foot">Shared with the team only after confirmation</span>
+              <span class="lk-ui-foot-btn" data-i18n="stage.cnf.btn">Confirm</span>
+            </div>
+          </div>
+
+          <div class="lk-stage-cards" id="st-panel-sync" role="tabpanel" aria-labelledby="st-tab-sync" data-stage-panel="sync" hidden>
+            <div class="lk-ui-card">
+              <div class="lk-ui-head">
+                <span class="lk-ui-pill" data-i18n="stage.syn.chip">Synced via MCP, API &amp; CLI</span>
+              </div>
+              <ul class="lk-sync-rows">
+                <li><i class="lk-sync-check" aria-hidden="true">✓</i><span data-i18n="stage.syn.r1">Launch plan updated to Dec 10 in Notion &amp; Linear</span></li>
+                <li><i class="lk-sync-check" aria-hidden="true">✓</i><span data-i18n="stage.syn.r2">Quote task assigned to Sam for Monday</span></li>
+              </ul>
+            </div>
+            <div class="lk-ui-card">
+              <div class="lk-agent-chat">
+                <p class="lk-chat-q" data-i18n="stage.syn.ask">“When are we launching now?”</p>
+                <p class="lk-chat-a" data-i18n="stage.syn.ans">Dec 10 — confirmed by Maya &amp; Sam on Tuesday. Three related tasks shifted.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="lk-fine" data-i18n="stage.note">Illustrative concept scenario · Tuesday afternoon, at a desk. No one wrote a word.</p>
+
+      <ul class="lk-pillars" aria-label="Core value of R1">
+        <li><h3 data-i18n="value.1.h">Spoken decisions stay on record</h3><p data-i18n="value.1.p">What gets decided out loud is written down automatically, with who said it and when.</p></li>
+        <li><h3 data-i18n="value.2.h">Commitments get owners</h3><p data-i18n="value.2.p">What people promise turns into tasks with an owner and a due date, instead of being forgotten after the conversation.</p></li>
+        <li><h3 data-i18n="value.3.h">Zero extra work for anyone</h3><p data-i18n="value.3.p">No notes tool to open, nothing to write up afterwards, no re-briefing your Agents.</p></li>
+        <li><h3 data-i18n="value.4.h">Flows to your own tools</h3><p data-i18n="value.4.p">Everything lands in your Rutta team knowledge base and flows on to your docs, task tools and Agents. It always belongs to your team.</p></li>
+        <li><h3 data-i18n="value.5.h">Only people who opted in</h3><p data-i18n="value.5.p">R1 is designed to process only enrolled teammates, and only at work. Lunch, hallways and private time are out of scope.</p></li>
+      </ul>
+    </section>
+
+    <!-- 2. Looki kinetic 3-word strip -->
+    <section class="lk-rules" aria-label="Three principles of R1">
+      <div class="lk-rule-words" role="group" aria-label="Choose a principle">
         <button type="button" data-detail="always" aria-pressed="true" data-i18n="detail.always">Always on</button>
         <button type="button" data-detail="voice" aria-pressed="false" data-i18n="detail.voice">Knows who said it</button>
         <button type="button" data-detail="flow" aria-pressed="false" data-i18n="detail.flow">Flows to your tools</button>
       </div>
-      <p id="detail-explainer" aria-live="polite" data-i18n="detail.always.body">No start button, no battery. Plugged into your Mac, R1 is on whenever your Mac is — so the small conversations that move work forward finally get captured.</p>
+      <p class="lk-rule-text" id="detail-explainer" aria-live="polite" data-i18n="detail.always.body">No start button, no battery. Plugged into your Mac, R1 is on whenever your Mac is — so the small conversations that move work forward finally get captured.</p>
     </section>
 
-    <!-- Value -->
-    <section id="value" class="lk-value" aria-labelledby="value-title">
-      <div class="lk-value-head">
-        <p class="lk-kicker" data-i18n="value.kicker">What R1 brings</p>
-        <h2 id="value-title" data-i18n="value.h2">The most useful things your team knows are said, not written.</h2>
-        <p class="lk-value-lead" data-i18n="value.lead">Decisions are made in passing, tasks are claimed out loud, context is shared at the desk. R1 captures it without anyone pressing record — and turns it into something your team can use.</p>
-      </div>
-      <ol class="lk-value-list">
-        <li><span>01</span><div><h3 data-i18n="value.1.h">Spoken decisions stay on record</h3><p data-i18n="value.1.p">What gets decided out loud is written down automatically, with who said it and when.</p></div></li>
-        <li><span>02</span><div><h3 data-i18n="value.2.h">Commitments get owners and follow-up</h3><p data-i18n="value.2.p">What people promise turns into tasks with an owner and a due date, instead of being forgotten after the conversation.</p></div></li>
-        <li><span>03</span><div><h3 data-i18n="value.3.h">Zero extra work for anyone</h3><p data-i18n="value.3.p">No notes tool to open, nothing to write up afterwards, no re-briefing your Agents.</p></div></li>
-        <li><span>04</span><div><h3 data-i18n="value.4.h">Your knowledge flows to your tools</h3><p data-i18n="value.4.p">Everything lands in your Rutta team knowledge base and flows on to your docs, task tools and Agents. It always belongs to your team.</p></div></li>
-        <li><span>05</span><div><h3 data-i18n="value.5.h">Only people who opted in</h3><p data-i18n="value.5.p">R1 is designed to process only enrolled teammates, and only at work. Lunch, hallways and private time are out of scope.</p></div></li>
-      </ol>
-    </section>
-
-    <!-- Scenarios -->
+    <!-- 3. Looki horizontal expandable scenario rail -->
     <section id="scenarios" class="lk-scenarios" aria-labelledby="scenarios-title">
       <header class="lk-heading">
-        <p class="lk-kicker" data-i18n="sc.kicker">Where R1 works · for teams of 3–15</p>
         <h2 id="scenarios-title" data-i18n="sc.h2">Built for the conversations no one records.</h2>
-        <p data-i18n="sc.lead">Nobody opens a recorder for a two-minute chat — yet that’s where dates move, tasks get claimed and context is shared. Here’s where R1 steps in.</p>
+        <p data-i18n="sc.lead">Nobody opens a recorder for a two-minute chat — yet that’s where dates move, tasks get claimed and context is shared. Built for co-located teams of 3–15.</p>
       </header>
-      <div class="lk-sc-grid">
-        <article class="lk-sc-card">
-          <span class="lk-sc-tag" data-i18n="sc.1.tag">At the desk</span>
-          <blockquote data-i18n="sc.1.quote">“Let’s push launch from Dec 3 to Dec 10.”</blockquote>
-          <h3 data-i18n="sc.1.h">Quick decisions get written down</h3>
-          <p data-i18n="sc.1.p">Minutes later, both of you get a note to confirm. One tap, and the project plan, related tasks and teammates are all updated — nobody writes a word.</p>
-        </article>
-        <article class="lk-sc-card">
-          <span class="lk-sc-tag" data-i18n="sc.2.tag">At standup</span>
-          <blockquote data-i18n="sc.2.quote">“The quote? I’ll send it Monday.”</blockquote>
-          <h3 data-i18n="sc.2.h">Every “I’ll take it” gets an owner</h3>
-          <p data-i18n="sc.2.p">R1 knows who said it, so the task lands in your tracker with an owner and a due date — a reminder on Monday, and closed when someone says it’s sent.</p>
-        </article>
-        <article class="lk-sc-card">
-          <span class="lk-sc-tag" data-i18n="sc.3.tag">Before &amp; after meetings</span>
-          <blockquote data-i18n="sc.3.quote">“Let’s go with B — the client needs SSO first.”</blockquote>
-          <h3 data-i18n="sc.3.h">The why stays with the decision</h3>
-          <p data-i18n="sc.3.p">The real reasoning often happens as a meeting wraps up. R1 keeps it next to the decision, so it’s there when someone asks later.</p>
-        </article>
-        <article class="lk-sc-card">
-          <span class="lk-sc-tag" data-i18n="sc.4.tag">Handoffs &amp; new teammates</span>
-          <blockquote data-i18n="sc.4.quote">“Wait — when did we decide that?”</blockquote>
-          <h3 data-i18n="sc.4.h">Nobody has to re-explain</h3>
-          <p data-i18n="sc.4.p">Teammates who weren’t in the room, and people who just joined, can look up what was decided, by whom, and why.</p>
-        </article>
-        <article class="lk-sc-card">
-          <span class="lk-sc-tag" data-i18n="sc.5.tag">Leads who assign out loud</span>
-          <blockquote data-i18n="sc.5.quote">“Can you take the onboarding flow this week?”</blockquote>
-          <h3 data-i18n="sc.5.h">Stop repeating yourself in chat</h3>
-          <p data-i18n="sc.5.p">What you hand out in person is tracked automatically — no more saying it once at the desk and again in the group chat with an @.</p>
-        </article>
-        <article class="lk-sc-card">
-          <span class="lk-sc-tag" data-i18n="sc.6.tag">Working with AI Agents</span>
-          <blockquote data-i18n="sc.6.quote">“So when are we launching now?”</blockquote>
-          <h3 data-i18n="sc.6.h">Your Agents are already up to date</h3>
-          <p data-i18n="sc.6.p">Confirmed decisions reach your Agents directly, so they can draft docs, create tasks and update plans without anyone re-briefing them.</p>
-        </article>
+
+      <div class="lk-story-wrap" data-story-rail>
+        <button type="button" class="lk-story-arrow lk-story-arrow--prev" aria-label="Previous scenario">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6 9 12l6 6"/></svg>
+        </button>
+
+        <div class="lk-story-track" role="region" aria-label="Team scenarios">
+          <article class="lk-story is-open" data-story="0">
+            <div class="lk-story-main">
+              <div class="lk-story-top">
+                <span class="lk-story-tag" data-i18n="sc.1.tag">At the desk</span>
+                <button type="button" class="lk-story-toggle" aria-expanded="true" aria-label="Toggle scenario details"></button>
+              </div>
+              <blockquote data-i18n="sc.1.quote">“Let’s push launch from Dec 3 to Dec 10.”</blockquote>
+              <h3 data-i18n="sc.1.h">Quick decisions get written down</h3>
+              <p class="lk-story-desc" data-i18n="sc.1.p">Minutes later, both of you get a note to confirm. One tap, and the project plan, related tasks and teammates are all updated — nobody writes a word.</p>
+            </div>
+            <div class="lk-story-side">
+              <div class="lk-story-preview">
+                <small data-i18n="sc.1.out.l">Captured &amp; confirmed</small>
+                <p data-i18n="sc.1.out.v">Launch date updated Dec 3 → Dec 10 · 3 dependent tasks shifted · teammates notified.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="lk-story" data-story="1">
+            <div class="lk-story-main">
+              <div class="lk-story-top">
+                <span class="lk-story-tag" data-i18n="sc.2.tag">At standup</span>
+                <button type="button" class="lk-story-toggle" aria-expanded="false" aria-label="Toggle scenario details"></button>
+              </div>
+              <blockquote data-i18n="sc.2.quote">“The quote? I’ll send it Monday.”</blockquote>
+              <h3 data-i18n="sc.2.h">Every “I’ll take it” gets an owner</h3>
+              <p class="lk-story-desc" data-i18n="sc.2.p">R1 knows who said it, so the task lands in your tracker with an owner and a due date — a reminder on Monday, and closed when someone says it’s sent.</p>
+            </div>
+            <div class="lk-story-side">
+              <div class="lk-story-preview">
+                <small data-i18n="sc.2.out.l">Task created automatically</small>
+                <p data-i18n="sc.2.out.v">Send revised quote · Owner matched by voiceprint · Reminder set for Monday 9:00 AM.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="lk-story" data-story="2">
+            <div class="lk-story-main">
+              <div class="lk-story-top">
+                <span class="lk-story-tag" data-i18n="sc.3.tag">Before &amp; after meetings</span>
+                <button type="button" class="lk-story-toggle" aria-expanded="false" aria-label="Toggle scenario details"></button>
+              </div>
+              <blockquote data-i18n="sc.3.quote">“Let’s go with B — the client needs SSO first.”</blockquote>
+              <h3 data-i18n="sc.3.h">The why stays with the decision</h3>
+              <p class="lk-story-desc" data-i18n="sc.3.p">The real reasoning often happens as a meeting wraps up. R1 keeps it next to the decision, so it’s there when someone asks later.</p>
+            </div>
+            <div class="lk-story-side">
+              <div class="lk-story-preview">
+                <small data-i18n="sc.3.out.l">Decision + rationale</small>
+                <p data-i18n="sc.3.out.v">Selected Option B · Reason: Enterprise client requires SSO before pilot rollout.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="lk-story" data-story="3">
+            <div class="lk-story-main">
+              <div class="lk-story-top">
+                <span class="lk-story-tag" data-i18n="sc.4.tag">Handoffs &amp; new teammates</span>
+                <button type="button" class="lk-story-toggle" aria-expanded="false" aria-label="Toggle scenario details"></button>
+              </div>
+              <blockquote data-i18n="sc.4.quote">“Wait — when did we decide that?”</blockquote>
+              <h3 data-i18n="sc.4.h">Nobody has to re-explain</h3>
+              <p class="lk-story-desc" data-i18n="sc.4.p">Teammates who weren’t in the room, and people who just joined, can look up what was decided, by whom, and why.</p>
+            </div>
+            <div class="lk-story-side">
+              <div class="lk-story-preview">
+                <small data-i18n="sc.4.out.l">Searchable team memory</small>
+                <p data-i18n="sc.4.out.v">Every confirmed decision carries speaker, timestamp and context — ready for anyone who joins later.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="lk-story" data-story="4">
+            <div class="lk-story-main">
+              <div class="lk-story-top">
+                <span class="lk-story-tag" data-i18n="sc.5.tag">Leads who assign out loud</span>
+                <button type="button" class="lk-story-toggle" aria-expanded="false" aria-label="Toggle scenario details"></button>
+              </div>
+              <blockquote data-i18n="sc.5.quote">“Can you take the onboarding flow this week?”</blockquote>
+              <h3 data-i18n="sc.5.h">Stop repeating yourself in chat</h3>
+              <p class="lk-story-desc" data-i18n="sc.5.p">What you hand out in person is tracked automatically — no more saying it once at the desk and again in the group chat with an @.</p>
+            </div>
+            <div class="lk-story-side">
+              <div class="lk-story-preview">
+                <small data-i18n="sc.5.out.l">Tracked without double-typing</small>
+                <p data-i18n="sc.5.out.v">Onboarding flow assigned · Owner confirmed · Visible in team workspace and tracker.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="lk-story" data-story="5">
+            <div class="lk-story-main">
+              <div class="lk-story-top">
+                <span class="lk-story-tag" data-i18n="sc.6.tag">Working with AI Agents</span>
+                <button type="button" class="lk-story-toggle" aria-expanded="false" aria-label="Toggle scenario details"></button>
+              </div>
+              <blockquote data-i18n="sc.6.quote">“So when are we launching now?”</blockquote>
+              <h3 data-i18n="sc.6.h">Your Agents are already up to date</h3>
+              <p class="lk-story-desc" data-i18n="sc.6.p">Confirmed decisions reach your Agents directly, so they can draft docs, create tasks and update plans without anyone re-briefing them.</p>
+            </div>
+            <div class="lk-story-side">
+              <div class="lk-story-preview">
+                <small data-i18n="sc.6.out.l">Open MCP, API &amp; CLI</small>
+                <p data-i18n="sc.6.out.v">Your coding, doc and planning Agents query confirmed team decisions directly — zero manual copy-paste.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <button type="button" class="lk-story-arrow lk-story-arrow--next" aria-label="Next scenario">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+        </button>
+
+        <div class="lk-story-dots" role="group" aria-label="Choose a scenario">
+          <button type="button" aria-label="Scenario 1" aria-current="true"></button>
+          <button type="button" aria-label="Scenario 2" aria-current="false"></button>
+          <button type="button" aria-label="Scenario 3" aria-current="false"></button>
+          <button type="button" aria-label="Scenario 4" aria-current="false"></button>
+          <button type="button" aria-label="Scenario 5" aria-current="false"></button>
+          <button type="button" aria-label="Scenario 6" aria-current="false"></button>
+        </div>
       </div>
     </section>
 
-    <!-- How it works -->
+    <!-- 4. How it works + Contained floating Dark Titanium Vision Card -->
     <section id="workflow" class="lk-workflow" aria-labelledby="workflow-title">
       <div class="lk-workflow-inner">
-        <header class="lk-wf-head">
-          <p class="lk-kicker" data-i18n="wf.kicker">How it works</p>
+        <header class="lk-heading">
           <h2 id="workflow-title" data-i18n="wf.h2">Plug it in once. Your team just keeps working.</h2>
         </header>
         <ol class="lk-wf-steps">
-          <li><span>01</span><strong data-i18n="wf.1.t">Plug in</strong><p data-i18n="wf.1.p">Plug R1 into your Mac. It’s on whenever your Mac is.</p></li>
-          <li><span>02</span><strong data-i18n="wf.2.t">Enroll</strong><p data-i18n="wf.2.p">Each teammate records a short voice sample once. Leave anytime.</p></li>
-          <li><span>03</span><strong data-i18n="wf.3.t">Work as usual</strong><p data-i18n="wf.3.p">Talk at your desk or in the meeting room. Nothing to start or stop.</p></li>
-          <li><span>04</span><strong data-i18n="wf.4.t">Confirm</strong><p data-i18n="wf.4.p">Only the people in the conversation see the note first. Once someone confirms, it goes to the team.</p></li>
-          <li><span>05</span><strong data-i18n="wf.5.t">Flow</strong><p data-i18n="wf.5.p">Decisions go to your knowledge base, tasks to your tracker with owners, and Agents can look it all up.</p></li>
+          <li><span class="lk-wf-num">1</span><strong data-i18n="wf.1.t">Plug in</strong><p data-i18n="wf.1.p">Plug R1 into your Mac. It’s on whenever your Mac is.</p></li>
+          <li><span class="lk-wf-num">2</span><strong data-i18n="wf.2.t">Enroll</strong><p data-i18n="wf.2.p">Each teammate records a short voice sample once. Leave anytime.</p></li>
+          <li><span class="lk-wf-num">3</span><strong data-i18n="wf.3.t">Work as usual</strong><p data-i18n="wf.3.p">Talk at your desk or in the meeting room. Nothing to start or stop.</p></li>
+          <li><span class="lk-wf-num">4</span><strong data-i18n="wf.4.t">Confirm</strong><p data-i18n="wf.4.p">Only the people in the conversation see the note first. Once someone confirms, it goes to the team.</p></li>
+          <li><span class="lk-wf-num">5</span><strong data-i18n="wf.5.t">Flow</strong><p data-i18n="wf.5.p">Decisions go to your knowledge base, tasks to your tracker with owners, and Agents can look it all up.</p></li>
         </ol>
 
-        <div class="lk-wf-example">
-          <div class="lk-wf-ex-head">
-            <span class="lk-wf-ex-label" data-i18n="wf.ex.label">Example · Tuesday afternoon, at a desk</span>
-            <span class="lk-wf-ex-badge" data-i18n="wf.ex.badge">Illustrative scenario · concept</span>
-          </div>
-          <div class="lk-wf-ex-grid">
-            <div><small data-i18n="wf.ex.1.s">Said out loud</small><p data-i18n="wf.ex.1.p">Two teammates agree to move launch from <strong>Dec 3</strong> to <strong>Dec 10</strong>.</p></div>
-            <div><small data-i18n="wf.ex.2.s">Confirmed in one tap</small><p data-i18n="wf.ex.2.p">A few minutes later, both get a note to confirm: the new date, who owns it, who agreed. One of them taps confirm.</p></div>
-            <div><small data-i18n="wf.ex.3.s">Updated everywhere</small><p data-i18n="wf.ex.3.p">The plan moves to Dec 10, three related tasks shift, and the team’s Agent now answers <strong>Dec 10</strong>. No one wrote a word.</p></div>
-          </div>
-        </div>
-
         <div class="lk-apps">
-          <p class="lk-apps-kicker" data-i18n="wf.apps">Designed to connect via MCP, API and CLI to the tools and Agents you already use</p>
+          <p class="lk-apps-label" data-i18n="wf.apps">Designed to connect via MCP, API and CLI to the tools and Agents you already use</p>
           <ul class="lk-app-list" aria-label="Example tools">
             <li>Notion</li><li>Linear</li><li>Slack</li><li>Jira</li><li>GitHub</li><li>Cursor</li><li data-i18n="wf.apps.agents">Claude &amp; custom Agents</li>
           </ul>
         </div>
       </div>
-    </section>
 
-    <!-- Vision -->
-    <section class="lk-vision" aria-labelledby="vision-title">
-      <div class="lk-vision-inner">
-        <p class="lk-kicker" data-i18n="vis.kicker">Where R1 is headed</p>
-        <h2 id="vision-title" data-i18n="vis.h2">A team that keeps itself up to date.</h2>
-        <p class="lk-vision-note" data-i18n="vis.note">Long-term vision — not everything will be in the first version.</p>
+      <div class="lk-vision-card" aria-labelledby="vision-title">
+        <div class="lk-vision-head">
+          <h2 id="vision-title" data-i18n="vis.h2">A team that keeps itself up to date.</h2>
+          <p class="lk-vision-note" data-i18n="vis.note">Long-term vision — not everything will be in the first version.</p>
+        </div>
         <ol class="lk-vision-list">
           <li><h3 data-i18n="vis.1.h">Knowledge that grows on its own</h3><p data-i18n="vis.1.p">No one writes docs, yet the team knowledge base updates every day.</p></li>
           <li><h3 data-i18n="vis.2.h">Tasks that follow through</h3><p data-i18n="vis.2.p">A reminder when it’s due, closed when someone says it’s done.</p></li>
@@ -213,44 +388,42 @@
       </div>
     </section>
 
-    <!-- Privacy -->
+    <!-- 5. Privacy (pure white canvas + macro stage + borderless hairline grid) -->
     <section id="privacy" class="lk-privacy" aria-labelledby="privacy-title">
       <div class="lk-privacy-inner">
-        <div class="lk-privacy-top">
-          <div class="lk-privacy-copy">
-            <p class="lk-kicker" data-i18n="pv.kicker">Privacy by design · concept</p>
-            <h2 id="privacy-title" data-i18n="pv.h2">Always on — only for the people who opted in.</h2>
-            <p class="lk-privacy-lead" data-i18n="pv.lead">R1 is built for work, at your desk and in the meeting room. These are the privacy principles we’re designing around — not built yet.</p>
+        <header class="lk-heading">
+          <h2 id="privacy-title" data-i18n="pv.h2">Always on — only for the people who opted in.</h2>
+          <p data-i18n="pv.lead">R1 is built for work, at your desk and in the meeting room. These are the privacy principles we’re designing around — not built yet.</p>
+        </header>
+
+        <div class="lk-privacy-media">
+          <div class="lk-privacy-stage">
+            <img id="privacy-photo" src="assets/landing/privacy-mute.webp?v=studio-v7" width="1200" height="480" loading="lazy" alt="Close-up of R1 muted: top light off and switch slid back to show an orange marker.">
           </div>
-          <div class="lk-privacy-media">
-            <div class="lk-privacy-stage">
-              <img id="privacy-photo" src="assets/landing/privacy-mute.webp?v=studio-v7" width="1200" height="480" loading="lazy" alt="Close-up of R1 muted: top light off and switch slid back to show an orange marker.">
+          <div class="lk-privacy-bar">
+            <div class="lk-privacy-states" role="group" aria-label="Preview R1 status">
+              <button type="button" data-pstate="ready" aria-pressed="false"><i class="dot-ready" aria-hidden="true"></i><span data-i18n="state.ready">Ready</span></button>
+              <button type="button" data-pstate="input" aria-pressed="false"><i class="dot-input" aria-hidden="true"></i><span data-i18n="state.input">Active</span></button>
+              <button type="button" data-pstate="mute" aria-pressed="true"><i class="dot-mute" aria-hidden="true"></i><span data-i18n="state.mute">Muted</span></button>
             </div>
-            <div class="lk-privacy-bar">
-              <div class="lk-privacy-states" role="group" aria-label="Preview R1 status">
-                <button type="button" data-pstate="ready" aria-pressed="false"><i class="dot-ready" aria-hidden="true"></i><span data-i18n="state.ready">Ready</span></button>
-                <button type="button" data-pstate="input" aria-pressed="false"><i class="dot-input" aria-hidden="true"></i><span data-i18n="state.input">Active</span></button>
-                <button type="button" data-pstate="mute" aria-pressed="true"><i class="dot-mute" aria-hidden="true"></i><span data-i18n="state.mute">Muted</span></button>
-              </div>
-              <p id="privacy-caption" aria-live="polite" data-i18n="pv.cap.mute">Light off · an orange marker shows it’s physically muted.</p>
-            </div>
+            <p id="privacy-caption" aria-live="polite" data-i18n="pv.cap.mute">Light off · an orange marker shows it’s physically muted.</p>
           </div>
         </div>
+
         <ol class="lk-privacy-grid">
-          <li><span>01</span><h3 data-i18n="pv.1.h">People in the conversation see it first</h3><p data-i18n="pv.1.p">Notes are visible only to the people who spoke. Nothing reaches the team until one of them shares it.</p></li>
-          <li><span>02</span><h3 data-i18n="pv.2.h">Only enrolled voices</h3><p data-i18n="pv.2.p">Designed to keep only enrolled teammates’ speech. Visitors and others are discarded — not transcribed, not saved.</p></li>
-          <li><span>03</span><h3 data-i18n="pv.3.h">Admins never get raw audio</h3><p data-i18n="pv.3.p">Admins can manage members and settings, but can’t access recordings.</p></li>
-          <li><span>04</span><h3 data-i18n="pv.4.h">Physical mute and a visible light</h3><p data-i18n="pv.4.p">A real switch on the side, and a light everyone at the table can see.</p></li>
-          <li><span>05</span><h3 data-i18n="pv.5.h">Audio stays on your Mac</h3><p data-i18n="pv.5.p">Audio is processed on your Mac and not uploaded — only text from enrolled teammates syncs. Anyone can delete records they’re in.</p></li>
-          <li><span>06</span><h3 data-i18n="pv.6.h">Never used to train models</h3><p data-i18n="pv.6.p">Your team’s content is never used to train AI models.</p></li>
+          <li><h3 data-i18n="pv.1.h">People in the conversation see it first</h3><p data-i18n="pv.1.p">Notes are visible only to the people who spoke. Nothing reaches the team until one of them shares it.</p></li>
+          <li><h3 data-i18n="pv.2.h">Only enrolled voices</h3><p data-i18n="pv.2.p">Designed to keep only enrolled teammates’ speech. Visitors and others are discarded — not transcribed, not saved.</p></li>
+          <li><h3 data-i18n="pv.3.h">Admins never get raw audio</h3><p data-i18n="pv.3.p">Admins can manage members and settings, but can’t access recordings.</p></li>
+          <li><h3 data-i18n="pv.4.h">Physical mute and a visible light</h3><p data-i18n="pv.4.p">A real switch on the side, and a light everyone at the table can see.</p></li>
+          <li><h3 data-i18n="pv.5.h">Audio stays on your Mac</h3><p data-i18n="pv.5.p">Audio is processed on your Mac and not uploaded — only text from enrolled teammates syncs. Anyone can delete records they’re in.</p></li>
+          <li><h3 data-i18n="pv.6.h">Never used to train models</h3><p data-i18n="pv.6.p">Your team’s content is never used to train AI models.</p></li>
         </ol>
       </div>
     </section>
 
-    <!-- Hardware (brief) -->
+    <!-- 6. R1 Hardware (concise interactive workbench on pure white canvas) -->
     <section id="hardware" class="lk-hardware" aria-labelledby="lk-hardware-title">
       <header class="lk-hw-heading">
-        <p class="lk-kicker" data-i18n="hw.kicker">Hardware</p>
         <h2 id="lk-hardware-title" data-i18n="hw.h2">R1 plugs in and stays out of the way.</h2>
         <p data-i18n="hw.lead">A thin aluminum bar that sits flush along the side of your Mac and draws power from it — no battery, no charging, no record button.</p>
       </header>
@@ -351,19 +524,20 @@
       </div>
     </section>
 
-    <!-- Pricing & FAQ -->
+    <!-- 7. Test Pricing & Looki-style Pill FAQ -->
     <section id="faq" class="lk-faq-band" aria-labelledby="faq-title">
-      <div class="lk-pricing-band">
-        <div class="lk-pricing-head">
-          <p class="lk-kicker" data-i18n="price.kicker">Test pricing · concept validation</p>
+      <div class="lk-pricing-wrap">
+        <header class="lk-heading">
           <h2 data-i18n="price.h2">Here’s what we’re thinking about price.</h2>
           <p data-i18n="price.p">We’re not selling anything yet — no payment, no pre-orders. We share a test price so you can tell us honestly whether R1 is worth it for your team.</p>
+        </header>
+        <div class="lk-pricing-card">
+          <dl class="lk-pricing-grid">
+            <div><dt data-i18n="price.1">R1 device</dt><dd><strong data-i18n-usd="79">$79</strong> <span data-i18n="price.1.u">/ device</span></dd></div>
+            <div><dt data-i18n="price.2">Rutta team workspace</dt><dd><strong data-i18n-usd="12">$12</strong> <span data-i18n="price.2.u">/ member / month</span></dd></div>
+            <div><dt data-i18n="price.3">Example: 5-person team</dt><dd><strong data-i18n-usd="1115">$1,115</strong> <span data-i18n="price.3.u">first year</span></dd></div>
+          </dl>
         </div>
-        <dl class="lk-pricing-grid">
-          <div><dt data-i18n="price.1">R1 device</dt><dd>$79 <span data-i18n="price.1.u">/ device</span></dd></div>
-          <div><dt data-i18n="price.2">Rutta team workspace</dt><dd>$12 <span data-i18n="price.2.u">/ member / month</span></dd></div>
-          <div><dt data-i18n="price.3">Example: 5-person team</dt><dd>$1,115 <span data-i18n="price.3.u">first year</span></dd></div>
-        </dl>
       </div>
 
       <div class="lk-faq-wrap">
@@ -379,10 +553,9 @@
       </div>
     </section>
 
-    <!-- Waitlist -->
+    <!-- 8. Waitlist (contained Apple cool-silver stage on pure white canvas, zero kickers) -->
     <section id="waitlist" class="lk-research" aria-labelledby="waitlist-title">
       <div class="lk-research-copy">
-        <p class="lk-research-kicker"><span class="lk-line" aria-hidden="true"></span><span data-i18n="wl.kicker">Early access</span></p>
         <h2 id="waitlist-title" data-i18n="wl.h2">Is R1 right for your team?</h2>
         <p data-i18n="wl.p">We’re talking with startup teams of 3–15 who work side by side. Leave your email, and tell us about the last decision your team had to chase down.</p>
         <ul class="lk-research-points">
@@ -390,7 +563,7 @@
           <li data-i18n="wl.pt2">Optional 15-min chat</li>
           <li data-i18n="wl.pt3">Unsubscribe anytime</li>
         </ul>
-        <p class="lk-research-contact" data-i18n="wl.contact">Want a link to share with your team? <a href="contact.html" target="_blank" rel="noopener" data-track="waitlist_contact">Open the standalone page ↗</a></p>
+        <p class="lk-research-contact" data-i18n="wl.contact">Want a link to share with your team? <a href="contact.html" target="_blank" rel="noopener" data-track="waitlist_contact" data-keep-lang>Open the standalone page ↗</a></p>
         <img class="lk-research-product" src="assets/landing/hero-silver.webp?v=studio-v7" width="1783" height="673" loading="lazy" alt="">
       </div>
 
@@ -495,6 +668,25 @@
       <div class="lk-foot-brand-col">
         <div class="lk-foot-brand"><img src="assets/landing/monogram.svg" width="28" height="34" alt=""> Rutta R1</div>
         <p class="lk-foot-tagline" data-i18n="foot.tag">Team memory for your Mac — what your team says becomes what it knows.</p>
+        <div class="lk-foot-locale">
+          <div class="lk-locale lk-locale--up" data-locale-picker>
+            <button type="button" class="lk-locale-btn" aria-haspopup="menu" aria-expanded="false" aria-label="Choose language">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M2.5 10h15M10 2.5c2.2 2.2 3.2 4.8 3.2 7.5s-1 5.3-3.2 7.5c-2.2-2.2-3.2-4.8-3.2-7.5S7.8 4.7 10 2.5z"/></svg>
+              <span data-locale-name>English</span>
+              <svg class="lk-locale-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg>
+            </button>
+            <div class="lk-locale-menu" role="menu" hidden>
+              <button type="button" role="menuitemradio" data-lang="en" aria-checked="true"><span>English</span><span>Global</span></button>
+              <button type="button" role="menuitemradio" data-lang="zh-CN" aria-checked="false"><span>简体中文</span><span>中国大陆</span></button>
+              <button type="button" role="menuitemradio" data-lang="zh-TW" aria-checked="false"><span>繁體中文</span><span>台灣 / 香港</span></button>
+              <button type="button" role="menuitemradio" data-lang="ja" aria-checked="false"><span>日本語</span><span>日本</span></button>
+              <button type="button" role="menuitemradio" data-lang="ko" aria-checked="false"><span>한국어</span><span>대한민국</span></button>
+              <button type="button" role="menuitemradio" data-lang="de" aria-checked="false"><span>Deutsch</span><span>DACH</span></button>
+              <button type="button" role="menuitemradio" data-lang="fr" aria-checked="false"><span>Français</span><span>France</span></button>
+              <button type="button" role="menuitemradio" data-lang="es" aria-checked="false"><span>Español</span><span>España / LatAm</span></button>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="lk-foot-links">
         <div>
@@ -507,13 +699,13 @@
         <div>
           <strong data-i18n="foot.c2">Learn more</strong>
           <a href="https://lululuchen1109-commits.github.io/rutta-bar-studio/product.html?v=040" target="_blank" rel="noopener" data-i18n="nav.gallery">Product gallery ↗</a>
-          <a href="#hardware" data-i18n="hw.kicker">Hardware</a>
+          <a href="#hardware" data-i18n="foot.hw">Hardware</a>
           <a href="#faq" data-i18n="foot.faq">Pricing &amp; FAQ</a>
         </div>
         <div>
           <strong data-i18n="foot.c3">Get involved</strong>
           <a href="#waitlist" data-i18n="hero.cta">Join the waitlist</a>
-          <a href="contact.html" target="_blank" rel="noopener" data-i18n="nav.contact">Contact us ↗</a>
+          <a href="contact.html" target="_blank" rel="noopener" data-keep-lang data-i18n="nav.contact">Contact us ↗</a>
           <button type="button" class="lk-foot-btn" data-open-privacy data-i18n="f.privacy">Privacy Notice</button>
         </div>
       </div>
@@ -528,19 +720,19 @@
       <button type="button" class="lk-dialog-close" data-close-privacy aria-label="Close">×</button>
     </div>
     <div class="lk-dialog-body">
-      <p data-i18n="dlg.1"><strong>What we collect:</strong> only what you submit — your email, scenario, optional name, team size and notes, and optional survey answers — plus campaign parameters (UTM/ref) if present.</p>
+      <p data-i18n="dlg.1"><strong>What we collect:</strong> only what you submit — your email, scenario, optional name, team size and notes, and optional survey answers — plus campaign parameters (UTM/ref) and locale/timezone if present.</p>
       <p data-i18n="dlg.2"><strong>How we use it:</strong> only to share R1 updates and, if you agree, to invite you to a short research chat. We never sell or rent your information.</p>
       <p data-i18n="dlg.3"><strong>R1 privacy principles (concept):</strong> participants confirm notes before they’re shared; only enrolled voices are kept; admins can’t access raw audio; physical mute switch and status light; audio is processed on your Mac; team content is never used to train models.</p>
       <p data-i18n="dlg.4"><strong>Unsubscribe &amp; deletion:</strong> every email has a one-click unsubscribe link, and you can ask us to delete your record at any time.</p>
     </div>
   </dialog>
 
-  <script defer src="assets/looki/i18n.js?v=v5"></script>
-  <script defer src="assets/looki/hero.js"></script>
-  <script defer src="assets/looki/sections.js?v=v5"></script>
-  <script defer src="assets/looki/hardware.js?v=v5"></script>
-  <script defer src="assets/landing/switch.js?v=v5"></script>
-  <script defer src="assets/landing/explore.js?v=v5"></script>
-  <script defer src="assets/looki/research.js?v=v5"></script>
+  <script defer src="assets/looki/i18n.js?v=v6"></script>
+  <script defer src="assets/looki/hero.js?v=v6"></script>
+  <script defer src="assets/looki/sections.js?v=v6"></script>
+  <script defer src="assets/looki/hardware.js?v=v6"></script>
+  <script defer src="assets/landing/switch.js?v=v6"></script>
+  <script defer src="assets/landing/explore.js?v=v6"></script>
+  <script defer src="assets/looki/research.js?v=v6"></script>
 </body>
 </html>

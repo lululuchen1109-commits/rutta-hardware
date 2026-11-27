@@ -1,5 +1,4 @@
 (() => {
-  const T = (key, fallback) => (window.ruttaT ? window.ruttaT(key, fallback) : (fallback || key));
   const SET = (el, key) => { if (!el) return; if (window.ruttaSet) window.ruttaSet(el, key); else el.textContent = key; };
 
   const store = {
@@ -100,11 +99,8 @@
         btn.addEventListener('mousedown', e => e.preventDefault());
         btn.addEventListener('click', () => {
           rteEditor.focus();
-          if (btn.dataset.cmd === 'removeFormat') {
-            rteEditor.textContent = rteEditor.innerText;
-          } else {
-            document.execCommand(btn.dataset.cmd, false);
-          }
+          if (btn.dataset.cmd === 'removeFormat') rteEditor.textContent = rteEditor.innerText;
+          else document.execCommand(btn.dataset.cmd, false);
           syncRte();
           updateToolbar();
         });
@@ -160,6 +156,7 @@
       if (useCase.value === 'Others' && otherInput && !otherInput.value.trim()) { setNote('err.other', 'error'); otherInput.focus(); return; }
       if (!consent.checked) { setNote('err.consent', 'error'); consent.focus(); return; }
 
+      const regionInfo = window.ruttaRegionInfo ? window.ruttaRegionInfo() : { locale: 'en', timeZone: '', browserLocale: '' };
       lastSignup = {
         type: 'waitlist',
         model: 'R1',
@@ -170,7 +167,9 @@
         notesText: (form.elements.notesText?.value || '').trim(),
         notesHtml: (form.elements.notesHtml?.value || '').trim(),
         consent: true,
-        language: window.ruttaLang ? window.ruttaLang() : 'en',
+        locale: regionInfo.locale,
+        browserLocale: regionInfo.browserLocale,
+        timeZone: regionInfo.timeZone,
         headline: variant,
         page: location.pathname,
         savedAt: new Date().toISOString(),
@@ -180,7 +179,7 @@
       submitBtn.disabled = true;
       try {
         const mode = await sendPayload(lastSignup);
-        track('waitlist_submit', { variant, useCase: useCase.value, teamSize: lastSignup.teamSize });
+        track('waitlist_submit', { variant, useCase: useCase.value, teamSize: lastSignup.teamSize, locale: regionInfo.locale });
         form.hidden = true;
         if (thanks) {
           SET(thanksStatus, mode === 'remote' ? 'th.remote' : 'th.local');
@@ -200,7 +199,8 @@
         const data = Object.fromEntries(new FormData(surveyForm).entries());
         if (!Object.values(data).some(v => String(v).trim())) return;
         try {
-          await sendPayload({ type: 'survey', model: 'R1', email: lastSignup?.email || '', ...data, savedAt: new Date().toISOString() });
+          const regionInfo = window.ruttaRegionInfo ? window.ruttaRegionInfo() : { locale: 'en' };
+          await sendPayload({ type: 'survey', model: 'R1', email: lastSignup?.email || '', locale: regionInfo.locale, ...data, savedAt: new Date().toISOString() });
         } catch {}
         track('survey_submit', { priceReaction: data.priceReaction || '', interviewPref: data.interviewPref || '' });
         const done = document.createElement('p');
@@ -213,12 +213,13 @@
     if (shareBtn) {
       shareBtn.addEventListener('click', async () => {
         const code = lastSignup ? btoa(lastSignup.email).replace(/[^a-z0-9]/gi, '').slice(0, 8) : 'team';
-        const url = location.origin + location.pathname + '?ref=' + code;
+        const activeLocale = window.ruttaLang ? window.ruttaLang() : 'en';
+        const q = activeLocale && activeLocale !== 'en' ? `?lang=${encodeURIComponent(activeLocale)}&ref=${code}` : `?ref=${code}`;
+        const url = location.origin + location.pathname + q;
         try { await navigator.clipboard.writeText(url); SET(shareBtn, 'sh.copied'); }
         catch { shareBtn.textContent = url; }
-        track('share_copy');
+        track('share_copy', { locale: activeLocale });
       });
     }
   });
-  void T;
 })();
