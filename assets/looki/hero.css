@@ -49,6 +49,7 @@
   white-space: nowrap;
   transition: background-color .18s, transform .18s;
 }
+.lk-topbar-right { display: flex; align-items: center; gap: 12px; }
 .lk-topbar .lk-cta:hover { background: #ffb270; transform: translateY(-1px); }
 .lk-nav-toggle { display: none; }
 .lk-slide, .lk-slide picture, .lk-slide picture img {
@@ -74,7 +75,7 @@
 }
 .lk-hero-panel .lk-eyebrow { margin: 0 0 12px; font-size: 12px; line-height: 1.25; font-weight: 600; letter-spacing: .06em; color: #f4d8c1; text-transform: uppercase; }
 .lk-hero-panel h1, .lk-hero-panel h2 {
-  font: 600 clamp(32px, 2.95vw, 52px)/1.07 Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  font: 600 clamp(32px, 2.95vw, 52px)/1.08 Inter, -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
   margin: 0;
   letter-spacing: -.03em;
   text-wrap: balance;
@@ -99,10 +100,15 @@
 .lk-pagination button { display: grid; align-items: center; width: clamp(54px, 7vw, 115px); height: 32px; padding: 0; border: none; background: transparent; }
 .lk-pagination button::after { content: ""; display: block; height: 2px; background: #ffffff70; }
 .lk-pagination button[aria-pressed="true"]::after { background: #fff; }
-@media (max-width: 960px) {
-  .lk-topbar { height: 64px; justify-content: flex-start; gap: 14px; }
+@media (max-width: 1180px) {
+  .lk-links { gap: 14px; }
+  .lk-links a { font-size: 13px; }
+}
+@media (max-width: 1040px) {
+  .lk-topbar { height: 64px; justify-content: flex-start; gap: 12px; }
   .lk-brand { margin-right: auto; }
   .lk-brand img { width: 24px; height: 29px; }
+  .lk-topbar-right { gap: 8px; }
   .lk-topbar .lk-cta { font-size: 12px; padding: 8px 14px; }
   .lk-nav-toggle { display: grid; align-content: center; gap: 5px; width: 36px; height: 40px; justify-items: center; padding: 0; background: transparent; color: #fff; border: none; }
   .lk-nav-toggle span { width: 20px; height: 1.5px; background: currentColor; }

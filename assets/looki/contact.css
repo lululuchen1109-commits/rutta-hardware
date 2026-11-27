@@ -38,7 +38,7 @@
 .ct-nav {
   display: flex;
   align-items: center;
-  gap: clamp(14px, 2.5vw, 32px);
+  gap: clamp(14px, 2.5vw, 28px);
 }
 .ct-nav a {
   text-decoration: none;
@@ -141,6 +141,7 @@
 @media (max-width: 560px) {
   .ct-header-inner { height: 56px; padding-inline: 16px; gap: 10px; }
   .ct-brand img { width: 21px; height: 25px; }
-  .ct-nav { gap: 12px; }
+  .ct-nav { gap: 10px; }
   .ct-nav a { font-size: 12.5px; }
+  .ct-nav a[target="_blank"] { display: none; }
 }

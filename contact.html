@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111116">
-  <title>Contact &amp; Waitlist | Rutta R1</title>
-  <meta name="description" content="Join the Rutta R1 concept waitlist, share your team’s workflow, or request a 15-minute validation chat.">
+  <title data-i18n-title="ct.title">Contact &amp; Waitlist | Rutta R1</title>
+  <meta name="description" content="Join the Rutta R1 waitlist, tell us how your team handles spoken decisions, or get in touch.">
   <meta property="og:title" content="Contact &amp; Waitlist | Rutta R1">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://lululuchen1109-commits.github.io/rutta-hardware/assets/looki/share-studio.jpg">
-  <meta property="og:description" content="Tell us how your team handles spoken decisions, or join the waitlist for Rutta R1.">
+  <meta property="og:description" content="R1 turns what your team says at work into team knowledge and tasks that get followed up.">
   <link rel="icon" type="image/svg+xml" href="assets/landing/monogram.svg">
   <link rel="preload" as="font" href="assets/inter-latin-var.woff2" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/looki/base.css?v=v4-r1">
-  <link rel="stylesheet" href="assets/looki/research.css?v=v4-r1b">
-  <link rel="stylesheet" href="assets/looki/contact.css?v=v4-r1">
+  <link rel="stylesheet" href="assets/looki/base.css?v=v5">
+  <link rel="stylesheet" href="assets/looki/research.css?v=v5">
+  <link rel="stylesheet" href="assets/looki/contact.css?v=v5">
 </head>
 <body id="top" class="lk-contact-body">
   <a class="lk-skip" href="#contact-main">Skip to form</a>
@@ -22,11 +22,15 @@
   <header class="ct-header">
     <div class="ct-header-inner">
       <a class="ct-brand" href="index.html" aria-label="Rutta R1 home">
-        <img alt="Rutta" width="24" height="29" src="assets/landing/monogram.svg">
+        <img alt="Rutta" width="26" height="31" src="assets/landing/monogram.svg">
       </a>
       <nav class="ct-nav" aria-label="Secondary navigation">
-        <a href="index.html">← Overview</a>
-        <a href="https://lululuchen1109-commits.github.io/rutta-bar-studio/product.html?v=040" target="_blank" rel="noopener" data-track="contact_gallery">Product gallery <span aria-hidden="true">↗</span></a>
+        <a href="index.html" data-i18n="ct.back">← Overview</a>
+        <a href="https://lululuchen1109-commits.github.io/rutta-bar-studio/product.html?v=040" target="_blank" rel="noopener" data-track="contact_gallery" data-i18n="nav.gallery">Product gallery ↗</a>
+        <div class="lk-lang lk-lang--light" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+        </div>
       </nav>
     </div>
   </header>
@@ -34,137 +38,113 @@
   <main id="contact-main" class="ct-main">
     <section class="ct-stage" aria-labelledby="contact-title">
       <div class="ct-info">
-        <p class="lk-research-kicker"><span aria-hidden="true"></span> R1 · Contact &amp; early access</p>
-        <h1 id="contact-title">Tell us if your team needs R1.</h1>
-        <p class="ct-lead">R1 is an always-on, voiceprint-gated team microphone concept for Mac that turns spoken decisions into team knowledge, owned tasks, and live context for your AI Agents.</p>
+        <p class="lk-research-kicker"><span class="lk-line" aria-hidden="true"></span><span data-i18n="ct.kicker">R1 · Contact &amp; early access</span></p>
+        <h1 id="contact-title" data-i18n="wl.h2">Is R1 right for your team?</h1>
+        <p class="ct-lead" data-i18n="ct.lead">R1 turns what your team says at work into team knowledge and tasks that get followed up — captured automatically, confirmed by the people who said it, and sent to the tools and Agents you already use.</p>
 
         <figure class="ct-hardware-card">
-          <img src="assets/landing/hero-silver.webp?v=studio-v7" width="1783" height="673" fetchpriority="high" alt="R1 in silver showing the centered mechanical mute switch, dual spaced Ø 0.40 mm pinholes, and USB-C plug.">
-          <figcaption>R1 concept render · 32.0 × 5.4 × 5.5 mm anodized aluminum · No physical unit built yet</figcaption>
+          <img src="assets/landing/hero-silver.webp?v=studio-v7" width="1783" height="673" fetchpriority="high" alt="R1 concept render in silver.">
+          <figcaption data-i18n="ct.cap">R1 concept render · no prototype yet</figcaption>
         </figure>
 
         <dl class="ct-facts">
-          <div>
-            <dt>Who we’re talking to</dt>
-            <dd>Co-located startup teams (3–15 people) who move fast through desk chats, standups, and quick decisions—plus press, creators, or anyone with workflow feedback.</dd>
-          </div>
-          <div>
-            <dt>Transparent test pricing (concept validation)</dt>
-            <dd>Estimated <strong>$79 / R1 device</strong> + <strong>$12 / member / month</strong> (~$1,115 Year 1 for a 5-person team). No payment or pre-order is taken now.</dd>
-          </div>
-          <div>
-            <dt>Hardware &amp; dimensions</dt>
-            <dd>Explore every millimeter, 3D model, and mounted view in the <a href="https://lululuchen1109-commits.github.io/rutta-bar-studio/product.html?v=040" target="_blank" rel="noopener">studio product gallery ↗</a>.</dd>
-          </div>
+          <div><dt data-i18n="ct.f1.t">Who we’re talking to</dt><dd data-i18n="ct.f1.d">Startup teams of 3–15 who work side by side and move fast through desk chats, standups and quick decisions.</dd></div>
+          <div><dt data-i18n="ct.f2.t">Test pricing</dt><dd data-i18n="ct.f2.d">Around <strong>$79 per device</strong> + <strong>$12 per member per month</strong> (about $1,115 in year one for a 5-person team). We’re not taking payment now.</dd></div>
+          <div><dt data-i18n="ct.f3.t">Press, partners &amp; other questions</dt><dd data-i18n="ct.f3.d">Choose <strong>Others</strong> in the form and tell us in the notes — we read every message.</dd></div>
+          <div><dt data-i18n="ct.f4.t">Hardware details</dt><dd data-i18n="ct.f4.d">See every angle in the <a href="https://lululuchen1109-commits.github.io/rutta-bar-studio/product.html?v=040" target="_blank" rel="noopener">product gallery ↗</a>.</dd></div>
         </dl>
       </div>
 
-      <!-- Unified single form card (no dual tabs, Email first, 4 real scenarios + Others, Rich Text Editor, Dark submit button) -->
       <div class="lk-research-card ct-card">
         <form class="lk-research-form" data-research-form data-endpoint="" novalidate>
-          <!-- #1 Priority: Email first -->
-          <label class="lk-research-field lk-field-first"><span>Work email <b aria-hidden="true">*</b></span>
+          <label class="lk-research-field lk-field-first"><span><span data-i18n="f.email">Work email</span> <b aria-hidden="true">*</b></span>
             <input type="email" name="email" autocomplete="email" placeholder="you@company.com" required>
           </label>
 
-          <!-- #2 Real scenarios + Others -->
           <fieldset class="lk-scenario-group">
-            <legend>Where would R1 help your team most?</legend>
-            <div class="lk-research-choices" role="group" aria-label="Choose a primary scenario">
-              <button type="button" data-use-case="Desk-side decisions" aria-pressed="false">Desk-side decisions</button>
-              <button type="button" data-use-case="Standups & handoffs" aria-pressed="false">Standups &amp; handoffs</button>
-              <button type="button" data-use-case="Team knowledge & onboarding" aria-pressed="false">Team knowledge &amp; onboarding</button>
-              <button type="button" data-use-case="Feeding AI Agents" aria-pressed="false">Feeding AI Agents</button>
-              <button type="button" data-use-case="Others" aria-pressed="false">Others</button>
+            <legend data-i18n="f.scenario">Where would R1 help your team most?</legend>
+            <div class="lk-research-choices" role="group">
+              <button type="button" data-use-case="Desk-side decisions" aria-pressed="false" data-i18n="f.sc1">Desk-side decisions</button>
+              <button type="button" data-use-case="Standups & follow-ups" aria-pressed="false" data-i18n="f.sc2">Standups &amp; follow-ups</button>
+              <button type="button" data-use-case="Team knowledge & handoffs" aria-pressed="false" data-i18n="f.sc3">Team knowledge &amp; handoffs</button>
+              <button type="button" data-use-case="Keeping AI Agents in sync" aria-pressed="false" data-i18n="f.sc4">Keeping AI Agents in sync</button>
+              <button type="button" data-use-case="Others" aria-pressed="false" data-i18n="f.sc5">Others</button>
             </div>
             <input type="hidden" name="useCase" required>
-            <label class="lk-research-field lk-other-wrap" data-other-wrap hidden><span>Describe your scenario</span>
-              <input type="text" name="otherScenario" placeholder="e.g. Client workshops, press / review inquiry, custom workflow">
+            <label class="lk-research-field lk-other-wrap" data-other-wrap hidden><span data-i18n="f.other">Describe your scenario</span>
+              <input type="text" name="otherScenario" placeholder="e.g. client calls, design reviews, founder syncs" data-i18n-ph="f.other.ph">
             </label>
           </fieldset>
 
-          <!-- #3 Compact Name / Team size / Mac -->
           <div class="lk-two-col">
-            <label class="lk-research-field"><span>Name <small class="lk-opt">(optional)</small></span>
-              <input type="text" name="name" autocomplete="name" placeholder="Alex">
+            <label class="lk-research-field"><span><span data-i18n="f.name">Name</span> <small class="lk-opt" data-i18n="f.opt">(optional)</small></span>
+              <input type="text" name="name" autocomplete="name" placeholder="Alex" data-i18n-ph="f.name.ph">
             </label>
-            <label class="lk-research-field"><span>Team size</span>
+            <label class="lk-research-field"><span data-i18n="f.team">Team size</span>
               <select name="teamSize">
-                <option value="">Choose team size</option>
-                <option value="1-2">Solo / 1–2</option>
-                <option value="3-15">3–15 (Startup team)</option>
-                <option value="16-50">16–50</option>
-                <option value="50+">50+</option>
+                <option value="" data-i18n="f.team.0">Choose team size</option>
+                <option value="1-2" data-i18n="f.team.1">1–2 people</option>
+                <option value="3-15" data-i18n="f.team.2">3–15 people</option>
+                <option value="16-50" data-i18n="f.team.3">16–50 people</option>
+                <option value="50+" data-i18n="f.team.4">50+ people</option>
               </select>
             </label>
           </div>
 
-          <label class="lk-research-field"><span>Primary Mac <small class="lk-opt">(optional)</small></span>
-            <select name="mac">
-              <option value="">Choose Mac</option>
-              <option value="13-mba">13" MacBook Air</option>
-              <option value="15-mba">15" MacBook Air</option>
-              <option value="mbp">MacBook Pro</option>
-              <option value="other-mac">Other / Mixed team</option>
-            </select>
-          </label>
-
-          <!-- #4 Rich Text Editor -->
           <div class="lk-research-field">
-            <span id="rte-label-contact">Suggestions, workflow, or a recent missed decision <small class="lk-opt">(optional)</small></span>
+            <span id="rte-label-contact"><span data-i18n="f.notes">Suggestions, or the last decision your team lost</span> <small class="lk-opt" data-i18n="f.opt">(optional)</small></span>
             <div class="lk-rte" data-rte>
-              <div class="lk-rte-toolbar" role="toolbar" aria-label="Text formatting">
-                <button type="button" data-cmd="bold" aria-label="Bold" title="Bold"><b>B</b></button>
-                <button type="button" data-cmd="italic" aria-label="Italic" title="Italic"><i>I</i></button>
-                <button type="button" data-cmd="insertUnorderedList" aria-label="Bullet list" title="Bullet list">• List</button>
-                <button type="button" data-cmd="insertOrderedList" aria-label="Numbered list" title="Numbered list">1. List</button>
-                <button type="button" data-cmd="removeFormat" aria-label="Clear formatting" title="Clear formatting" class="lk-rte-clear">Clear</button>
+              <div class="lk-rte-editor" contenteditable="true" role="textbox" aria-multiline="true" aria-labelledby="rte-label-contact" data-placeholder="e.g. “We agreed at someone’s desk to move the launch, and half the team never heard about it.”" data-i18n-dph="f.notes.ph"></div>
+              <div class="lk-rte-toolbar" role="toolbar" aria-label="Formatting">
+                <button type="button" data-cmd="bold" aria-label="Bold" title="Bold"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 2.75h4.1a2.6 2.6 0 0 1 0 5.2H4.5zM4.5 7.95h4.8a2.65 2.65 0 0 1 0 5.3H4.5z"/></svg></button>
+                <button type="button" data-cmd="italic" aria-label="Italic" title="Italic"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 2.75H6.75M9.25 13.25H5.5M8.6 2.75 7.4 13.25"/></svg></button>
+                <span class="lk-rte-sep" aria-hidden="true"></span>
+                <button type="button" data-cmd="insertUnorderedList" aria-label="Bulleted list" title="Bulleted list"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4h7.5M6 8h7.5M6 12h7.5"/><circle cx="3" cy="4" r=".9"/><circle cx="3" cy="8" r=".9"/><circle cx="3" cy="12" r=".9"/></svg></button>
+                <button type="button" data-cmd="insertOrderedList" aria-label="Numbered list" title="Numbered list"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 4h7M6.5 8h7M6.5 12h7M2.4 2.9l.9-.5v3.1M2.2 9.3c.2-.6 1.6-.7 1.6.2 0 .7-1.6 1.2-1.6 1.9h1.7"/></svg></button>
+                <button type="button" data-cmd="removeFormat" class="lk-rte-clear" aria-label="Clear formatting" title="Clear formatting"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3.5h7M6.5 3.5 5 12.5M9.5 9.5l4 4M13.5 9.5l-4 4"/></svg></button>
               </div>
-              <div class="lk-rte-editor" contenteditable="true" role="textbox" aria-multiline="true" aria-labelledby="rte-label-contact" data-placeholder="Share a recent verbal decision your team had to repeat, your tool/Agent stack, press inquiry, or suggestions for R1…"></div>
               <input type="hidden" name="notesHtml">
               <input type="hidden" name="notesText">
             </div>
           </div>
 
-          <!-- Single clean checkbox -->
           <label class="lk-research-check">
             <input type="checkbox" name="consent" required>
-            <span>Email me about R1 progress and optional 15-min concept chats. <button type="button" class="lk-inline-link" data-open-privacy>Privacy Notice</button></span>
+            <span><span data-i18n="f.consent">Email me about R1 updates and an optional 15-minute chat.</span> <button type="button" class="lk-inline-link" data-open-privacy data-i18n="f.privacy">Privacy Notice</button></span>
           </label>
 
-          <!-- Dark Submit Button -->
-          <button class="lk-research-submit" type="submit">Join the waitlist <span aria-hidden="true">↗</span></button>
-          <p class="lk-research-note" data-research-note role="status" aria-live="polite">Concept validation · No purchase or pre-order required.</p>
+          <button class="lk-research-submit" type="submit"><span data-i18n="f.submit">Join the waitlist</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></button>
+          <p class="lk-research-note" data-research-note role="status" aria-live="polite" data-i18n="note.default">Concept stage · free, no payment or pre-order.</p>
         </form>
 
         <div class="lk-research-thanks" data-research-thanks hidden tabindex="-1">
-          <p class="lk-thanks-badge"><span aria-hidden="true">✓</span> You’re on the waitlist.</p>
+          <p class="lk-thanks-badge"><span aria-hidden="true">✓</span> <em data-i18n="th.badge">You’re on the waitlist.</em></p>
           <p class="lk-thanks-status" data-thanks-status></p>
-          <h3>Quick check—would your team evaluate R1?</h3>
-          <p class="lk-thanks-sub">Optional, takes 15 seconds and directly shapes whether we build R1.</p>
+          <h3 data-i18n="th.h3">One quick question</h3>
+          <p class="lk-thanks-sub" data-i18n="th.sub">Optional — it directly shapes whether we build R1.</p>
           <form class="lk-survey-form" data-survey-form novalidate>
             <fieldset class="lk-price-group">
-              <legend>At $79/device + $12/member/mo ($1,115 Year 1 for 5 people), how does it feel?</legend>
+              <legend data-i18n="sv.legend">At $79 per device + $12 per member per month (about $1,115 in year one for a 5-person team), how does R1 feel?</legend>
               <div class="lk-price-grid">
-                <label><input type="radio" name="priceReaction" value="worth-evaluating"><span>Worth evaluating</span></label>
-                <label><input type="radio" name="priceReaction" value="too-high"><span>Too expensive</span></label>
-                <label><input type="radio" name="priceReaction" value="software-only"><span>Prefer software only</span></label>
-                <label><input type="radio" name="priceReaction" value="manual-only"><span>Prefer manual record</span></label>
+                <label><input type="radio" name="priceReaction" value="worth-evaluating"><span data-i18n="sv.o1">Worth evaluating</span></label>
+                <label><input type="radio" name="priceReaction" value="too-high"><span data-i18n="sv.o2">Too expensive</span></label>
+                <label><input type="radio" name="priceReaction" value="software-only"><span data-i18n="sv.o3">I’d rather have software only</span></label>
+                <label><input type="radio" name="priceReaction" value="manual-only"><span data-i18n="sv.o4">I’d rather start it manually</span></label>
               </div>
             </fieldset>
-            <label class="lk-research-field"><span>Open to a 15-minute concept chat?</span>
+            <label class="lk-research-field"><span data-i18n="sv.chat">Up for a 15-minute chat?</span>
               <select name="interviewPref">
-                <option value="">Choose one</option>
-                <option value="video-call">Yes — quick video or phone call</option>
-                <option value="email">Yes — over email</option>
-                <option value="updates-only">Just keep me posted on updates</option>
+                <option value="" data-i18n="sv.c0">Choose one</option>
+                <option value="video-call" data-i18n="sv.c1">Yes — video or phone</option>
+                <option value="email" data-i18n="sv.c2">Yes — by email</option>
+                <option value="updates-only" data-i18n="sv.c3">Just send me updates</option>
               </select>
             </label>
-            <button class="lk-survey-submit" type="submit">Send response</button>
+            <button class="lk-survey-submit" type="submit" data-i18n="sv.send">Send</button>
           </form>
           <div class="lk-share-row">
-            <span>Share R1 with your co-founder or team:</span>
-            <button type="button" class="lk-share-btn" data-share-copy>Copy invite link</button>
+            <span data-i18n="sh.text">Know a team that needs this?</span>
+            <button type="button" class="lk-share-btn" data-share-copy data-i18n="sh.btn">Copy invite link</button>
           </div>
         </div>
       </div>
@@ -175,45 +155,46 @@
     <div class="lk-foot-inner">
       <div class="lk-foot-brand-col">
         <div class="lk-foot-brand"><img src="assets/landing/monogram.svg" width="28" height="34" alt=""> Rutta R1</div>
-        <p class="lk-foot-tagline">Always-on, voiceprint-gated team microphone concept for Mac.</p>
+        <p class="lk-foot-tagline" data-i18n="foot.tag">Team memory for your Mac — what your team says becomes what it knows.</p>
       </div>
       <div class="lk-foot-links">
         <div>
-          <strong>Overview</strong>
-          <a href="index.html">Landing page</a>
-          <a href="index.html#scenarios">Real scenarios</a>
-          <a href="index.html#privacy">Privacy intentions</a>
-          <a href="index.html#hardware">R1 Hardware</a>
+          <strong data-i18n="foot.c1">Product</strong>
+          <a href="index.html#value" data-i18n="nav.value">Why R1</a>
+          <a href="index.html#scenarios" data-i18n="nav.scenarios">Scenarios</a>
+          <a href="index.html#workflow" data-i18n="nav.how">How it works</a>
+          <a href="index.html#privacy" data-i18n="nav.privacy">Privacy</a>
         </div>
         <div>
-          <strong>Engineering</strong>
-          <a href="https://lululuchen1109-commits.github.io/rutta-bar-studio/product.html?v=040" target="_blank" rel="noopener">Product gallery ↗</a>
-          <a href="https://lululuchen1109-commits.github.io/rutta-bar-studio/product.html?v=040#dimensions" target="_blank" rel="noopener">Dimension drawings ↗</a>
-          <a href="https://lululuchen1109-commits.github.io/rutta-bar-studio/product.html?v=040#specs" target="_blank" rel="noopener">Full specifications ↗</a>
+          <strong data-i18n="foot.c2">Learn more</strong>
+          <a href="https://lululuchen1109-commits.github.io/rutta-bar-studio/product.html?v=040" target="_blank" rel="noopener" data-i18n="nav.gallery">Product gallery ↗</a>
+          <a href="index.html#faq" data-i18n="foot.faq">Pricing &amp; FAQ</a>
         </div>
         <div>
-          <strong>Legal</strong>
-          <button type="button" class="lk-foot-btn" data-open-privacy>Privacy Notice</button>
+          <strong data-i18n="foot.c3">Get involved</strong>
+          <button type="button" class="lk-foot-btn" data-open-privacy data-i18n="f.privacy">Privacy Notice</button>
         </div>
       </div>
-      <p class="lk-foot-legal">Rutta R1 · Early concept in validation</p>
-      <a class="lk-foot-top" href="index.html">← Back to Rutta R1</a>
+      <p class="lk-foot-legal" data-i18n="foot.legal">Rutta R1 · Concept stage · Renders and illustrative scenarios</p>
+      <a class="lk-foot-top" href="index.html" data-i18n="ct.back">← Overview</a>
     </div>
   </footer>
 
   <dialog id="privacy-dialog" class="lk-dialog" aria-labelledby="privacy-dialog-title">
     <div class="lk-dialog-head">
-      <h2 id="privacy-dialog-title">Privacy Notice</h2>
-      <button type="button" class="lk-dialog-close" data-close-privacy aria-label="Close privacy notice">×</button>
+      <h2 id="privacy-dialog-title" data-i18n="f.privacy">Privacy Notice</h2>
+      <button type="button" class="lk-dialog-close" data-close-privacy aria-label="Close">×</button>
     </div>
     <div class="lk-dialog-body">
-      <p><strong>Waitlist &amp; research data:</strong> We collect only the email, scenario, optional name/team/Mac info, rich-text notes, and optional feedback you submit, plus referral/UTM parameters if present. We use it strictly for R1 validation updates and optional 15-minute research conversations—never sold or rented.</p>
-      <p><strong>R1 product privacy design intentions (concept):</strong> Participants review and confirm notes before sharing; voiceprint gating is designed to keep only enrolled teammates’ speech; managers cannot access raw audio; physical mute switch and top status light; local audio processing on Mac with delete control; team content is never used to train models.</p>
-      <p><strong>Unsubscribe &amp; deletion:</strong> Every email includes one-click unsubscribe, and you may request deletion of your waitlist record at any time.</p>
+      <p data-i18n="dlg.1"><strong>What we collect:</strong> only what you submit — your email, scenario, optional name, team size and notes, and optional survey answers — plus campaign parameters (UTM/ref) if present.</p>
+      <p data-i18n="dlg.2"><strong>How we use it:</strong> only to share R1 updates and, if you agree, to invite you to a short research chat. We never sell or rent your information.</p>
+      <p data-i18n="dlg.3"><strong>R1 privacy principles (concept):</strong> participants confirm notes before they’re shared; only enrolled voices are kept; admins can’t access raw audio; physical mute switch and status light; audio is processed on your Mac; team content is never used to train models.</p>
+      <p data-i18n="dlg.4"><strong>Unsubscribe &amp; deletion:</strong> every email has a one-click unsubscribe link, and you can ask us to delete your record at any time.</p>
     </div>
   </dialog>
 
-  <script defer src="assets/looki/sections.js?v=v4-r1"></script>
-  <script defer src="assets/looki/research.js?v=v4-r1"></script>
+  <script defer src="assets/looki/i18n.js?v=v5"></script>
+  <script defer src="assets/looki/sections.js?v=v5"></script>
+  <script defer src="assets/looki/research.js?v=v5"></script>
 </body>
 </html>

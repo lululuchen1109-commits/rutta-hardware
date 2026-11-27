@@ -43,7 +43,7 @@
     selected = name;
     const view = views[name];
     section.dataset.detail = name;
-    caption.textContent = view.text;
+    if (window.ruttaSet) window.ruttaSet(caption, "ex." + name); else caption.textContent = view.text;
     for (const control of parts) {
       control.setAttribute("aria-pressed", String(control.dataset.rbPart === name));
     }
@@ -71,7 +71,8 @@
     viewer = null;
     canvas.tabIndex = -1;
     section.dataset["3d"] = "still";
-    section.querySelector(".rb-explore-intro").textContent = "Choose a detail to see how Rutta Bar fits together.";
+    const intro = section.querySelector(".rb-explore-intro");
+    if (window.ruttaSet) window.ruttaSet(intro, "ex.introStill"); else intro.textContent = "Choose a detail to see how R1 fits together.";
     show(selected);
   }
   function enhance() {

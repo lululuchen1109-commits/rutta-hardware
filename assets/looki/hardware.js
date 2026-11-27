@@ -80,7 +80,7 @@
         photo.src = url;
         const name = button.getAttribute('aria-label');
         photo.alt = 'R1 in ' + name + ', viewed from its outer face.';
-        label.textContent = 'R1 · ' + name;
+        if (window.ruttaSet) window.ruttaSet(label, 'finish.' + color); else label.textContent = 'R1 · ' + name;
         hardware.querySelector('#finish').dataset.finish = color;
         finishes.forEach(item => item.setAttribute('aria-pressed',String(item === button)));
       } catch {
@@ -102,11 +102,11 @@
       const state = n === 0 ? 'Unplugged' : n === 15 ? 'Connected' : 'Aligning';
       slider.value = String(n);
       slider.setAttribute('aria-valuetext', state);
-      output.value = state;
+      if (window.ruttaSet) window.ruttaSet(output, 'fit.' + state.toLowerCase()); else output.value = state;
       frame.alt = state === 'Connected' ? 'Rutta Bar seated against the side of the MacBook Air.' : 'The Rutta Bar USB-C plug aligns with the MacBook Air.';
       return true;
     } catch {
-      if (request === sequence) {slider.value = String(shown); output.value = 'Try again';}
+      if (request === sequence) {slider.value = String(shown); if (window.ruttaSet) window.ruttaSet(output, 'fit.retry'); else output.value = 'Try again';}
       return false;
     }
   }

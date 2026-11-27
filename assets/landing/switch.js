@@ -36,8 +36,13 @@
     photo.src = source(mode);
     const muted = mode === "mute";
     handle.setAttribute("aria-checked", String(muted));
-    callout.textContent = muted ? "Slide to unmute" : "Slide to mute";
-    reading.textContent = messages[mode];
+    if (window.ruttaSet) {
+      window.ruttaSet(callout, muted ? "sw.unmute" : "sw.mute");
+      window.ruttaSet(reading, "sw.read." + mode);
+    } else {
+      callout.textContent = muted ? "Slide to unmute" : "Slide to mute";
+      reading.textContent = messages[mode];
+    }
     choices.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.mode === mode)));
   }
 

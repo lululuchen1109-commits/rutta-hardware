@@ -22,7 +22,7 @@
   letter-spacing: .08em;
   text-transform: uppercase;
 }
-.lk-research-kicker span { width: 28px; height: 2px; background: #e56f35; }
+.lk-research-kicker .lk-line { width: 28px; height: 2px; background: #e56f35; flex: none; }
 .lk-research h2 {
   margin-top: 16px;
   max-width: 12ch;
@@ -171,10 +171,10 @@
   box-shadow: 0 0 0 3px rgb(20 21 23 / .12);
 }
 
-/* Rich Text Editor */
+/* Rich Text Editor — reads like a normal text field, with a quiet icon toolbar underneath */
 .lk-rte {
   border: 1px solid #d5d2cc;
-  border-radius: 12px;
+  border-radius: 10px;
   background: #fff;
   overflow: hidden;
   transition: border-color .16s, box-shadow .16s;
@@ -183,38 +183,14 @@
   border-color: #141517;
   box-shadow: 0 0 0 3px rgb(20 21 23 / .12);
 }
-.lk-rte-toolbar {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 6px 8px;
-  background: #f7f5f1;
-  border-bottom: 1px solid #e7e3db;
-  flex-wrap: wrap;
-}
-.lk-rte-toolbar button {
-  min-width: 30px;
-  height: 28px;
-  padding: 0 8px;
-  border: 1px solid transparent;
-  border-radius: 7px;
-  background: transparent;
-  color: #3a3d42;
-  font-size: 12px;
-  font-weight: 560;
-  line-height: 1;
-}
-.lk-rte-toolbar button:hover { background: #ebe7df; color: #141517; }
-.lk-rte-toolbar button[aria-pressed=true] { background: #141517; color: #fff; }
-.lk-rte-toolbar .lk-rte-clear { margin-left: auto; color: #6c7076; font-weight: 500; }
 .lk-rte-editor {
-  min-height: 112px;
+  min-height: 104px;
   max-height: 240px;
   overflow-y: auto;
-  padding: 12px 14px;
-  font-size: 14.5px;
+  padding: 12px 14px 8px;
+  font-size: 15px;
   font-weight: 430;
-  line-height: 1.56;
+  line-height: 1.55;
   color: #171819;
   outline: none;
 }
@@ -223,11 +199,42 @@
   color: #8c9096;
   pointer-events: none;
 }
-.lk-rte-editor ul,
-.lk-rte-editor ol { margin: 6px 0; padding-left: 20px; }
+.lk-rte-editor ul, .lk-rte-editor ol { margin: 4px 0; padding-left: 20px; }
 .lk-rte-editor p { margin: 0 0 6px; }
-.lk-rte-editor b,
-.lk-rte-editor strong { color: #141517; font-weight: 680; }
+.lk-rte-editor b, .lk-rte-editor strong { color: #141517; font-weight: 680; }
+.lk-rte-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 6px;
+  border-top: 1px solid #f0ede7;
+}
+.lk-rte-toolbar button {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #8a8d93;
+  transition: background-color .15s, color .15s;
+}
+.lk-rte-toolbar button svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.lk-rte-toolbar button svg circle { fill: currentColor; stroke: none; }
+.lk-rte-toolbar button:hover { background: #f3f1ec; color: #141517; }
+.lk-rte-toolbar button[aria-pressed=true] { background: #ebe8e1; color: #141517; }
+.lk-rte-sep { width: 1px; height: 16px; margin: 0 4px; background: #e6e2da; }
+.lk-rte-toolbar .lk-rte-clear { margin-left: auto; }
 
 .lk-research-check {
   display: flex;
@@ -257,24 +264,26 @@
 }
 .lk-inline-link:hover { color: #141517; }
 
-/* Dark primary CTA button */
+/* Dark primary CTA button — label centered */
 .lk-research-submit {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10px;
   width: 100%;
   min-height: 52px;
   margin-top: 20px;
-  padding: 0 18px 0 22px;
+  padding: 0 24px;
   border: 0;
   border-radius: 999px;
   background: #141517;
   color: #ffffff;
   font-size: 15px;
   font-weight: 620;
+  text-align: center;
   transition: background-color .18s, transform .18s;
 }
-.lk-research-submit span { font-size: 20px; line-height: 1; }
+.lk-research-submit svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
 .lk-research-submit:hover { background: #2c2f36; transform: translateY(-1px); }
 .lk-research-submit:focus-visible { outline: 3px solid #247bd5; outline-offset: 3px; }
 .lk-research-submit:disabled { opacity: .6; cursor: wait; transform: none; }
@@ -286,6 +295,7 @@
 /* ---------- post-signup thanks & validation check ---------- */
 .lk-research-thanks { outline: none; }
 .lk-thanks-badge { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 620; color: #171819; }
+.lk-thanks-badge em { font-style: normal; }
 .lk-thanks-badge span { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #1f8a4c; color: #fff; font-size: 14px; }
 .lk-thanks-status { margin-top: 8px; font-size: 12.5px; color: #5d6066; line-height: 1.45; }
 .lk-research-thanks h3 { margin-top: 22px; font-size: 16px; font-weight: 620; color: #171819; }
